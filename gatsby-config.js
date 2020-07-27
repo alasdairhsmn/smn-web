@@ -1,12 +1,44 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Tailwind CSS + Emotion Starter`,
-    description: `A bare-bones Tailwind CSS + Emotion starter to kickoff your project. `,
-    author: `@pauloelias`,
+    title: `SMN 2020`,
+    description: `SMN Test Site`,
+    author: `SMN`,
   },
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    
+    {
+      resolve: 'gatsby-source-prismic-graphql',
+      options: {
+        repositoryName: 'SMNweb', // required
+        defaultLang: 'en-gb', // optional, but recommended
+        pages: [{
+          type: 'Project',
+          match: '/changework/:uid',
+          component: require.resolve('./src/pages/changework/view.js'),
+        }, {
+          type: 'Blog_post',
+          match: '/blog/:uid',
+          component: require.resolve('./src/pages/blog/view.js'),
+        }],
+
+        sharpKeys: [
+          /image|photo|picture/, // (default)
+          'profilepic',
+        ],
+      }
+    },
+
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['IBM Plex Sans:300,400,500,600,700', 'IBM Plex Mono', 'Poppins:300,400,500,600,700,800,900']
+        }
+      }
+    }
+
   ],
 }
