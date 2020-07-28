@@ -17,11 +17,11 @@ module.exports = {
         pages: [{
           type: 'Project',
           match: '/changework/:uid',
-          component: require.resolve('./src/pages/changework/view.js'),
+          component: require.resolve('./src/components/work/view/template.js'),
         }, {
           type: 'Blog_post',
           match: '/blog/:uid',
-          component: require.resolve('./src/pages/blog/view.js'),
+          component: require.resolve('./src/components/blog/view/template.js'),
         }],
 
         sharpKeys: [

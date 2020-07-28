@@ -4,14 +4,14 @@ import tw from "twin.macro"
 
 import Fade from 'react-reveal/Fade'
 
-import Layout from "../../components/layout/layout"
-import BodyText from "../../components/shared/bodyText"
-import ProjectRow from "../../components/shared/projectRow"
+import Layout from "../../layout/layout"
+import BodyText from "../../shared/bodyText"
+import ProjectRow from "../../shared/projectRow"
 
-import ProjectHero from "../../components/work/projectHero"
-import ProjectSummary from "../../components/work/projectSummary"
-import ProjectContextImage from "../../components/work/projectContextImage"
-import ProjectSlices from "../../components/work/projectSlices"
+import ProjectHero from "../projectHero"
+import ProjectSummary from "../projectSummary"
+import ProjectContextImage from "../projectContextImage"
+import ProjectSlices from "../projectSlices"
 
 export const query = graphql`
 query ProjectQuery($uid: String!) {

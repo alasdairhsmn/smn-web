@@ -1,12 +1,12 @@
 import tw from "twin.macro"
 import React from "react"
-import Layout from "../../components/layout/layout"
-import BodyText from "../../components/shared/bodyText"
+import Layout from "../../layout/layout"
+import BodyText from "../../shared/bodyText"
 
-import BlogHead from "../../components/blog/blogHead"
-import BlogStandfirst from "../../components/blog/blogStandfirst"
-import BlogEnd from "../../components/blog/blogEnd"
-import BlogRow from "../../components/shared/blogRow"
+import BlogHead from "../blogHead"
+import BlogStandfirst from "../blogStandfirst"
+import BlogEnd from "../blogEnd"
+import BlogRow from "../../shared/blogRow"
 
 export const query = graphql`
 query BlogPostQuery($uid: String!) {
