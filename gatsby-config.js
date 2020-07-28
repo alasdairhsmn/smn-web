@@ -14,6 +14,7 @@ module.exports = {
       options: {
         repositoryName: 'SMNweb', // required
         defaultLang: 'en-gb', // optional, but recommended
+        previews: false, // optional, default: false
         pages: [{
           type: 'Project',
           match: '/changework/:uid',

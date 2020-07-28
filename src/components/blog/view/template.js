@@ -49,8 +49,10 @@ const Block = tw.div`
 
 export default function BlogView ({data}) {
 
-    const post = data.prismic.blog_post
-    const nextposts = data.prismic.allBlog_posts.edges
+  const nextposts = data.prismic.allBlog_posts.edges  
+  const post = data.prismic.blog_post
+  if(!post) return null
+    
 
     return (
        <Layout>

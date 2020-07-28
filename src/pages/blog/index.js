@@ -32,6 +32,7 @@ const BlogWrapper = tw.div `
 export default function BlogIndex ( {data} ) {
 
     const posts = data.prismic.allBlog_posts.edges
+    if (!posts) return null
 
     return (
        <Layout>

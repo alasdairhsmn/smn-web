@@ -29,6 +29,7 @@ query ChangeworkQuery {
 export default function ProjectsIndex ({ data }) {
 
     const projects = data.prismic.changework_page.projects
+    if (!projects) return null
 
     return (
        <Layout>

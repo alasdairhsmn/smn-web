@@ -1,6 +1,5 @@
 import tw from "twin.macro"
 import React from "react"
-import SEO from "../components/seo"
 
 import github from "../images/github.svg"
 
@@ -53,7 +52,8 @@ const SmallIcon = tw.img`
 
 export default () => (
   <Wrapper>
-    <SEO title="Page Not Found" />
+
+    
     <Main>
       <Logos>
         {logos &&

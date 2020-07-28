@@ -96,6 +96,8 @@ export default function ProjectView ({data}) {
 
     const nextprojects = data.prismic.allProjects.edges
 
+    if(!project) return null
+
     return (
        <Layout>
 
