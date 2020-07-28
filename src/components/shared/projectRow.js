@@ -6,21 +6,24 @@ import { Link } from "gatsby"
 
 const WorkGrid = tw.div `
     md:grid 
-    grid-cols-1 md:grid-cols-3 
-    gap-8 md:gap-20 
+    md:grid-cols-3 
+    col-gap-20 
     container 
-    mx-8 md:mx-auto 
-    mb-32 
-    mt-24
+    md:mx-auto 
+    mb-16 md:mb-32 
+    mt-12 md:mt-24
 `
 
 const RowTitle = tw.div `
-    col-span-3 text-4xl mb-12 font-display font-extrabold
+    col-span-3 
+    text-3xl md:text-4xl 
+    mb-6 md:mb-12 
+    font-display 
+    font-extrabold
 `
 
 const WorkBlock = tw.div`
-    container 
-    mx-auto 
+    mb-12 md:mb-0
     hover:opacity-75 
 `
 
@@ -30,12 +33,15 @@ const WorkImage = tw.div`
 
 const Image = tw.img `
     w-auto md:w-full 
-    
+    h-64
     object-cover
 `
 
 const WorkTitle = tw.div`
-    text-3xl font-display font-extrabold leading-none font-bold
+    text-2xl md:text-3xl 
+    font-display 
+    font-extrabold 
+    leading-none
 `
 
 const WorkSub = tw.div `

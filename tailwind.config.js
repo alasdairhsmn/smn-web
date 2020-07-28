@@ -1,5 +1,13 @@
 module.exports = {
   theme: {
+    container: {
+      padding: {
+        default: '1.5rem',
+        sm: '0rem',
+        lg: '0rem',
+        xl: '0rem',
+      },
+    },
     extend: {
       colors: {
         yellow: "#fcca5b",

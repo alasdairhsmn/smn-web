@@ -11,7 +11,7 @@ const Wrapper = tw.div `
 
 const Container = tw.div `
   container 
-  mx-8 md:mx-auto 
+  md:mx-auto 
   md:flex
 `
 

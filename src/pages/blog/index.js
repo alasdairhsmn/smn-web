@@ -26,7 +26,7 @@ query BlogQuery {
 
 
 const BlogWrapper = tw.div `
-    container mx-auto py-8
+    container md:mx-auto py-8
 `
 
 export default function BlogIndex ( {data} ) {
@@ -36,24 +36,11 @@ export default function BlogIndex ( {data} ) {
 
     return (
        <Layout>
-           
-        <div className={'bg-black'}>
 
-        <BlogWrapper>
-
-            <div>The Blog – Notes on creative change</div>
-
-            <div>Filter: Fragment / Fieldnote / Tools</div>
-
-            <br />
 
             <BlogGrid data={posts}></BlogGrid>
 
 
-        </BlogWrapper>
-
-            
-        </div>
 
        </Layout>
     )

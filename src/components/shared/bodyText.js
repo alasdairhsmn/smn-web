@@ -7,7 +7,7 @@ const Text = styled.div `
    
     ${tw`   
     md:w-2/3
-    mx-8 md:mx-auto
+    md:mx-auto
     font-light
     text-lg md:text-2xl
     leading-normal

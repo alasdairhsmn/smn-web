@@ -12,7 +12,7 @@ const Block = tw.div `
 
 const Wrapper = tw.div `
     container 
-    mx-8 md:mx-auto
+    md:mx-auto
 `
 
 const TextBlock = tw.div `
@@ -35,11 +35,14 @@ const Subhead = tw.div `
 
 const ImageBlock = tw.div `
     md:flex 
+    space-x-0 md:space-x-6
     mt-12
 `
 
 const Item = tw.div `
-    bg-lightgrey overflow-hidden m-2
+    bg-lightgrey 
+    mb-4 md:mb-0
+    overflow-hidden
 `
 
 const ItemImage = tw.img `

@@ -5,15 +5,15 @@ import { Link } from "gatsby"
 
 const Wrapper = tw.div`
     block 
-    w-full 
     font-display
 `
 
 const Container = tw.div `
     container 
-    mx-8 md:mx-auto 
+    w-full
+    md:mx-auto 
     md:flex 
-    py-6 
+    py-4 md:py-6 
     font-normal 
     tracking-wide 
     text-lg 
@@ -25,11 +25,10 @@ const HeadMain = tw.div `
 `
 
 const HeadNav = tw.div `
-
+    flex space-x-6
 `
 
-const SMNLink = tw.div `
-    mr-8 md:ml-8 
+const SMNLink = tw.div ` 
     inline-block 
     hover:text-blue 
     tracking-wider 
@@ -37,8 +36,7 @@ const SMNLink = tw.div `
 `
 
 const HeadLink = tw.div `
-    mr-8 md:ml-8 
-    block md:inline-block 
+    inline-block md:inline-block 
     hover:text-blue 
     font-light 
     font-sans
@@ -59,7 +57,6 @@ export default function Header () {
             </HeadMain>
 
             <HeadNav>
-
             <Link to={'/about'}>
                 <HeadLink>About</HeadLink>
             </Link>

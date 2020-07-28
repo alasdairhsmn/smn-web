@@ -10,20 +10,27 @@ const Grid = tw.div `
     md:grid-cols-2 
     gap-8 md:gap-24 
     container 
-    mx-auto 
+    md:mx-auto 
     mb-32
 `
 
-const BlogItem = tw.div `
-    container mx-auto mt-8 hover:opacity-75 
+const BlogItem = tw.div ` 
+    w-auto    
+    mt-8 
+    hover:opacity-75 
 `
 
 const BlogImage = tw.div `
-    bg-gray-200 mb-6 overflow-hidden
+    bg-gray-200 
+    mb-6 
+    w-full
+    overflow-hidden
 `
 
 const Image = tw.img `
-    w-full md:h-med h-sm object-cover
+    h-sm md:h-med 
+    w-full    
+    object-cover
 `
 
 const BlogTitle = tw.div`

@@ -4,11 +4,26 @@ import Layout from "../../components/layout/layout"
 
 
 const Hero = tw.div`
-    bg-blue text-white h-screen flex items-center text-6xl font-display font-extrabold leading-tight
+    bg-blue 
+    text-white 
+    py-12
+    min-h-screen 
+    flex 
+    items-center 
+    text-3xl md:text-6xl 
+    font-display 
+    font-extrabold 
+    leading-tight
 `
 
 const Placeholder = tw.div `
-    w-auto py-48 px-32 bg-gray-200 text-5xl text-center
+    w-auto 
+    min-h-screen
+    py-32 
+    px-32 
+    bg-gray-200 
+    text-2xl md:text-5xl 
+    text-center
 `
 
 const Block = tw.div `
@@ -16,7 +31,15 @@ const Block = tw.div `
 `
 
 const Experience = tw.div `
-    bg-purple text-white text-5xl py-32 font-display font-extrabold min-h-screen flex items-center
+    bg-purple 
+    text-white 
+    text-3xl md:text-5xl 
+    py-12 
+    font-display 
+    font-extrabold 
+    min-h-screen 
+    flex 
+    items-center
 `
 
 const Editorial = tw.div `
@@ -24,18 +47,29 @@ const Editorial = tw.div `
 `
 
 const EditorialBlock = tw.div `
-    container mx-auto w-3/4 flex items-center
+    container 
+    mx-auto 
+    w-full md:w-3/4 
+    md:flex 
+    md:space-x-16
+    items-center
 `
 
 const EditorialTitle = tw.div `
-    font-display font-extrabold text-5xl
+    font-display 
+    font-extrabold 
+    text-2xl md:text-5xl
 `
 const EditorialBody = tw.div `
-    text-2xl font-light
+    text-lg 
+    md:text-2xl 
+    font-light
 `
 
 const EditorialImage = tw.div `
-    w-full h-med bg-white m-16
+    w-full 
+    h-sm md:h-med 
+    bg-white 
 `
 
 

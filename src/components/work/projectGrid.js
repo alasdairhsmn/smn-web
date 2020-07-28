@@ -10,14 +10,12 @@ const WorkGrid = tw.div `
     md:grid-cols-2 
     gap-8 md:gap-24 
     container 
-    px-8 md:mx-auto 
+    md:mx-auto 
     mb-32
 `
 
 const WorkBlock = tw.div`
-    container 
     w-auto 
-    mx-auto
     mt-8 
     hover:opacity-75 
 `

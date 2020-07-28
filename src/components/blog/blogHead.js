@@ -3,7 +3,10 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Wrapper = tw.div `
-    mx-auto my-24 flex w-full
+    mx-auto 
+    my-24 
+    md:flex 
+    w-full
 `
 
 const PostMain = tw.div `
@@ -15,11 +18,19 @@ const Title = tw.div `
 `
 
 const SubHead = tw.div `
-text-3xl leading-none mt-6 font-light
+    text-3xl 
+    leading-none 
+    mt-0 md:mt-6 
+    mb-8 md:mb-0
+    font-light
 `
 
 const PostMeta = tw.div `
-    font-light text-gray-500 border-l pl-12 ml-24 pr-12
+    font-light text-gray-500 
+    md:border-l 
+    md:pl-12 
+    md:ml-24 
+    md:pr-12
 `
 
 const PostType = tw.div `

@@ -9,19 +9,26 @@ const Block = tw.div `
 `
 
 const Wrapper = tw.div `
-    container mx-auto
+    container 
+    md:mx-auto
 `
 
 const TextBlock = tw.div `
-    w-1/2
+    w-full md:w-1/2
 `
 
 const Title = tw.div `
-    text-4xl font-display font-extrabold mb-2
+    text-2xl md:text-4xl 
+    font-display 
+    font-extrabold 
+    mb-2
 `
 
 const Subhead = tw.div `
-    text-xl font-sans font-light text-gray-600
+    text-lg md:text-xl 
+    font-sans 
+    font-light 
+    text-gray-600
 `
 
 const ImageBlock = tw.div `
@@ -37,7 +44,7 @@ const ItemCaption = tw.div`
 `
 
 const ItemImage = tw.img `
-    object-cover h-lg
+    object-cover h-sm
 `
 
 

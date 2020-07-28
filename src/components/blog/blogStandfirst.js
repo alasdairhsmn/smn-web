@@ -10,7 +10,7 @@ const Wrapper = tw.div `
 const Text = styled.div `
    
     ${tw`   
-    w-2/3
+    md:w-2/3
     mx-auto
     font-bold
     font-display

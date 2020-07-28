@@ -117,7 +117,6 @@ export default function ProjectView ({data}) {
 
            <BodyBlock>
            <Fade delay={300}>
-                <Subheading>Background</Subheading>
                <BodyText data={project.summary}></BodyText>
                </Fade>
            </BodyBlock>
