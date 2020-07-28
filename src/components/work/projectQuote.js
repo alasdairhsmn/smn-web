@@ -11,7 +11,7 @@ const Wrapper = tw.div `
 `
 
 const QuoteBody = tw.div `
-    text-6xl text-white leading-snug font-display font-extrabold
+    text-5xl text-white leading-snug font-display font-extrabold
 `
 
 const QuoteCaption = tw.div `

@@ -3,6 +3,7 @@ import Fade from 'react-reveal/Fade'
 
 import ProjectQuote from "../work/projectQuote"
 import ProjectImageGrid from "../work/projectImageGrid"
+import ProjectCarousel from "../work/projectCarousel"
 
 
 export default function ProjectSlices ( {data} ) {
@@ -11,7 +12,7 @@ export default function ProjectSlices ( {data} ) {
 
     const blocks = data.map(function(slice){
 
-        if(slice.type == 'quote') {
+        if(slice.type === 'quote') {
     
         return (
 
@@ -21,13 +22,22 @@ export default function ProjectSlices ( {data} ) {
            
         )
 
-    } else if(slice.type == 'image_grid') {
+    } else if(slice.type === 'image_grid') {
 
         return (
             <Fade delay={300}>
            <ProjectImageGrid data={slice}></ProjectImageGrid>
            </Fade>
         )
+
+    } else if(slice.type === 'image_carousel') {
+
+        return (
+            <Fade delay={300}>
+                <ProjectCarousel data={slice}></ProjectCarousel>
+           </Fade>
+        )
+
 
     } else {
         return (

@@ -30,6 +30,9 @@ module.exports = {
         'lg': '34rem',
         'med': '26rem',
         'sm': '18rem',
+      },
+      width: {
+        'lg': '34rem'
       }
     }
   },

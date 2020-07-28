@@ -11,7 +11,6 @@ import ProjectRow from "../../components/shared/projectRow"
 import ProjectHero from "../../components/work/projectHero"
 import ProjectSummary from "../../components/work/projectSummary"
 import ProjectContextImage from "../../components/work/projectContextImage"
-import ProjectQuote from "../../components/work/projectQuote"
 import ProjectSlices from "../../components/work/projectSlices"
 
 export const query = graphql`
@@ -42,6 +41,18 @@ query ProjectQuery($uid: String!) {
                   section_summary
                 }
                 fields {
+                  image
+                }
+              }
+              ... on PRISMIC_ProjectBodyImage_carousel {
+                type
+                label
+                primary {
+                  section_title
+                  section_summary
+                }
+                fields {
+                  caption
                   image
                 }
               }

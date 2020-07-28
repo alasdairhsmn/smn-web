@@ -11,11 +11,11 @@ const PostMain = tw.div `
 `
 
 const Title = tw.div `
-    font-bold text-6xl leading-none
+    font-bold text-6xl leading-none font-display font-extrabold
 `
 
 const SubHead = tw.div `
-text-3xl leading-none mt-6
+text-3xl leading-none mt-6 font-light
 `
 
 const PostMeta = tw.div `

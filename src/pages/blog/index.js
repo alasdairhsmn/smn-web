@@ -29,10 +29,6 @@ const BlogWrapper = tw.div `
     container mx-auto py-8
 `
 
-const BlogItem = tw.div `
-    w-auto text-black
-`
-
 export default function BlogIndex ( {data} ) {
 
     const posts = data.prismic.allBlog_posts.edges

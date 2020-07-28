@@ -1,5 +1,6 @@
 import tw from "twin.macro"
 import React from "react"
+import Fade from 'react-reveal/Fade'
 import { Link } from "gatsby"
 import { RichText } from 'prismic-reactjs'
 
@@ -38,6 +39,8 @@ export default function BlogGrid ( {data} ) {
 
     const blocks = data.map(function(post){
         return (
+
+            <Fade delay={300}>
             <Link to={`/blog/${post.node._meta.uid}`}>
                 
                 <BlogItem>
@@ -61,6 +64,7 @@ export default function BlogGrid ( {data} ) {
                 </BlogItem>
 
             </Link>
+            </Fade>
         )   
     })
 

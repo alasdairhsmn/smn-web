@@ -2,9 +2,9 @@ import tw from "twin.macro"
 import React from "react"
 import Layout from "../../components/layout/layout"
 import BodyText from "../../components/shared/bodyText"
-import { RichText } from 'prismic-reactjs'
 
 import BlogHead from "../../components/blog/blogHead"
+import BlogStandfirst from "../../components/blog/blogStandfirst"
 import BlogEnd from "../../components/blog/blogEnd"
 import BlogRow from "../../components/shared/blogRow"
 
@@ -14,6 +14,7 @@ query BlogPostQuery($uid: String!) {
         blog_post(lang: "en-gb", uid:$uid) {
             title
             subhead
+            standfirst
             body
             lead_image
             _meta {
@@ -59,8 +60,12 @@ export default function BlogView ({data}) {
         </Block>    
 
         <Hero>
-           <img src={post.lead_image.url}></img>
+           <img src={post.lead_image.url} alt={post.lead_image.alt}></img>
         </Hero>
+
+        <Block>
+          <BlogStandfirst data={post.standfirst}></BlogStandfirst>
+        </Block>
 
         <Block>
             <BodyText data={post.body}></BodyText>

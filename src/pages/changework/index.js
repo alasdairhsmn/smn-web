@@ -1,4 +1,3 @@
-import tw from "twin.macro"
 import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../../components/layout/layout"
