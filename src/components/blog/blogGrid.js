@@ -6,7 +6,12 @@ import { RichText } from 'prismic-reactjs'
 
 
 const Grid = tw.div `
-    grid grid-cols-2 gap-24 container mx-auto mb-32
+    grid 
+    md:grid-cols-2 
+    gap-8 md:gap-24 
+    container 
+    mx-auto 
+    mb-32
 `
 
 const BlogItem = tw.div `
@@ -18,7 +23,7 @@ const BlogImage = tw.div `
 `
 
 const Image = tw.img `
-    w-full h-med object-cover
+    w-full md:h-med h-sm object-cover
 `
 
 const BlogTitle = tw.div`

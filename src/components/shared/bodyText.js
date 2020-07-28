@@ -6,10 +6,10 @@ import { RichText } from 'prismic-reactjs'
 const Text = styled.div `
    
     ${tw`   
-    w-2/3
-    mx-auto
+    md:w-2/3
+    mx-8 md:mx-auto
     font-light
-    text-2xl
+    text-lg md:text-2xl
     leading-normal
     `}
     p     {

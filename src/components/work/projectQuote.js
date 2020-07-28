@@ -3,19 +3,30 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Block = tw.div `
-    min-h-screen bg-orange flex items-center
+    py-12 md:py-24
+    bg-orange 
+    flex 
+    items-center
 `
 
 const Wrapper = tw.div `
-    container mx-auto
+    container 
+    mx-8 md:mx-auto
 `
 
 const QuoteBody = tw.div `
-    text-5xl text-white leading-snug font-display font-extrabold
+    text-3xl md:text-5xl 
+    text-white 
+    leading-snug 
+    font-display 
+    font-extrabold
 `
 
 const QuoteCaption = tw.div `
-    text-xl text-white mt-6 opacity-75
+    text-lg md:text-xl 
+    text-white 
+    mt-6 
+    opacity-75
 `
 
 

@@ -3,27 +3,39 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Block = tw.div `
-    flex text-6xl mb-16 mt-24 py-16
+    flex 
+    text-6xl 
+    mb-8 md:mb-16 
+    mt-12 md:mt-24 
+    py-16
 `
 
 const Wrapper = tw.div `
-    container mx-auto
+    container 
+    mx-8 md:mx-auto
 `
 
 const TextBlock = tw.div `
-    w-1/2
+    md:w-1/2
 `
 
 const Title = tw.div `
-    text-4xl font-display font-extrabold mb-2
+    text-2xl md:text-4xl 
+    font-display 
+    font-extrabold 
+    mb-2
 `
 
 const Subhead = tw.div `
-    text-xl font-sans font-light text-gray-600
+    text-lg md:text-xl 
+    font-sans 
+    font-light 
+    text-gray-600
 `
 
 const ImageBlock = tw.div `
-    flex mt-12
+    md:flex 
+    mt-12
 `
 
 const Item = tw.div `
@@ -31,7 +43,9 @@ const Item = tw.div `
 `
 
 const ItemImage = tw.img `
-    w-full h-lg object-cover
+    w-full 
+    h-med md:h-lg 
+    object-cover
 `
 
 

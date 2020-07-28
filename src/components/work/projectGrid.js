@@ -6,19 +6,33 @@ import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
 const WorkGrid = tw.div `
-    grid md:grid-cols-2 gap-24 container mx-auto mb-32
+    grid 
+    md:grid-cols-2 
+    gap-8 md:gap-24 
+    container 
+    px-8 md:mx-auto 
+    mb-32
 `
 
 const WorkBlock = tw.div`
-    container mx-auto mt-8 hover:opacity-75 
+    container 
+    w-auto 
+    mx-auto
+    mt-8 
+    hover:opacity-75 
 `
 
 const WorkImage = tw.div`
-    bg-gray-200 mb-6 overflow-hidden
+    bg-gray-200 
+    mb-6 
+    w-full
+    overflow-hidden
 `
 
 const Image = tw.img `
-    object-cover w-full h-med
+    h-sm md:h-med 
+    w-full    
+    object-cover
 `
 
 const WorkTitle = tw.div`

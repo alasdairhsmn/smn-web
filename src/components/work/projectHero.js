@@ -4,25 +4,39 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Hero = tw.div`
-    items-center pt-24
+    items-center 
+    pt-12 md:pt-24
 `
 const Container = tw.div `
-    container mx-auto
+    container 
+    mx-8 md:mx-auto
+    w-auto
 `
 
 const Title = tw.div `
-    font-display font-extrabold text-7xl leading-none
+    font-display 
+    font-extrabold 
+    text-5xl md:text-7xl 
+    leading-none
 `
 
 const Subhead = tw.div `
-    text-3xl leading-none mt-6 font-light
+    text-2xl md:text-3xl 
+    leading-none 
+    mt-6 
+    font-light
 `
 
 const HeroImage = tw.div`
-    mt-12 max-h-screen80 overflow-hidden
+    mt-6 md:mt-12 
+    max-h-screen80 
+    overflow-hidden
+    bg-yellow
 `
 const Image = tw.img `
-    w-full h-auto
+    h-sm md:h-lg 
+    w-auto md:w-full    
+    object-cover
 `
 
 export default function ProjectHero ( {data} ) {
