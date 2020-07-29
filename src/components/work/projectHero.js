@@ -4,13 +4,8 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Hero = tw.div`
-
-`
-
-const BG = tw.div `
     bg-orange 
-    pt-12 md:pt-32 
-    pb-12
+    pt-24 md:pt-16
 `
 
 const Container = tw.div `
@@ -39,6 +34,7 @@ const HeroImage = tw.div`
     max-h-screen 
     overflow-hidden
     bg-yellow
+    mt-12
 `
 const Image = tw.img `
     w-auto md:w-full    
@@ -52,10 +48,6 @@ export default function ProjectHero ( {data} ) {
 
     <Hero>
 
-        <BG>
-            
-       
-
         <Container>
         
         <Title>
@@ -67,8 +59,6 @@ export default function ProjectHero ( {data} ) {
         </Subhead>
 
         </Container>
-
-        </BG>
 
         <HeroImage>
             <Image src={data.lead_image.url}></Image>

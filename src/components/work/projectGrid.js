@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 
 const WorkGrid = tw.div `
     grid 
+    py-16 md:py-0
     md:grid-cols-2 
     gap-8 md:gap-24 
     container 

@@ -28,7 +28,7 @@ module.exports = {
         '7xl': '5rem',
         '8xl': '6rem',
         '9xl': '7rem',
-        '10xl': '8.5rem'
+        '10xl': '8rem'
       },
       maxHeight: {
         'screen60': '60vh',

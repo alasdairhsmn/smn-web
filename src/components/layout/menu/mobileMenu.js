@@ -16,11 +16,11 @@ const Block = tw.div `
     w-full
     font-display
     text-3xl
+    pt-4
 `
 
 const Title = tw.div `
     font-extrabold
-    mb-8
 `
 
 const Nav = tw.div `
@@ -28,7 +28,9 @@ const Nav = tw.div `
 `
 
 const HeadLink = tw.div `
-    mb-4
+    border-b
+    py-6
+    font-extrabold
 `
 
 export default function MobileMenu () {

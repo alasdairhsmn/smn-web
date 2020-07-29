@@ -7,6 +7,7 @@ import { RichText } from 'prismic-reactjs'
 
 const Grid = tw.div `
     grid 
+    py-16 md:py-0
     md:grid-cols-2 
     gap-8 md:gap-24 
     container 

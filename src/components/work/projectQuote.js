@@ -3,7 +3,7 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Block = tw.div `
-    py-12 md:py-24
+    py-16 md:py-24
     md:min-h-screen
     bg-orange 
     flex 

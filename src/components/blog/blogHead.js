@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs'
 
 const Wrapper = tw.div `
     mx-auto 
-    my-24 
+    py-24 
     md:flex 
     w-full
 `

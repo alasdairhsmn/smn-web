@@ -9,6 +9,10 @@ const Wrapper = tw.div`
     block 
     font-display
     relative
+    fixed md:static
+    z-50
+    w-full
+    bg-white
 `
 
 const Container = tw.div `
@@ -18,8 +22,9 @@ const Container = tw.div `
     flex 
     font-normal 
     tracking-wide 
-    text-lg 
+    text-base md:text-lg 
     justify-end
+    py-0 md:py-6
 `
 
 const HeadLinks = tw.div `
@@ -28,15 +33,12 @@ const HeadLinks = tw.div `
     space-x-6
     w-full
     relative
-    bg-green
-`
-
-const HeadMain = tw.div `
-    flex-grow
 `
 
 const HeadNav = tw.div `
-    flex space-x-6
+    flex 
+    space-x-8 
+    hidden md:block
 `
 
 const SMNLink = tw.div ` 
@@ -48,7 +50,7 @@ const SMNLink = tw.div `
 `
 
 const HeadLink = tw.div `
-    hidden md:inline-block 
+    inline-block
     hover:text-blue 
     font-light 
     font-sans
@@ -60,40 +62,41 @@ const Toggle = tw.div`
     items-center
     justify-end
     z-50
-    h-full
+    h-8
     py-8
     px-4
+    md:hidden
 `
 
 const Hamburger = styled.div`
   background-color: #111;
-  width: 30px;
+  width: 21px;
   height: 3px;
-  transition: all .3s linear;
+  transition: all .1s linear;
   align-self: center;
   position: relative;
   transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
 
   ::before,
   ::after {
-    width: 30px;
+    width: 21px;
     height: 3px;
     background-color: #111;
     content: "";
     position: absolute;
-    transition: all 0.3s linear;
+    transition: all 0.1s linear;
   }
 
   ::before {
     transform: ${props =>
-      props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
-    top: -10px;
+      props.open ? "rotate(-90deg) translate(-7px, 0px)" : "rotate(0deg)"};
+    top: -7px;
   }
 
   ::after {
     opacity: ${props => (props.open ? "0" : "1")};
     transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
-    top: 10px;
+    top: 7px;
   }
 `
 
@@ -138,6 +141,22 @@ const Header = () => {
                 {navbarOpen ? <Hamburger open /> : <Hamburger />}
 
                 </Toggle>
+
+                <HeadNav>
+
+                <Link to={'/about'}>
+                    <HeadLink>About</HeadLink>
+                </Link>
+
+                <Link to={'/changework'}>
+                    <HeadLink>Changework</HeadLink>
+                </Link>
+
+                <Link to={'/blog'}>
+                    <HeadLink>Blog</HeadLink>
+                </Link>
+
+                </HeadNav>
 
                 </HeadLinks>
 
