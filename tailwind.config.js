@@ -20,9 +20,9 @@ module.exports = {
         blue: "#1234f1",
       },
       fontFamily: {
-        sans: ['IBM Plex Sans'],
-        mono: ['IBM Plex Mono'],
-        display: ['Poppins']
+        sans: ['IBM Plex Sans', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
+        display: ['Poppins', 'sans-serif']
       },
       fontSize: {
         '7xl': '5rem',

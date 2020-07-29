@@ -1,7 +1,6 @@
 import tw from "twin.macro"
 import React from "react"
 
-import elephant from "../../images/sample/elephant.jpg"
 import tower from "../../images/sample/east-tower.jpg"
 
 const Hero = tw.div`

@@ -86,10 +86,6 @@ const BodyBlock = tw.div `
     container mx-auto mb-48 mt-32
 `
 
-const Subheading = tw.div `
-  font-display font-extrabold w-2/3 mx-auto text-2xl mb-4
-`
-
 export default function ProjectView ({data}) {
 
     const project = data.prismic.project
