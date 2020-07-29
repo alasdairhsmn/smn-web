@@ -15,12 +15,20 @@ const Container = tw.div `
     container 
     w-full
     md:mx-auto 
-    md:flex 
-    py-4 md:py-6 
+    flex 
     font-normal 
     tracking-wide 
     text-lg 
     justify-end
+`
+
+const HeadLinks = tw.div `
+    flex 
+    items-center
+    space-x-6
+    w-full
+    relative
+    bg-green
 `
 
 const HeadMain = tw.div `
@@ -33,6 +41,7 @@ const HeadNav = tw.div `
 
 const SMNLink = tw.div ` 
     inline-block 
+    flex-grow
     hover:text-blue 
     tracking-wider 
     font-extrabold
@@ -45,15 +54,15 @@ const HeadLink = tw.div `
     font-sans
 `
 
-const Toggle = styled.div`
-  display: none;
-  height: 100%;
-  cursor: pointer;
-  padding: 0 10vw;
-
-  @media (max-width: 768px) {
-    display: flex;
-  }
+const Toggle = tw.div`
+    cursor-pointer
+    flex
+    items-center
+    justify-end
+    z-50
+    h-full
+    py-8
+    px-4
 `
 
 const Hamburger = styled.div`
@@ -89,23 +98,18 @@ const Hamburger = styled.div`
 `
 
 const Navbox = styled.div`
-  display: flex;
-  height: 100%;
-  justify-content: flex-end;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-    justify-content: flex-start;
-    padding-top: 10vh;
-    background-color: #fff;
-    transition: all 0.3s ease-in;
-    top: 8vh;
+  ${tw`
+    flex
+    h-screen
+    w-full
+    z-20
+    fixed
+    bg-white
+    transition-all
+    duration-300
+    ease-in
+  `}
     left: ${props => (props.open ? "-100%" : "0")};
-  }
 `
 
 
@@ -115,35 +119,31 @@ const Header = () => {
 
     return (
         <Wrapper>
+           
             <Container>
 
-            <HeadMain>
-            <Link to={'/'}>
-                <SMNLink>SOMETHING MORE NEAR</SMNLink>
-            </Link>
-            </HeadMain>
+                <HeadLinks>
 
-            <HeadNav>
-            <Link to={'/about'}>
-                <HeadLink>About</HeadLink>
-            </Link>
+                <SMNLink>
+                    <Link to={'/'}>
+                        Something More Near
+                    </Link>    
+                </SMNLink>
 
-            <Link to={'/changework'}>
-                <HeadLink>Changework</HeadLink>
-            </Link>
+                <Toggle
+                    navbarOpen={navbarOpen}
+                    onClick={() => setNavbarOpen(!navbarOpen)}
+                >
 
-            <Link to={'/blog'}>
-                <HeadLink>Blog</HeadLink>
-            </Link>
+                {navbarOpen ? <Hamburger open /> : <Hamburger />}
+
+                </Toggle>
+
+                </HeadLinks>
+
+
 
             
-            <Toggle
-                navbarOpen={navbarOpen}
-                onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-                {navbarOpen ? <Hamburger open /> : <Hamburger />}
-            </Toggle>
-            </HeadNav>
 
             </Container>
 
@@ -156,7 +156,6 @@ const Header = () => {
                 <MobileMenu />
             </Navbox>
             )}
-
 
         </Wrapper>
     )

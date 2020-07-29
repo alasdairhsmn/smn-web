@@ -5,10 +5,15 @@ import { Link } from "gatsby"
 
 
 const Wrapper = tw.div`
+    w-full
 `
 
 const Block = tw.div `
     container
+    mx-auto
+    block
+    relative
+    w-full
     font-display
     text-3xl
 `
@@ -19,7 +24,11 @@ const Title = tw.div `
 `
 
 const Nav = tw.div `
-    font-normal
+   
+`
+
+const HeadLink = tw.div `
+    mb-4
 `
 
 export default function MobileMenu () {
@@ -30,17 +39,28 @@ export default function MobileMenu () {
 
             <Block>
 
-                <Title>
-                    Something More Near
-                </Title>
 
                 <Nav>
             
-                <p>About</p>
-                <p>Changework</p>
-                <p>Blog</p>
-                <p>Contact</p>
-                <p>Social</p>
+                <Link to={'/about'}>
+                    <HeadLink>About</HeadLink>
+                </Link>
+
+                <Link to={'/changework'}>
+                    <HeadLink>Changework</HeadLink>
+                </Link>
+
+                <Link to={'/blog'}>
+                    <HeadLink>Blog</HeadLink>
+                </Link>
+
+                <Link to={'/'}>
+                    <HeadLink>Contact</HeadLink>
+                </Link>
+
+                <Link to={'/'}>
+                    <HeadLink>Social</HeadLink>
+                </Link>
 
                 </Nav>
 
