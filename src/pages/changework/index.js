@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../../components/layout/layout"
+
+import PageTitle from "../../components/shared/pageTitle"
 import ProjectGrid from "../../components/work/projectGrid"
 
 
@@ -34,7 +36,12 @@ export default function ProjectsIndex ({ data }) {
     return (
        <Layout>
 
-            <ProjectGrid data={projects}></ProjectGrid>
+        <PageTitle
+          title={"Changework"}
+          sub={"Imaginative work to help organisations evolve, together"}
+        />
+
+        <ProjectGrid data={projects}></ProjectGrid>
             
        </Layout>
     )

@@ -1,9 +1,11 @@
 import React from "react"
 import Fade from 'react-reveal/Fade'
 
-import ProjectQuote from "../work/projectQuote"
-import ProjectImageGrid from "../work/projectImageGrid"
-import ProjectCarousel from "../work/projectCarousel"
+import ProjectQuote from "./projectQuote"
+import ProjectImageGrid from "./projectImageGrid"
+import ProjectCarousel from "./projectCarousel"
+import ProjectStats from "./projectStats"
+import BodyText from "../shared/bodyText"
 
 
 export default function ProjectSlices ( {data} ) {
@@ -17,7 +19,7 @@ export default function ProjectSlices ( {data} ) {
         return (
 
             <Fade delay={300}>
-            <ProjectQuote data={slice}></ProjectQuote>
+                <ProjectQuote data={slice} />
             </Fade>
            
         )
@@ -25,16 +27,34 @@ export default function ProjectSlices ( {data} ) {
     } else if(slice.type === 'image_grid') {
 
         return (
-            <Fade delay={300}>
-           <ProjectImageGrid data={slice}></ProjectImageGrid>
-           </Fade>
+        <Fade delay={300}>
+           <ProjectImageGrid data={slice} />
+        </Fade>
         )
 
     } else if(slice.type === 'image_carousel') {
 
         return (
             <Fade delay={300}>
-                <ProjectCarousel data={slice}></ProjectCarousel>
+                <ProjectCarousel data={slice} />
+           </Fade>
+        )
+
+
+    } else if(slice.type === 'body_text') {
+
+        return (
+            <Fade delay={300}>
+                <BodyText data={slice} />
+           </Fade>
+        )
+
+
+    } else if(slice.type === 'project_stats') {
+
+        return (
+            <Fade delay={300}>
+                <ProjectStats data={slice}/>
            </Fade>
         )
 
@@ -49,7 +69,11 @@ export default function ProjectSlices ( {data} ) {
 
     return (
     <>
-        { blocks }
+
+    
+
+    { blocks }
+
     </>
 
     )

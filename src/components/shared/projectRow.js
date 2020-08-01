@@ -16,10 +16,10 @@ const WorkGrid = tw.div `
 
 const RowTitle = tw.div `
     col-span-3 
-    text-3xl md:text-4xl 
+    text-lg md:text-2xl 
     mb-6 md:mb-12 
     font-display 
-    font-extrabold
+    font-light
 `
 
 const WorkBlock = tw.div`
@@ -33,7 +33,7 @@ const WorkImage = tw.div`
 
 const Image = tw.img `
     w-auto md:w-full 
-    h-64
+    h-med
     object-cover
 `
 

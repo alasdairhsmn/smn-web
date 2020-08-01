@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `SMN 2020`,
-    description: `SMN Test Site`,
-    author: `SMN`,
+    title: `Something More Near`,
+    titleTemplate: "%s · Something More Near",
+    description: `Something More Near – Social changework for ambitious organisations`,
+    url: "https://www.somethingmorenear.com", // No trailing slash allowed!
+    image: "/images/icon.png", // Path to your image you placed in the 'static' folder
+    author: `Something More Near`,
+    twitterUsername: "@occlumency",
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -36,7 +40,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['IBM Plex Sans:300,400,500,600,700', 'IBM Plex Mono', 'Poppins:300,400,500,600,700,800,900']
+          families: ['IBM Plex Sans:300,400,500,600,700', 'IBM Plex Mono', 'Poppins:300,400,500,600,700,800,900', 'Archivo:400,500,600,700', 'Archivo Narrow:400,500,600,700', 'Archivo Black']
         }
       }
     }

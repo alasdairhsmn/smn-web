@@ -2,12 +2,12 @@ import tw from "twin.macro"
 import React from "react"
 
 import tower from "../../images/sample/east-tower.jpg"
+import elephant from "../../images/sample/elephant_west.jpg"
 
 const Hero = tw.div`
-    min-h-screen 
-    bg-black 
+    min-h-screen90 
+    bg-purple
     flex 
-    py-24 
     text-white
     relative 
     items-center
@@ -21,7 +21,8 @@ const BackBlock = tw.div `
     top-0 
     z-0 
     overflow-hidden
-    opacity-75
+    opacity-100
+    hidden
 `
 
 const BackImage = tw.img `    
@@ -32,52 +33,68 @@ const BackImage = tw.img `
 
 const Block = tw.div`
     container 
-    md:mx-auto 
+    grid
     z-10
-    text-center
+    md:mx-auto
 `
 
 const Heading = tw.div`
-    text-5xl md:text-9xl 
+    text-6xl md:text-12xl 
+    font-title
+    font-extrabold
+    uppercase 
+    leading-extra-tight 
+    mb-6
+    tracking-wider
+    text-center
+`
+
+const Secondary = tw.div `
+    py-24
+`
+
+const PageTitle = tw.div `
     font-display 
     font-extrabold 
-    leading-none 
-    mb-6
+    text-2xl md:text-5xl
+    leading-tight
+    mb-8
 `
 
 const Subhead = tw.div`
-    text-2xl md:text-3xl 
-    leading-snug
+    font-display
+    md:text-5xl 
+    leading-none
     font-light
 `
 
 export default function HomeHero ( {data} ) {
 
     return (
-        
+      
+        <>
+
+
     <Hero>
 
         <BackBlock>
-            <BackImage src={tower}></BackImage>
+            <BackImage src={elephant}></BackImage>
         </BackBlock>
+
 
         <Block>
 
             <Heading>
                 <p>Something</p>
                 <p>More Near</p>
-            </Heading>
-                        
-            <Subhead>
-                <p>We tackle big challenges for ambitious organisations</p> 
-                <p>Find out about what we do and explore our changework</p>
-            </Subhead>
-  
+            </Heading>   
+
         </Block>
         
-    
     </Hero>
 
+
+</>
     )
 
 }

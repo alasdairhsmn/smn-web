@@ -20,6 +20,13 @@ query BlogPostQuery($uid: String!) {
             _meta {
                 uid
             }
+            author {
+              ... on PRISMIC_Team_member {
+                name
+                image
+                in_brief
+              }
+            }
           }
 
           allBlog_posts(first: 3) {
@@ -40,7 +47,13 @@ query BlogPostQuery($uid: String!) {
 `
 
 const Hero = tw.div`
-    bg-yellow mb-24
+    bg-yellow 
+    mt-12
+    mb-24
+    w-2/3
+    overflow-hidden
+    container
+    mx-auto
 `
 
 const Block = tw.div`
@@ -74,7 +87,7 @@ export default function BlogView ({data}) {
         </Block>
 
         <Block>
-            <BlogEnd></BlogEnd>
+            <BlogEnd data={post}></BlogEnd>
         </Block>
            
         <BlogRow data={nextposts}></BlogRow>   

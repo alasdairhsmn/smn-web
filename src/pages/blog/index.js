@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../../components/layout/layout"
 
+import PageTitle from "../../components/shared/pageTitle"
 import BlogGrid from "../../components/blog/blogGrid"
 
 
@@ -32,12 +33,15 @@ export default function BlogIndex ( {data} ) {
     return (
        <Layout>
 
+        
+        <PageTitle
+          title={"The Blog"}
+          sub={"Notes on social changework"}
+        />
 
-            <BlogGrid data={posts}></BlogGrid>
-
-
-
-       </Layout>
+        <BlogGrid data={posts}></BlogGrid>
+        
+        </Layout>
     )
 
 }

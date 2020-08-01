@@ -1,5 +1,6 @@
 import tw from "twin.macro"
 import React from "react"
+import { Link } from "gatsby"
 
 import paypal from "../../images/sample/paypal.png"
 import allianz from "../../images/sample/allianz.png"
@@ -16,36 +17,58 @@ const Hero = tw.div`
 `
 
 const Block = tw.div`
-  container 
-  py-16
-  md:mx-auto 
-  md:flex 
-  md:space-x-40
-  items-center
+    container 
+    md:mx-auto 
+    md:flex 
+    space-x-16
+    md:flex-row-reverse
+    items-center
 `
 
 const LogoGrid = tw.div `
-    md:flex-grow-0 
     grid 
     grid-cols-2 
     items-center 
-    col-gap-4 
+    gap-12 
+    overflow-hidden
+    flex-grow
+    w-1/2
 `
 
 const Logo = tw.div `
-    p-8 md:p-16
+
+`
+
+const LogoImage = tw.img `
+    w-40
+    mx-12
+    h-auto
 `
 
 const Subhead = tw.div`
-    text-xl md:text-3xl 
+    text-xl md:text-2xl 
     font-light
+    leading-snug
+    w-1/2
 `
 
 const SubTitle = tw.div `
     font-display
-    font-extrabold
-    mb-6
-    text-3xl md:text-4xl
+    font-light
+    my-6
+    text-3xl md:text-6xl
+    leading-tight
+`
+
+const Button = tw.div `
+    p-4
+    inline-block
+    rounded
+    border
+    border-black
+    font-display
+    text-xl
+    my-8
 `
 
 export default function HomeClients ( {data} ) {
@@ -55,39 +78,52 @@ export default function HomeClients ( {data} ) {
     <Hero>
       
         <Block>
-        
-            <Subhead>
-                <SubTitle>For those who want to make change happen</SubTitle>
-                <p>If you’re an ambitious organisation with a tough challenge, we can create projects that bring together a range of different minds (staff, audiences, talent) to help you address it.</p> 
-            </Subhead>
 
             <LogoGrid>
 
                 <Logo>
-                    <img src={ted} alt=''></img>
+                    <LogoImage src={ted} alt=''></LogoImage>
                 </Logo>  
 
                 <Logo>
-                    <img src={mol} alt=''></img>
+                    <LogoImage src={mol} alt=''></LogoImage>
                 </Logo> 
 
                 <Logo>
-                    <img src={paypal} alt=''></img>
+                    <LogoImage src={paypal} alt=''></LogoImage>
                 </Logo>  
 
                 <Logo>
-                    <img src={allianz} alt=''></img>
+                    <LogoImage src={allianz} alt=''></LogoImage>
                 </Logo>  
 
                 <Logo>
-                    <img src={ce} alt=''></img>
+                    <LogoImage src={ce} alt=''></LogoImage>
                 </Logo> 
 
                 <Logo>
-                    <img src={franco} alt=''></img>
+                    <LogoImage src={franco} alt=''></LogoImage>
                 </Logo>  
 
             </LogoGrid>
+
+
+            <Subhead>
+
+                <p>Who we work with</p>
+
+                <SubTitle>Partners for change</SubTitle>
+
+                <p>We work with the ambitious disruptors and evolutionaries to bring together different minds and move organisations forwards together, quicker.</p>
+                <br />
+                <p>We work with leaders and founders across international corporates, cultural and non-profits</p> 
+
+                <Link to={`/about`}>
+                    <Button>About us &rarr;</Button> 
+                </Link>
+
+            </Subhead>
+
   
         </Block>
     

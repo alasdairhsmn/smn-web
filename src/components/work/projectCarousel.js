@@ -1,11 +1,12 @@
 import tw from "twin.macro"
 import React from "react"
-import Slider from "react-slick";
 
 import { RichText } from 'prismic-reactjs'
 
+import Slider from "react-slick";
+
 const Block = tw.div `
-    flex text-6xl mb-16 mt-24 py-16
+    mt-40 
 `
 
 const Wrapper = tw.div `
@@ -31,24 +32,34 @@ const Subhead = tw.div `
     text-gray-600
 `
 
-const ImageBlock = tw.div `
-    mt-12
+const SliderBlock = tw.div `
+    w-full
+    mx-auto
+    mt-8
 `
 
 const Item = tw.div `
+    w-full
+    h-lg
     overflow-hidden
 `
 
 const ItemCaption = tw.div`
-    mt-4 text-xl
+    mt-4 
+    text-lg
+    text-lightgrey
 `
 
 const ItemImage = tw.img `
-    object-cover h-sm
+    h-full
+    w-full
+    object-cover
+    p-4
 `
 
 
 export default function ProjectCarousel ( {data} ) {
+
 
     const settings = {
         dots: true,
@@ -56,9 +67,10 @@ export default function ProjectCarousel ( {data} ) {
         speed: 1000,
         autoplaySpeed: 3000,
         fadeIn: false,
-        autoplay: false,
+        autoplay: true,
         pauseOnHover: false,
-        slidesToShow: 3,
+        slidesToShow: 2,
+        slidesToScroll: 1,
       };
 
 
@@ -93,18 +105,14 @@ export default function ProjectCarousel ( {data} ) {
             </Subhead>
 
             </TextBlock>
-
-            <ImageBlock>
-
-                <Slider {...settings}>
-                    { images }
-                </Slider>
-
-            </ImageBlock>
-
-
         </Wrapper>
     </Block>
+
+    <SliderBlock>
+        <Slider {...settings}>
+            { images }
+        </Slider>
+    </SliderBlock>
     
     </>
 

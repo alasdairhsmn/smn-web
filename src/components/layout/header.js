@@ -12,7 +12,6 @@ const Wrapper = tw.div`
     fixed md:static
     z-50
     w-full
-    bg-white
 `
 
 const Container = tw.div `
@@ -30,7 +29,7 @@ const Container = tw.div `
 const HeadLinks = tw.div `
     flex 
     items-center
-    space-x-6
+    space-x-12
     w-full
     relative
 `
@@ -45,15 +44,20 @@ const SMNLink = tw.div `
     inline-block 
     flex-grow
     hover:text-blue 
-    tracking-wider 
+    tracking-widest
     font-extrabold
+    uppercase
 `
 
 const HeadLink = tw.div `
     inline-block
     hover:text-blue 
     font-light 
-    font-sans
+    font-display
+    text-sm
+    text-lightgrey
+    uppercase
+    tracking-widest
 `
 
 const Toggle = tw.div`

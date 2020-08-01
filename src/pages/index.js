@@ -6,6 +6,7 @@ import HomeHero from '../components/homepage/hero'
 import HomeProp from "../components/homepage/proposition"
 import HomeClients from "../components/homepage/clients"
 
+import PageTitle from "../components/shared/pageTitle"
 import ProjectRow from "../components/shared/projectRow"
 import BlogRow from "../components/shared/blogRow"
 
@@ -51,6 +52,13 @@ export default function Home ( {data} ) {
 
   return (
   <Layout>
+
+    <Fade delay={300}>
+      <PageTitle
+                title={'Change made social'}
+                sub={"We tackle big challenges for ambitious organisations"}
+      />
+    </Fade>
 
     <HomeHero></HomeHero>
     

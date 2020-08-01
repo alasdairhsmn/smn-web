@@ -17,7 +17,7 @@ const Container = tw.div `
 
 const Subtitle = tw.div `
   text-gray-500 
-  text-lg md:text-xl 
+  text-base md:text-lg
   mb-2 md:mb-4 
   font-light
 `

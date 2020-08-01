@@ -15,10 +15,9 @@ const WorkGrid = tw.div `
 
 const RowTitle = tw.div `
     col-span-3 
-    text-3xl md:text-4xl 
+    text-lg md:text-2xl 
     mb-6 md:mb-12 
-    font-display 
-    font-extrabold
+    font-title 
 `
 
 const WorkBlock = tw.div`
@@ -36,10 +35,25 @@ const Image = tw.img `
     object-cover
 `
 
+const BlogCategory = tw.div `
+    p-2
+    mb-4
+    inline-block
+    mx-auto
+    text-xs
+    text-rose
+    font-mono
+    tracking-widest
+    uppercase
+    border
+    border-rose
+    rounded
+`
+
 const WorkTitle = tw.div`
     text-2xl md:text-3xl 
     font-display 
-    font-extrabold 
+    font-bold 
     leading-none
 `
 
@@ -48,7 +62,12 @@ const WorkSub = tw.div `
 `
 
 const WorkTags = tw.div`
-    font-mono mt-4 uppercase tracking-widest text-gray-500
+    font-mono 
+    text-xs
+    mt-4 
+    uppercase 
+    tracking-widest 
+    text-gray-500
 `
 
 
@@ -66,6 +85,10 @@ export default function BlogRow ({data}) {
                 <Image src={block.node.lead_image.url}></Image>
             </WorkImage>
 
+            <BlogCategory>
+                Fieldnotes
+            </BlogCategory>
+
             <WorkTitle>
                 <RichText render={block.node.title} />
             </WorkTitle>
@@ -74,7 +97,7 @@ export default function BlogRow ({data}) {
                 <RichText render={block.node.subhead} />
             </WorkSub>
 
-            <WorkTags>project tag</WorkTags>
+            <WorkTags>post date</WorkTags>
             </WorkBlock>
             </Link>
 

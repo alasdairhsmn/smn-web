@@ -56,6 +56,18 @@ query ProjectQuery($uid: String!) {
                   image
                 }
               }
+              ... on PRISMIC_ProjectBodyProject_stats {
+                type
+                label
+                primary {
+                  section_title
+                  section_summary
+                }
+                fields {
+                  stat_caption
+                  stat_number
+                }
+              }
             }
           }
 
@@ -101,9 +113,7 @@ export default function ProjectView ({data}) {
             <ProjectHero data={project}></ProjectHero>
         </Fade>
 
-        <Fade delay={300}>
           <ProjectSummary data={project}></ProjectSummary>  
-        </Fade>
 
            <Block>
            <Fade delay={300}>

@@ -9,7 +9,7 @@ const WorkGrid = tw.div `
     grid 
     py-16 md:py-0
     md:grid-cols-2 
-    gap-8 md:gap-24 
+    gap-8 md:gap-32 
     container 
     md:mx-auto 
     mb-32
@@ -39,7 +39,7 @@ const WorkTitle = tw.div`
 `
 
 const WorkSub = tw.div `
-    font-light text-xl leading-tight mt-4
+    font-light text-lg leading-tight mt-4
 `
 
 const WorkTags = tw.div`

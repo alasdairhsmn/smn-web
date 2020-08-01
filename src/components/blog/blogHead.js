@@ -4,13 +4,12 @@ import { RichText } from 'prismic-reactjs'
 
 const Wrapper = tw.div `
     mx-auto 
-    py-24 
-    md:flex 
-    w-full
+    mt-20
+    w-2/3
 `
 
 const PostMain = tw.div `
-    flex-grow
+    
 `
 
 const Title = tw.div `
@@ -26,15 +25,8 @@ const SubHead = tw.div `
 `
 
 const PostMeta = tw.div `
+    mt-4
     font-light text-gray-500 
-    md:border-l 
-    md:pl-12 
-    md:ml-24 
-    md:pr-12
-`
-
-const PostType = tw.div `
-    mt-8
 `
 
 
@@ -58,14 +50,7 @@ export default function BlogHead ( {data} ) {
         </PostMain>
 
         <PostMeta>
-        <p>Author</p>
-        <p>Date posted</p>
-        <p>Social sharing buttons</p>
-
-        <PostType>
-            Part of Fieldnotes
-        </PostType>
-
+            <p>Author Name / Date posted / Social Links / Category</p>
         </PostMeta>
     
     </Wrapper>
