@@ -3,6 +3,7 @@ import Layout from "../components/layout/layout"
 import Fade from 'react-reveal/Fade'
 
 import HomeHero from '../components/homepage/hero'
+import HomeSecond from "../components/homepage/secondary"
 import HomeProp from "../components/homepage/proposition"
 import HomeClients from "../components/homepage/clients"
 
@@ -54,13 +55,15 @@ export default function Home ( {data} ) {
   <Layout>
 
     <Fade delay={300}>
+      <HomeHero />
+    </Fade>  
+
+    <Fade delay={300}>
       <PageTitle
-                title={'Change made social'}
+                title={'Changework'}
                 sub={"We tackle big challenges for ambitious organisations"}
       />
     </Fade>
-
-    <HomeHero></HomeHero>
     
     <Fade delay={300}>
       <ProjectRow data={projects}></ProjectRow>

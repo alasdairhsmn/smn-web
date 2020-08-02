@@ -96,7 +96,7 @@ export default function AboutIndex () {
            <Experience>
                 <Block>
                 <EditorialTitle>We have...</EditorialTitle>
-                    <p>brought together 1000 Londoners to re-imagine the Museum of London / designed a university course for mass collaboration / re-positioned a real estate giant / created a mass membership model for climate action….</p>
+                    <p>brought together 1000 Londoners to re-imagine the Museum of London &bull; designed a university course for mass collaboration &bull; re-positioned a real estate giant &bull; created a mass membership model for climate action….</p>
                 </Block>
            </Experience>
            </Fade>

@@ -32,8 +32,8 @@ const WorkImage = tw.div`
 `
 
 const Image = tw.img `
-    w-auto md:w-full 
-    h-med
+    w-full md:w-full 
+    h-sm md:h-med
     object-cover
 `
 

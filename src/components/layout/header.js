@@ -8,7 +8,6 @@ import MobileMenu from "./menu/mobileMenu"
 const Wrapper = tw.div`
     block 
     font-display
-    relative
     fixed md:static
     z-50
     w-full
@@ -24,6 +23,7 @@ const Container = tw.div `
     text-base md:text-lg 
     justify-end
     py-0 md:py-6
+    z-50
 `
 
 const HeadLinks = tw.div `

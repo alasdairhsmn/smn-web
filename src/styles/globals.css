@@ -3,3 +3,13 @@
   the rest of Tailwind's classes in the project
 */
 @tailwind base;
+
+.headroom--unfixed {
+  background-color: transparent;
+  transform: translateY(0);
+}
+
+.headroom--pinned {
+  background-color: white;
+
+}

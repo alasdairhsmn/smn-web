@@ -2,10 +2,10 @@ module.exports = {
   theme: {
     container: {
       padding: {
-        default: '5rem',
-        sm: '0rem',
-        lg: '0rem',
-        xl: '0rem',
+        default: '1rem',
+        sm: '3.5rem',
+        lg: '4rem',
+        xl: '5rem',
       },
     },
     extend: {

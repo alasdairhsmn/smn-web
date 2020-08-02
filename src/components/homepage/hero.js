@@ -1,52 +1,45 @@
 import tw from "twin.macro"
 import React from "react"
+import TextLoop from "react-text-loop";
 
 import tower from "../../images/sample/east-tower.jpg"
 import elephant from "../../images/sample/elephant_west.jpg"
+import workshop from "../../images/sample/workshop.jpg"
 
 const Hero = tw.div`
-    min-h-screen90 
-    bg-purple
     flex 
-    text-white
-    relative 
+    w-full
+    min-h-screen80
+    bg-black
     items-center
-    overflow-hidden
+    relative
 `
 
 const BackBlock = tw.div `
-    absolute 
-    w-full
-    h-full
-    top-0 
-    z-0 
-    overflow-hidden
-    opacity-100
     hidden
 `
 
 const BackImage = tw.img `    
     object-cover 
-    w-full
     h-full
+    w-full
 `
 
 const Block = tw.div`
-    container 
-    grid
     z-10
+    relative
+    container
     md:mx-auto
 `
 
 const Heading = tw.div`
-    text-6xl md:text-12xl 
+    text-6xl md:text-10xl 
     font-title
     font-extrabold
     uppercase 
     leading-extra-tight 
-    mb-6
     tracking-wider
-    text-center
+    text-white
 `
 
 const Secondary = tw.div `
@@ -72,29 +65,47 @@ export default function HomeHero ( {data} ) {
 
     return (
       
-        <>
-
+    <>
 
     <Hero>
 
-        <BackBlock>
-            <BackImage src={elephant}></BackImage>
-        </BackBlock>
-
-
         <Block>
 
+        
+
             <Heading>
-                <p>Something</p>
-                <p>More Near</p>
-            </Heading>   
+                    <p>SOME</p>
+                    <p>THING</p>
+                    <p>MORE</p>
+                <TextLoop interval={2500} mask={true}>
+                    <span>Human</span>
+                    <span>Meaningful</span>
+                    <span>Real</span>
+                    <span>Social</span>
+                    <span>Practical</span>
+                    <span>Achievable</span>
+                    <span>Tangible</span>
+                    <span>Sustainable</span>
+                    <span>Imaginative</span>
+                    <span>Empathetic</span>
+                    <span>Grounded</span>
+                    <span>Practical</span>
+                    <span>Near</span>
+                </TextLoop>
+            </Heading>
+
+            <BackBlock>
+                <BackImage src={workshop}></BackImage>
+            </BackBlock>
 
         </Block>
+
+        
         
     </Hero>
 
+    </>
 
-</>
     )
 
 }

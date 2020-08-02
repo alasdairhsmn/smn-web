@@ -18,6 +18,11 @@ const AuthorBlock = tw.div `
     gap-16
 `
 
+const AuthorImage = tw.div `
+    h-16
+    overflow-hidden
+`
+
 
 
 export default function BlogEnd ( {data} ) {
@@ -28,9 +33,9 @@ export default function BlogEnd ( {data} ) {
 
         <AuthorBlock>
         
-        <div>
+        <AuthorImage>
             <img src={data.author.image.url}></img>
-        </div>
+        </AuthorImage>
         
         <div>
             <div><RichText render={data.author.name} /></div>
