@@ -35,9 +35,9 @@ const Subhead = tw.div `
 const Wrapper = tw.div `
     container 
     md:mx-auto
-    flex
-    items-center
-    space-x-32
+    md:flex
+    md:items-center
+    md:space-x-32
 `
 
 const StatBlock = tw.div `
@@ -45,13 +45,13 @@ const StatBlock = tw.div `
     flex-grow
     text-center
     text-white
-    mb-12
+    mb-6 md:mb-12
 `
 
 const StatNumber = tw.div `
     font-display
     font-extrabold
-    text-12xl
+    text-6xl md:text-12xl
     leading-none
     mb-2
 `

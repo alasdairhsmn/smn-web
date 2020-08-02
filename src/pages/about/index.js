@@ -6,6 +6,10 @@ import Fade from 'react-reveal/Fade'
 import PageTitle from "../../components/shared/pageTitle"
 import AboutExperience from "../../components/about/experience"
 
+import engage from "../../images/sample/molgroup.jpg"
+import elephant from "../../images/sample/elephant_west.jpg"
+import workshop from "../../images/sample/workshop.jpg"
+
 
 const Hero = tw.div`
     py-24
@@ -43,11 +47,10 @@ const Experience = tw.div `
 
 const Editorial = tw.div `
     flex items-center 
-    py-32
+    py-24
 `
 
 const EditorialBlock = tw.div `
-    container 
     mx-auto 
     w-full md:w-3/4 
     md:flex 
@@ -75,10 +78,11 @@ const EditorialBody = tw.div `
     font-light
 `
 
-const EditorialImage = tw.div `
-    w-full 
+const EditorialImage = tw.img `
+    w-1/2
     h-sm md:h-med 
     bg-lightgrey 
+    object-cover
 `
 
 export default function AboutIndex () {
@@ -98,7 +102,7 @@ export default function AboutIndex () {
             <Fade delay={300}>
             <PageTitle
                 title={'How we do it'}
-                sub={"We work with you to harness diverse talents"}
+                sub={"We work with you to harness the energy inside and outside of your organisation"}
             />
         </Fade>
 
@@ -111,16 +115,17 @@ export default function AboutIndex () {
                <EditorialTitle>Engage and inspire your teams</EditorialTitle>
                <EditorialBody>You already have a lot of the answer. We can help you find the ways to unlock it and communicate it through your organisation</EditorialBody>
                </div>
-                <EditorialImage></EditorialImage>
+                <EditorialImage src={engage} />
             </EditorialBlock>
            </Editorial>
            </Fade>
+
 
            <Fade delay={300}>
            <Editorial>
             <EditorialBlock>
 
-            <EditorialImage></EditorialImage>
+            <EditorialImage src={workshop} />
 
                <div>
                <EditorialSubHead>How we do it</EditorialSubHead>
@@ -140,7 +145,7 @@ export default function AboutIndex () {
                <EditorialTitle>Collaborate with diverse talents</EditorialTitle>
                <EditorialBody>We don’t pretend we have all the answers or expertise – tough challenges need diverse perspectives. </EditorialBody>
                </div>
-                <EditorialImage></EditorialImage>
+               <EditorialImage src={elephant} />
             </EditorialBlock>
            </Editorial>
            </Fade>

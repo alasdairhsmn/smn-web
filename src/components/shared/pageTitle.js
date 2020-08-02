@@ -4,7 +4,8 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Hero = tw.div`
-    py-24
+    
+    py-12 md:py-24
     flex 
     items-center 
     text-3xl md:text-6xl 
@@ -22,7 +23,7 @@ const Title = tw.div `
     font-extrabold 
     text-2xl md:text-5xl
     leading-tight
-    mb-8
+    mb-4 md:mb-8
 `
 
 const Sub = tw.div ``

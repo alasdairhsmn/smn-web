@@ -6,7 +6,7 @@ import PageTitle from "../shared/pageTitle"
 import { RichText } from 'prismic-reactjs'
 
 const Hero = tw.div` 
-
+    
 `
 
 const Container = tw.div `

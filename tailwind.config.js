@@ -40,6 +40,7 @@ module.exports = {
        'extra-tight': '0.9',
       },
       minHeight: {
+        'screen50':'50vh',
         'screen60': '60vh',
         'screen70': '70vh',
         'screen80': '80vh',
@@ -53,7 +54,7 @@ module.exports = {
       height: {
         'lg': '34rem',
         'med': '26rem',
-        'sm': '18rem',
+        'sm': '15rem',
       },
       width: {
         'lg': '34rem'

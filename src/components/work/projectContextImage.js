@@ -3,7 +3,8 @@ import React from "react"
 
 
 const ImageBlock = tw.div `
-    max-h-screen80 overflow-hidden
+    max-h-screen80 
+    overflow-hidden
 `
 
 const Image = tw.img `
@@ -11,7 +12,10 @@ const Image = tw.img `
 `
 
 const Caption = tw.div `
-    text-gray-500 mt-2 text-base font-light
+    text-gray-500 
+    mt-2 
+    text-base 
+    font-light
 `
 
 export default function ProjectLeadImage ({data}) {

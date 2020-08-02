@@ -28,13 +28,19 @@ const MainText = tw.div `
   leading-snug
 `
 
-const MetaText = tw.div `
-  mt-12 
-  font-light 
-  text-gray-500 
+const Meta = tw.div `
+  grid
+  grid-cols-2 md:grid-cols-1
+  mt-12 md:mt-0
+  gap-8
   md:border-l 
   md:px-12 
   md:ml-24
+`
+
+const MetaText = tw.div `
+  font-light 
+  text-gray-500 
 `
 
 
@@ -66,19 +72,29 @@ export default function ProjectSummary ( {data} ) {
     </div>
  
 
-          <MetaText>
-                   <p><strong>Client</strong></p>
-                   <p>The Museum of London</p>
-                    <br />
-                   <p>Partners</p>
-                   <p>Partner Name</p>
-                   <br />
-                   <p>Sector</p>
-                   <p>Cultural</p>
-                   <br />
-                   <p>Services</p>
-                   <p>Engagement, Brand Strategy, Organisational Development</p>
-          </MetaText>
+        <Meta>
+
+        <MetaText>
+            <p><strong>Client</strong></p>
+            <p>The Museum of London</p>
+        </MetaText>
+
+        <MetaText>
+            <p>Partners</p>
+            <p>Partner Name</p>
+        </MetaText>
+
+        <MetaText>
+            <p>Sector</p>
+            <p>Cultural</p>
+        </MetaText>
+
+        <MetaText>
+            <p>Services</p>
+            <p>Engagement, Brand Strategy, Organisational Development</p>
+        </MetaText>
+        
+        </Meta>
 
         </Container>
     

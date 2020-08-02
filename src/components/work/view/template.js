@@ -95,7 +95,10 @@ const Block = tw.div `
 `
 
 const BodyBlock = tw.div `
-    container mx-auto mb-48 mt-32
+    container 
+    mx-auto 
+    md:mb-32 
+    md:mt-24
 `
 
 export default function ProjectView ({data}) {
@@ -108,8 +111,6 @@ export default function ProjectView ({data}) {
 
     return (
        <Layout>
-
-         
 
         <Fade delay={300}>
             <ProjectHero data={project}></ProjectHero>

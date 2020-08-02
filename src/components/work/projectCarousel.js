@@ -6,7 +6,7 @@ import { RichText } from 'prismic-reactjs'
 import Slider from "react-slick";
 
 const Block = tw.div `
-    mt-40 
+    mt-20 md:mt-40 
 `
 
 const Wrapper = tw.div `

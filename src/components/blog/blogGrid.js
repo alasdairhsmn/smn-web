@@ -7,20 +7,16 @@ import { RichText } from 'prismic-reactjs'
 
 const Grid = tw.div `
     grid 
-    py-16 md:py-0
     md:grid-cols-2 
-    gap-8 md:col-gap-40 
+    gap-16 md:gap-32 
     container 
     md:mx-auto 
     mb-32
-    w-3/4
 `
 
 const BlogItem = tw.div ` 
-    w-auto    
-    mt-8 
-    hover:opacity-75
-    mb-8 
+    w-auto 
+    hover:opacity-75 
 `
 
 const BlogImage = tw.div `

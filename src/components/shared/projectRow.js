@@ -7,11 +7,12 @@ import { Link } from "gatsby"
 const WorkGrid = tw.div `
     md:grid 
     md:grid-cols-3 
-    col-gap-20 
-    container 
-    md:mx-auto 
+    col-gap-16 
     mb-16 md:mb-32 
     mt-12 md:mt-24
+    container
+    px-0
+    mx-0 md:mx-auto
 `
 
 const RowTitle = tw.div `
@@ -23,7 +24,8 @@ const RowTitle = tw.div `
 `
 
 const WorkBlock = tw.div`
-    mb-12 md:mb-0
+    mb-12 
+    md:mb-0
     hover:opacity-75 
 `
 
@@ -33,7 +35,7 @@ const WorkImage = tw.div`
 
 const Image = tw.img `
     w-full md:w-full 
-    h-sm md:h-med
+    h-sm md:h-sm
     object-cover
 `
 
@@ -45,11 +47,18 @@ const WorkTitle = tw.div`
 `
 
 const WorkSub = tw.div `
-    font-light text-lg leading-snug mt-3
+    font-light 
+    text-lg 
+    leading-snug 
+    mt-3
 `
 
 const WorkTags = tw.div`
-    font-mono mt-4 uppercase tracking-widest text-gray-500
+    font-mono 
+    mt-4 
+    uppercase 
+    tracking-widest 
+    text-gray-500
 `
 
 
@@ -67,15 +76,16 @@ export default function ProjectRow ({data}) {
                 <Image src={block.node.lead_image.url}></Image>
             </WorkImage>
            
-            <WorkTitle>
-                <RichText render={block.node.title} />
-            </WorkTitle>
+                <WorkTitle>
+                    <RichText render={block.node.title} />
+                </WorkTitle>
 
-            <WorkSub>
-                <RichText render={block.node.subheading} />
-            </WorkSub>
+                <WorkSub>
+                    <RichText render={block.node.subheading} />
+                </WorkSub>
 
-            <WorkTags>project tag</WorkTags>
+                <WorkTags>project tag</WorkTags>
+
             </WorkBlock>
             </Link>
 
