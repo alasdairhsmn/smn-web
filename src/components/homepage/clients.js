@@ -13,7 +13,6 @@ const Hero = tw.div`
   min-h-screen 
   flex 
   items-center 
-  bg-lightgrey
 `
 
 const Block = tw.div`

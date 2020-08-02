@@ -12,11 +12,12 @@ const Hero = styled.div`
         flex 
         w-full
         min-h-screen50 md:min-h-screen90
-        items-center
+        py-12
         relative
         bg-cover
+        bg-blue
+        text-white
     `}
-    background-image: url(${workshop});
 `
 
 const Block = tw.div`

@@ -55,14 +55,14 @@ export default function Home ( {data} ) {
   <Layout>
 
     <Fade delay={300}>
+      <HomeHero />
+    </Fade>  
+
+    <Fade delay={300}>
       <PageTitle
                 sub={"We help ambitious organisations evolve in imaginative and effective ways"}
       />
     </Fade>
-
-    <Fade delay={300}>
-      <HomeHero />
-    </Fade>  
     
     <Fade delay={300}>
       <ProjectRow data={projects}></ProjectRow>

@@ -52,8 +52,8 @@ module.exports = {
         'screen80': '80vh',
       },
       height: {
-        'lg': '34rem',
-        'med': '26rem',
+        'lg': '30rem',
+        'med': '22rem',
         'sm': '15rem',
       },
       width: {
