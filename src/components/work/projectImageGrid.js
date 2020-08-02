@@ -16,7 +16,7 @@ const Wrapper = tw.div `
 `
 
 const TextBlock = tw.div `
-    md:w-1/2
+    md:w-2/3
 `
 
 const Title = tw.div `

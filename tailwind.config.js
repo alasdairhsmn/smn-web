@@ -3,9 +3,9 @@ module.exports = {
     container: {
       padding: {
         default: '1rem',
-        sm: '3.5rem',
-        lg: '4rem',
-        xl: '5rem',
+        sm: '2rem',
+        lg: '2rem',
+        xl: '2rem',
       },
     },
     extend: {

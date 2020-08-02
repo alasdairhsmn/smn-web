@@ -87,8 +87,6 @@ export default function ProjectRow ({data}) {
     <>
             <WorkGrid>
 
-            <RowTitle>Our Changework</RowTitle>
-
                 { blocks }
 
             </WorkGrid>

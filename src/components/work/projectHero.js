@@ -30,14 +30,11 @@ export default function ProjectHero ( {data} ) {
 
     <Hero>
 
-        <Container>
-
-        <PageTitle
+        
+    <PageTitle
           title={RichText.asText(data.title)}
           sub={RichText.asText(data.subheading)}
         />
-
-        </Container>
 
         <HeroImage>
             <Image src={data.lead_image.url}></Image>

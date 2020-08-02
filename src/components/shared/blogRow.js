@@ -110,8 +110,6 @@ export default function BlogRow ({data}) {
     <>
             <WorkGrid>
 
-            <RowTitle>Blog posts</RowTitle>
-
             {blocks}
 
             </WorkGrid>

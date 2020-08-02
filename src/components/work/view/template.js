@@ -109,6 +109,8 @@ export default function ProjectView ({data}) {
     return (
        <Layout>
 
+         
+
         <Fade delay={300}>
             <ProjectHero data={project}></ProjectHero>
         </Fade>

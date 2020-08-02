@@ -7,6 +7,7 @@ import MobileMenu from "./menu/mobileMenu"
 
 const Wrapper = tw.div`
     block 
+    bg-white md:bg-transparent
     font-display
     fixed md:static
     z-50

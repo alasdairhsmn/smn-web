@@ -4,6 +4,7 @@ import Layout from "../../components/layout/layout"
 import Fade from 'react-reveal/Fade'
 
 import PageTitle from "../../components/shared/pageTitle"
+import AboutExperience from "../../components/about/experience"
 
 
 const Hero = tw.div`
@@ -31,7 +32,7 @@ const Block = tw.div `
 `
 
 const Experience = tw.div `
-    bg-yellow 
+    bg-blue
     text-3xl md:text-5xl 
     py-12 
     font-display 
@@ -92,14 +93,15 @@ export default function AboutIndex () {
             />
         </Fade>
 
-           <Fade delay={300}>
-           <Experience>
-                <Block>
-                <EditorialTitle>We have...</EditorialTitle>
-                    <p>brought together 1000 Londoners to re-imagine the Museum of London &bull; designed a university course for mass collaboration &bull; re-positioned a real estate giant &bull; created a mass membership model for climate action….</p>
-                </Block>
-           </Experience>
-           </Fade>
+        <AboutExperience />
+
+            <Fade delay={300}>
+            <PageTitle
+                title={'How we do it'}
+                sub={"We work with you to harness diverse talents"}
+            />
+        </Fade>
+
 
            <Fade delay={300}>
            <Editorial>
