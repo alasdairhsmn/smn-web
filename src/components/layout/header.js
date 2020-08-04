@@ -48,6 +48,7 @@ const SMNLink = tw.div `
     tracking-widest
     font-extrabold
     uppercase
+    font-title
 `
 
 const HeadLink = tw.div `

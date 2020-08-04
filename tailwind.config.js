@@ -20,10 +20,10 @@ module.exports = {
         blue: "#1234f1",
       },
       fontFamily: {
-        sans: ['IBM Plex Sans', 'sans-serif'],
+        sans: ['forma-djr-text', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['IBM Plex Mono', 'monospace'],
         display: ['Archivo', 'sans-serif'],
-        title: ['Archivo Narrow', 'sans-serif'],
+        title: ['obviously-narrow', 'sans-serif'],
       },
       fontSize: {
         '7xl': '5rem',

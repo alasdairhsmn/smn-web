@@ -40,7 +40,10 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['IBM Plex Sans:300,400,500,600,700', 'IBM Plex Mono', 'Poppins:300,400,500,600,700,800,900', 'Archivo:400,500,600,700', 'Archivo Narrow:400,500,600,700', 'Archivo Black']
+          families: ['IBM Plex Sans:300,400,500,600,700', 'IBM Plex Mono', 'Archivo:400,500,600,700', ]
+        },
+        typekit: {
+          id: 'vak6jai'
         }
       }
     }

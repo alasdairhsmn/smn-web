@@ -8,12 +8,11 @@ import workshop from "../../images/sample/workshop.jpg"
 
 
 const Heading = tw.div`
-    text-6xl md:text-12xl 
+    text-6xl md:text-11xl 
     font-title
-    font-extrabold
+    font-semibold
     uppercase 
     leading-extra-tight 
-    tracking-widest
     z-20
 `
 
