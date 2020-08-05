@@ -1,19 +1,29 @@
 import tw from "twin.macro"
+import styled from "@emotion/styled"
 import React from "react"
-import TextLoop from "react-text-loop";
-
-import tower from "../../images/sample/east-tower.jpg"
-import elephant from "../../images/sample/elephant_west.jpg"
-import workshop from "../../images/sample/workshop.jpg"
 
 
 const Heading = tw.div`
-    text-6xl md:text-11xl 
+    text-6xl md:text-12xl 
     font-title
-    font-semibold
+    font-bold
     uppercase 
     leading-extra-tight 
-    z-20
+    tracking-tight
+    col-span-12
+    border-b-4
+    border-black
+    pb-10
+`
+
+const Aligner = styled.p `
+::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-bottom: -25px;
+  }
 `
 
 
@@ -24,24 +34,11 @@ export default function HomeAnimation () {
     <>
 
         <Heading>
-        <p>SOME</p>
-        <p>THING</p>
-        <p>MORE</p>
-            <TextLoop interval={2500} mask={true}>
-                <span>Human</span>
-                <span>Meaningful</span>
-                <span>Real</span>
-                <span>Social</span>
-                <span>Practical</span>
-                <span>Achievable</span>
-                <span>Tangible</span>
-                <span>Sustainable</span>
-                <span>Imaginative</span>
-                <span>Empathetic</span>
-                <span>Grounded</span>
-                <span>Practical</span>
-                <span>Near</span>
-            </TextLoop>
+            
+        <Aligner>SOMETHING</Aligner>
+            <p>MORE</p>
+            <p>NEAR</p>
+
         </Heading>
 
     </>

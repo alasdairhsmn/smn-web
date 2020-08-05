@@ -2,73 +2,55 @@ import tw from "twin.macro"
 import React from "react"
 import { RichText } from 'prismic-reactjs'
 
-import workshop from "../../images/sample/workshop.jpg"
-import elephant from "../../images/sample/elephant_west.jpg"
-import mol from "../../images/sample/residency.jpg"
 
-const Gallery = tw.div `
-    grid
-    grid-cols-3
-    gap-12
-    py-24
-    mb-16
-    bg-black
-    text-white
+const Wrapper = tw.div `
+    bg-blue
+    py-12
+    flex
+    items-center
+    min-h-screen90
+    w-full
+    my-16
 `
 
-const BlockTitle = tw.div `
+const Container = tw.div `
     container
     mx-auto
-    text-5xl
-    font-display
-    mb-8
-    col-span-3
-`
-
-const GalleryItem = tw.div `
-    
-`
-
-const GalleryTitle = tw.div `
+    text-white
     font-title
-    text-3xl
-    leading-none
+    text-6xl
+    font-bold
+    leading-tight
 `
 
-const GalleryImage = tw.img `
-    h-med
-    w-auto
-    mb-4
-    object-cover
+const Line = tw.span `
+    inline
 `
 
+export default function AboutExperience ( {data} ) {
 
-export default function AboutExperience ( ) {
+    const lines = data.map(function(line){
+
+        return (
+            <Line>
+                {RichText.asText(line.text)}
+            </Line>
+        )
+
+    })
 
     return (
     
-    <Gallery>
+        <Wrapper>
 
-        <BlockTitle>
-            We have...
-        </BlockTitle>
+            <Container>
+                <Line>Recently we have…</Line>
+                <p>
+                {lines}
+                </p>
+            </Container>
 
-        <GalleryItem>
-            <GalleryImage src={workshop} />
-            <GalleryTitle>Brought together 1000 Londoners to re-imagine the Museum of London</GalleryTitle>
-        </GalleryItem>
-
-        <GalleryItem>
-            <GalleryImage src={elephant} />
-            <GalleryTitle>Designed a university course for mass collaboration</GalleryTitle>
-        </GalleryItem>
-
-        <GalleryItem>
-            <GalleryImage src={mol} />
-            <GalleryTitle>Set a new course for a real estate giant</GalleryTitle>
-        </GalleryItem>
-
-    </Gallery>
+        </Wrapper>
 
     )
 

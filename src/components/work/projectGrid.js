@@ -20,7 +20,6 @@ const WorkBlock = tw.div`
 `
 
 const WorkImage = tw.div`
-    bg-gray-200 
     mb-6 
     w-full
     overflow-hidden

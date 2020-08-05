@@ -1,17 +1,34 @@
 import tw from "twin.macro"
 import React from "react"
 
-import PageTitle from "../shared/pageTitle"
-
 import { RichText } from 'prismic-reactjs'
 
 const Hero = tw.div` 
-    
+
 `
 
 const Container = tw.div `
     container 
     md:mx-auto
+    grid
+    grid-cols-12
+`
+
+const MainTitle = tw.div `
+    font-title
+    uppercase
+    font-bold
+    text-10xl
+    col-span-7
+    leading-extra-tight
+    mb-12
+`
+
+const Rule = tw.div `
+    col-span-12
+    border-b-8
+    border-black
+    mb-8
 `
 
 const HeroImage = tw.div`
@@ -30,11 +47,17 @@ export default function ProjectHero ( {data} ) {
 
     <Hero>
 
+        <Container>
         
-    <PageTitle
-          title={RichText.asText(data.title)}
-          sub={RichText.asText(data.subheading)}
-        />
+        <MainTitle>
+            <RichText render={data.title} />
+        </MainTitle>
+
+        <Rule />
+
+        </Container>
+
+    
 
         <HeroImage>
             <Image src={data.lead_image.url}></Image>

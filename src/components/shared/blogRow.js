@@ -3,25 +3,47 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
+const Wrapper = tw.div `
+    bg-blue
+    py-24
+    text-white
+`
+
 const WorkGrid = tw.div `
     md:grid 
     md:grid-cols-3 
-    col-gap-20 
-    container 
-    md:mx-auto 
-    mb-16 md:mb-32 
-    mt-12 md:mt-24
+    col-gap-12 
+    container
+    px-0
+    mx-0 md:mx-auto
 `
 
 const RowTitle = tw.div `
-    col-span-3 
-    text-lg md:text-2xl 
-    mb-6 md:mb-12 
-    font-title 
+    container 
+    mx-auto
+    border-b-4
+    border-white
+    mb-8
+    flex
+    py-4
+    items-center
+`
+
+const RowTitleMain = tw.div `
+    font-title
+    font-semibold
+    text-4xl
+    flex-grow
+`
+
+const RowTitleLink = tw.div `
+    text-xl
+    hover:underline
 `
 
 const WorkBlock = tw.div`
-    mb-12 md:mb-0
+    mb-12 
+    md:mb-0
     hover:opacity-75 
 `
 
@@ -30,44 +52,38 @@ const WorkImage = tw.div`
 `
 
 const Image = tw.img `
-    w-auto md:w-full 
-    h-64
+    w-full md:w-full 
+    h-sm md:h-sm
     object-cover
 `
 
-const BlogCategory = tw.div `
-    p-2
-    mb-4
-    inline-block
-    mx-auto
-    text-xs
-    text-rose
-    font-mono
-    tracking-widest
-    uppercase
-    border
-    border-rose
-    rounded
-`
-
 const WorkTitle = tw.div`
-    text-2xl md:text-3xl 
-    font-display 
-    font-bold 
+    text-2xl md:text-4xl 
+    font-title
+    font-semibold 
+    uppercase
+    mb-6
     leading-none
 `
 
 const WorkSub = tw.div `
-    font-light text-lg leading-snug mt-3
+    font-light 
+    text-xl 
+    leading-snug 
+    mt-3
 `
 
 const WorkTags = tw.div`
-    font-mono 
-    text-xs
     mt-4 
     uppercase 
     tracking-widest 
-    text-gray-500
+    border
+    border-white
+    rounded-md
+    inline-block
+    px-3
+    py-2
+    text-sm
 `
 
 
@@ -85,10 +101,6 @@ export default function BlogRow ({data}) {
                 <Image src={block.node.lead_image.url}></Image>
             </WorkImage>
 
-            <BlogCategory>
-                Fieldnotes
-            </BlogCategory>
-
             <WorkTitle>
                 <RichText render={block.node.title} />
             </WorkTitle>
@@ -97,7 +109,8 @@ export default function BlogRow ({data}) {
                 <RichText render={block.node.subhead} />
             </WorkSub>
 
-            <WorkTags>post date</WorkTags>
+            <WorkTags>post type</WorkTags>
+            
             </WorkBlock>
             </Link>
 
@@ -107,14 +120,22 @@ export default function BlogRow ({data}) {
     })
 
     return (
-    <>
-            <WorkGrid>
+    <Wrapper>
 
-            {blocks}
+        <RowTitle>
 
-            </WorkGrid>
+            <RowTitleMain>The Blog</RowTitleMain>
+            <RowTitleLink>
+                <Link to={`/blog`}>See all &rarr;</Link>     
+            </RowTitleLink>
+
+        </RowTitle>
+
+        <WorkGrid>
+                { blocks }
+        </WorkGrid>
     
-    </>
+    </Wrapper>
 
     )
 

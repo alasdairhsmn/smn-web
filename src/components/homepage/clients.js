@@ -1,6 +1,8 @@
 import tw from "twin.macro"
+import styled from "@emotion/styled"
 import React from "react"
 import { Link } from "gatsby"
+import { RichText } from 'prismic-reactjs'
 
 import paypal from "../../images/sample/paypal.png"
 import allianz from "../../images/sample/allianz.png"
@@ -9,124 +11,120 @@ import franco from "../../images/sample/francomanca.png"
 import mol from "../../images/sample/mol.png"
 import ted from "../../images/sample/ted.png"
 
-const Hero = tw.div`
-  min-h-screen 
-  flex 
-  items-center 
+const Wrapper = tw.div `
+    min-h-screen90
+    flex
+    items-center
+    my-32
 `
 
-const Block = tw.div`
-    container 
-    md:mx-auto 
-    md:flex 
-    space-x-16
-    md:flex-row-reverse
+const Container = tw.div `
+    container
+    mx-auto
+    grid
+    grid-cols-12
+    gap-4
+`
+
+const Major = tw.div `
+    col-span-7
+    border-l-2
+    border-black
+    h-auto
+    flex
     items-center
 `
 
-const LogoGrid = tw.div `
-    grid 
-    grid-cols-2 
-    items-center 
-    gap-12 
-    overflow-hidden
-    flex-grow
-    w-1/2
+const Gallery = tw.div `
+    grid
+    grid-cols-3
+    w-5/6
+    gap-0
+    mx-auto
+`
+const GalleryItem = tw.div `
+    flex
+    items-center
+    m-8
 `
 
-const Logo = tw.div `
+const ItemImage = tw.img `
 
 `
 
-const LogoImage = tw.img `
-    w-40
-    mx-12
-    h-auto
+const Minor = tw.div `
+    col-span-5
 `
 
-const Subhead = tw.div`
-    text-xl md:text-2xl 
-    font-light
-    leading-snug
-    w-1/2
+const Title = tw.div `
+    text-8xl
+    font-title
+    font-bold
+    tracking-tight
+    leading-extra-tight
+    mb-12
+    uppercase
 `
 
-const SubTitle = tw.div `
-    font-display
-    font-light
-    my-6
-    text-3xl md:text-6xl
+const Body = styled.div `
+    ${tw`   
+    font-sans
+    text-2xl
     leading-tight
-`
-
-const Button = tw.div `
-    p-4
-    inline-block
-    rounded
-    border
-    border-black
-    font-display
-    text-xl
-    my-8
+    pr-12
+    font-normal
+    `}
+    p     {
+            margin-bottom: 1em;
+            }
 `
 
 export default function HomeClients ( {data} ) {
 
+    const logos = data.client_logos.map(function(logo){
+
+        return (
+            <GalleryItem>
+                <ItemImage src={logo.logo_image.url} />
+            </GalleryItem>
+        )
+
+    })
+
     return (
         
-    <Hero>
-      
-        <Block>
+    <Wrapper>
 
-            <LogoGrid>
+        <Container>
 
-                <Logo>
-                    <LogoImage src={ted} alt=''></LogoImage>
-                </Logo>  
+        <Minor>
+            <Title>
+                <RichText render={data.clients_heading} />
+            </Title> 
 
-                <Logo>
-                    <LogoImage src={mol} alt=''></LogoImage>
-                </Logo> 
+            <Body>
+                <RichText render={data.clients_copy} />
+            </Body>  
 
-                <Logo>
-                    <LogoImage src={paypal} alt=''></LogoImage>
-                </Logo>  
+            <Link>Learn more about us</Link>
 
-                <Logo>
-                    <LogoImage src={allianz} alt=''></LogoImage>
-                </Logo>  
+        </Minor>   
 
-                <Logo>
-                    <LogoImage src={ce} alt=''></LogoImage>
-                </Logo> 
+        
+        <Major>
 
-                <Logo>
-                    <LogoImage src={franco} alt=''></LogoImage>
-                </Logo>  
+            <Gallery>
 
-            </LogoGrid>
+                {logos}
+
+            </Gallery>
+            
+        </Major> 
 
 
-            <Subhead>
+        </Container>
 
-                <p>Who we work with</p>
-
-                <SubTitle>Partners for change</SubTitle>
-
-                <p>We work with the ambitious disruptors and evolutionaries to bring together different minds and move organisations forwards together, quicker.</p>
-                <br />
-                <p>We work with leaders and founders across international corporates, cultural and non-profits</p> 
-
-                <Link to={`/about`}>
-                    <Button>About us &rarr;</Button> 
-                </Link>
-
-            </Subhead>
-
-  
-        </Block>
-    
-    </Hero>
+    </Wrapper>
 
     )
 

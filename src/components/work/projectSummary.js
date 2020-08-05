@@ -2,45 +2,74 @@ import tw from "twin.macro"
 import React from "react"
 
 import { RichText } from 'prismic-reactjs'
+import { Link } from "gatsby"
 
 const Wrapper = tw.div `
   flex items-center 
-  py-12 md:py-16
+  py-16 md:py-32
+  min-h-screen80
 `
 
 const Container = tw.div `
   container 
   md:mx-auto 
-  md:flex
+  grid
+  grid-cols-12
+  min-h-screen80
+`
+
+const Major = tw.div `
+  col-span-7
+  col-start-6
+  border-l-2
+  border-black
+  pl-6
+  flex
+  items-start
+  h-full
+`
+
+const Minor = tw.div `
+  flex
+  items-end
+  col-span-2
+  col-start-4
 `
 
 const Subtitle = tw.div `
-  text-gray-500 
-  text-base md:text-lg
-  mb-2 md:mb-4 
-  font-light
+  font-title
+  font-semibold
+  text-2xl md:text-4xl 
+  uppercase
+  mb-4
 `
 
 const MainText = tw.div `
-  font-display 
-  font-extrabold 
-  text-2xl md:text-5xl 
+  font-sans
+  tracking-normal
+  text-2xl md:text-4xl 
   leading-snug
 `
 
 const Meta = tw.div `
   grid
-  grid-cols-2 md:grid-cols-1
-  mt-12 md:mt-0
-  gap-8
-  md:border-l 
-  md:px-12 
-  md:ml-24
+  grid-cols-1
+  col-gap-4
+  pr-8
 `
 
 const MetaText = tw.div `
   font-light 
   text-gray-500 
+  mt-4
+`
+
+const MetaLink = tw.a `
+  hover:underline
+`
+
+const MetaHead = tw.p `
+  font-bold
 `
 
 
@@ -53,48 +82,49 @@ export default function ProjectSummary ( {data} ) {
 
     <Container>
 
-    <div>
+    <Minor>
 
-    <Subtitle>The Challenge</Subtitle>
-    
-    <MainText>
-      <RichText render={data.challenge} />
-    </MainText>
-    
-    <br /> <br />
+<Meta>
 
-    <Subtitle>The Outcomes</Subtitle>
-    
-    <MainText>
-      <RichText render={data.outcomes} />
-    </MainText>
-    
-    </div>
- 
+    <MetaText>
+      <MetaHead>Client</MetaHead>
+      <MetaLink href={data.client_url.url} target='blank'>
+        {RichText.asText(data.client_name)} &rarr;
+      </MetaLink>
+      </MetaText>
 
-        <Meta>
+    <MetaText>
+      <MetaHead>Services</MetaHead>
+      <RichText render={data.services} />
+    </MetaText>
 
-        <MetaText>
-            <p><strong>Client</strong></p>
-            <p>The Museum of London</p>
-        </MetaText>
+    <MetaText>
+      <MetaHead>Sector</MetaHead>
+      <RichText render={data.project_sector} />
+    </MetaText>
+</Meta>
 
-        <MetaText>
-            <p>Partners</p>
-            <p>Partner Name</p>
-        </MetaText>
+</Minor>
 
-        <MetaText>
-            <p>Sector</p>
-            <p>Cultural</p>
-        </MetaText>
+    <Major>
 
-        <MetaText>
-            <p>Services</p>
-            <p>Engagement, Brand Strategy, Organisational Development</p>
-        </MetaText>
+      <div>
+        <Subtitle>The Challenge</Subtitle>
         
-        </Meta>
+        <MainText>
+          <RichText render={data.challenge} />
+        </MainText>
+        
+        <br /> <br />
+
+        <Subtitle>The Approach</Subtitle>
+        
+        <MainText>
+          <RichText render={data.the_approach} />
+        </MainText>
+    
+        </div>
+    </Major>
 
         </Container>
     

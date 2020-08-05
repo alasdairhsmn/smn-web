@@ -2,6 +2,7 @@ import tw from "twin.macro"
 import styled from "@emotion/styled"
 import React from "react"
 import TextLoop from "react-text-loop";
+import { RichText } from 'prismic-reactjs'
 
 import HomeAnimation from "./animation"
 
@@ -15,29 +16,24 @@ const Hero = styled.div`
         py-12
         relative
         bg-cover
-        bg-blue
-        text-white
     `}
 `
 
 const Block = tw.div`
     container
     mx-auto   
+    grid
+    grid-cols-12
+    gap-0
 `
 
-const BackBlock = tw.div `
-    absolute
-    w-full
-    h-full
-    bg-yellow
-    top-0
-    left-0
-`
-
-const BackImage = tw.img `    
-    object-cover 
-    h-full
-    w-full
+const Subhead = tw.div `
+    col-span-5
+    col-start-8
+    leading-tight
+    mt-4
+    text-5xl
+    leading-none
 `
 
 
@@ -53,8 +49,10 @@ export default function HomeHero ( {data} ) {
 
             <HomeAnimation />
 
-           
-
+            <Subhead>
+                <RichText render={data.splash_subheading} />
+            </Subhead>
+        
         </Block>
 
         

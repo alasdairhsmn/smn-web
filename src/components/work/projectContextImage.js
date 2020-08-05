@@ -5,35 +5,46 @@ import React from "react"
 const ImageBlock = tw.div `
     max-h-screen80 
     overflow-hidden
+    flex
+    space-x-4
+`
+
+const ImageItem = tw.div `
+    flex-auto
+    overflow-hidden
 `
 
 const Image = tw.img `
-    w-full
-`
-
-const Caption = tw.div `
-    text-gray-500 
-    mt-2 
-    text-base 
-    font-light
+    w-auto
+    h-med md:h-lg 
+    object-cover
 `
 
 export default function ProjectLeadImage ({data}) {
 
-    if(data.context_image) {
+    if(data.context_images) {
+
+        const blocks = data.context_images.map(function(image){
+
+            return (
+                
+                <ImageItem>
+                    <Image src={image.image.url}></Image>
+                </ImageItem>    
+                
+            )
+    
+        })
+    
 
     return (
     <>
 
     <ImageBlock>
 
-    <Image src={data.context_image.url}></Image>
+        {blocks}
 
     </ImageBlock>
-    
-    <Caption>
-        Our work has engaged over 1500 Londoners to directly input into future operations of the museum
-    </Caption>
     
     </>
 

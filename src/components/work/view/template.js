@@ -20,10 +20,22 @@ query ProjectQuery($uid: String!) {
             title
             subheading
             summary
-            outcomes
+            the_approach
             challenge
-            context_image
+            client_name
+            client_url {
+              _linkType
+              ... on PRISMIC__ExternalLink {
+                _linkType
+                url
+              }
+            }
+            project_sector
+            services
             lead_image
+            context_images {
+              image
+            }
             body {
               ... on PRISMIC_ProjectBodyQuote {
                 type

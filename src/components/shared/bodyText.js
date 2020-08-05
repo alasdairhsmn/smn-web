@@ -11,6 +11,7 @@ const Text = styled.div `
     font-light
     text-lg md:text-2xl
     leading-normal
+    tracking-wide
     `}
     p     {
             margin-bottom: 1em;

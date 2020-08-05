@@ -3,24 +3,41 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
+const Wrapper = tw.div `
+    bg-green
+    py-24
+`
 
 const WorkGrid = tw.div `
     md:grid 
     md:grid-cols-3 
-    col-gap-16 
-    mb-16 md:mb-32 
-    mt-12 md:mt-24
+    col-gap-12 
     container
     px-0
     mx-0 md:mx-auto
 `
 
 const RowTitle = tw.div `
-    col-span-3 
-    text-lg md:text-2xl 
-    mb-6 md:mb-12 
-    font-display 
-    font-light
+    container 
+    mx-auto
+    border-b-4
+    border-black
+    mb-8
+    flex
+    py-4
+    items-center
+`
+
+const RowTitleMain = tw.div `
+    font-title
+    font-semibold
+    text-4xl
+    flex-grow
+`
+
+const RowTitleLink = tw.div `
+    text-xl
+    hover:underline
 `
 
 const WorkBlock = tw.div`
@@ -40,25 +57,32 @@ const Image = tw.img `
 `
 
 const WorkTitle = tw.div`
-    text-2xl md:text-3xl 
-    font-display 
-    font-extrabold 
+    text-2xl md:text-4xl 
+    font-title
+    font-semibold 
+    uppercase
+    mb-6
     leading-none
 `
 
 const WorkSub = tw.div `
     font-light 
-    text-lg 
+    text-xl 
     leading-snug 
     mt-3
 `
 
 const WorkTags = tw.div`
-    font-mono 
     mt-4 
     uppercase 
     tracking-widest 
-    text-gray-500
+    border
+    border-black
+    rounded-md
+    inline-block
+    px-3
+    py-2
+    text-sm
 `
 
 
@@ -84,7 +108,9 @@ export default function ProjectRow ({data}) {
                     <RichText render={block.node.subheading} />
                 </WorkSub>
 
-                <WorkTags>project tag</WorkTags>
+                <WorkTags>
+                    <RichText render={block.node.project_sector} />
+                </WorkTags>
 
             </WorkBlock>
             </Link>
@@ -94,14 +120,22 @@ export default function ProjectRow ({data}) {
     })
 
     return (
-    <>
-            <WorkGrid>
+    <Wrapper>
 
+        <RowTitle>
+
+            <RowTitleMain>Changework Projects</RowTitleMain>
+            <RowTitleLink>
+                <Link to={`/changework`}>See all &rarr;</Link>     
+            </RowTitleLink>
+
+        </RowTitle>
+
+        <WorkGrid>
                 { blocks }
-
-            </WorkGrid>
+        </WorkGrid>
     
-    </>
+    </Wrapper>
 
     )
 

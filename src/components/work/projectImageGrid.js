@@ -13,41 +13,47 @@ const Block = tw.div `
 const Wrapper = tw.div `
     container 
     md:mx-auto
+    border-t-8
+    border-black
 `
 
 const TextBlock = tw.div `
-    md:w-2/3
+    md:w-7/12
 `
 
 const Title = tw.div `
-    text-2xl md:text-4xl 
-    font-display 
-    font-extrabold 
-    mb-2
+    text-2xl md:text-5xl 
+    font-title
+    font-semibold 
+    uppercase
+    leading-extra-tight
+    pt-6
+    pb-8
 `
 
 const Subhead = tw.div `
     text-lg md:text-xl 
     font-sans 
-    font-light 
-    text-gray-600
 `
 
 const ImageBlock = tw.div `
-    md:flex 
-    space-x-0 md:space-x-6
+    md:flex
+    flex-wrap 
     mt-12
 `
 
 const Item = tw.div `
     bg-lightgrey 
-    mb-4 md:mb-0
+    w-1/3
+    flex-auto
+    even:flex-grow
+    mb-4 md:mb-6
     overflow-hidden
 `
 
 const ItemImage = tw.img `
-    w-full 
     h-med md:h-lg 
+    w-full
     object-cover
 `
 
@@ -83,6 +89,7 @@ export default function ProjectImageGrid ( {data} ) {
             </Subhead>
 
             </TextBlock>
+
 
             <ImageBlock>
 

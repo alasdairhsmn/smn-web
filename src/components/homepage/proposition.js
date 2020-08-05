@@ -1,91 +1,101 @@
 import tw from "twin.macro"
+import styled from "@emotion/styled"
 import React from "react"
 import { Link } from "gatsby"
+import { RichText } from 'prismic-reactjs'
 
-import mol from "../../images/sample/molgroup.jpg"
+import workshop from "../../images/sample/workshop.jpg"
 
-const Hero = tw.div `
-    bg-yellow 
-    flex 
-    items-center 
-    bg-cover 
-    py-16 md:py-24
-    min-h-screen
-`
 
-const Block = tw.div`
-    container 
-    md:mx-auto 
-    md:flex 
-    space-x-16
-    md:flex-row-reverse
+const Wrapper = tw.div `
+    min-h-screen90
+    flex
     items-center
+    my-32
 `
 
-const ImageFrame = tw.div `
-    mb-12 md:mb-0
-    w-full
+const Container = tw.div `
+    container
+    mx-auto
+    grid
+    grid-cols-12
+    gap-4
+    min-h-screen80
 `
 
-const Image = tw.img `
-    h-sm md:h-lg 
-    object-cover 
-    rounded-full
-`
-
-const Subhead = tw.div`
-    text-xl md:text-2xl 
-    font-light
-    leading-snug
-`
-
-const SubTitle = tw.div `
-    font-display
-    font-light
-    my-6
-    text-3xl md:text-6xl
-    leading-tight
-`
-const Button = tw.div `
-    p-4
-    inline-block
-    rounded
-    border
+const Major = tw.div `
+    col-span-7
+    border-r-2
     border-black
-    font-display
-    text-xl
-    my-8
+    h-auto
+    flex
+    items-end
+`
+
+const ImageBlock = tw.div `
+    w-auto
+    pr-4
+    h-lg
+    overflow-hidden
+`
+
+const Minor = tw.div `
+    col-span-5
+`
+
+const Title = tw.div `
+    text-8xl
+    font-title
+    font-bold
+    tracking-tight
+    leading-extra-tight
+    mb-12
+    uppercase
+`
+
+const Body = styled.div `
+    ${tw`   
+    font-sans
+    text-2xl
+    leading-tight
+    pr-12
+    font-normal
+    `}
+    p     {
+            margin-bottom: 1em;
+            }
 `
 
 export default function HomeProp ( {data} ) {
 
     return (
         
-    <Hero>
-      
-        <Block>
+        <Wrapper>
 
-            <ImageFrame>
-               <Image src={mol}></Image>
-            </ImageFrame>
-                        
-            <Subhead>
+            <Container>
 
-                <p>Our Work</p>
+            <Major>
+                <ImageBlock>
+                    <img src={data.proposition_image.url}></img>
+                </ImageBlock>
+            </Major>
 
-                <SubTitle>Bringing the future closer</SubTitle>
-                <p>Social changework that helps organisations evolve in imaginative and effective ways.</p>
+            <Minor>
+                <Title>
+                    <RichText render={data.proposition_heading} />
+                </Title> 
 
-                <Link to={`/changework`}>
-                    <Button>See our changework &rarr;</Button> 
-                </Link>
+                <Body>
+                    <RichText render={data.proposition_copy} />
+                </Body>  
 
-            </Subhead>
+                <Link>Learn more about us</Link>
 
-  
-        </Block>
-    
-    </Hero>
+            </Minor>    
+
+            </Container>
+
+        </Wrapper>
 
     )
 

@@ -1,29 +1,22 @@
 module.exports = {
   theme: {
-    container: {
-      padding: {
-        default: '1rem',
-        sm: '2rem',
-        lg: '2rem',
-        xl: '2rem',
-      },
-    },
     extend: {
       colors: {
         yellow: "#fdfc71",
         lightyellow: "#ffeecf",
         rose: "#f6cccd",
         purple: "#b45aff",
-        green: "#b3ffaf",
         orange: "#ff6650",
         lightgrey: "#dcdcdc",
-        blue: "#1234f1",
+        blue: "#4D0CFA",
+        green: "#05FABD",
+        red: "#FE546E",
       },
       fontFamily: {
         sans: ['forma-djr-text', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['IBM Plex Mono', 'monospace'],
         display: ['Archivo', 'sans-serif'],
-        title: ['obviously-narrow', 'sans-serif'],
+        title: ['obviously-narrow', 'Arial Narrow', 'Impact', 'sans-serif'],
       },
       fontSize: {
         '7xl': '5rem',
@@ -35,6 +28,11 @@ module.exports = {
         '13xl': '11rem',
         '14xl': '12rem',
         '15xl': '13rem',
+        '16xl': '14rem',
+        '17xl': '15rem',
+        '18xl': '16rem',
+        '19xl': '17rem',
+        '20xl': '18rem',
       },
       lineHeight: {
        'extra-tight': '0.9',

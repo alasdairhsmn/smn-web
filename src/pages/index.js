@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/layout/layout"
 import Fade from 'react-reveal/Fade'
 
+import { RichText } from 'prismic-reactjs'
+
 import HomeHero from '../components/homepage/hero'
 import HomeSecond from "../components/homepage/secondary"
 import HomeProp from "../components/homepage/proposition"
@@ -17,15 +19,29 @@ import BlogRow from "../components/shared/blogRow"
 export const query = graphql`
 query HomeQuery {
   prismic {
-    allProjects(first: 3) {
-      edges {
+    homepage(lang: "en-gb", uid: "homepage") {
+      _meta {
+        uid
+      }
+      splash_subheading
+      proposition_heading
+      proposition_copy
+      proposition_image
+      clients_heading
+      clients_copy
+      client_logos {
+        logo_image
+      }
+      projects {
         node {
-          title
-          subheading
-          lead_image
-          _linkType
-          _meta {
-            uid
+          ... on PRISMIC_Project {
+            title
+            subheading
+            project_sector
+            lead_image
+            _meta {
+              uid
+            }
           }
         }
       }
@@ -46,34 +62,29 @@ query HomeQuery {
 }
 `;
 
-export default function Home ( {data} ) {
+export default function Home ( { data } ) {
 
-  const projects = data.prismic.allProjects.edges
+  const homepage = data.prismic.homepage
+
   const blogposts = data.prismic.allBlog_posts.edges
 
   return (
   <Layout>
 
     <Fade delay={300}>
-      <HomeHero />
+      <HomeHero data={homepage} />
     </Fade>  
-
-    <Fade delay={300}>
-      <PageTitle
-                sub={"We help ambitious organisations evolve in imaginative and effective ways"}
-      />
-    </Fade>
     
     <Fade delay={300}>
-      <ProjectRow data={projects}></ProjectRow>
+      {<ProjectRow data={homepage.projects}></ProjectRow>}
     </Fade>
 
     <Fade delay={300}>
-      <HomeProp></HomeProp>
+      <HomeProp data={homepage}></HomeProp>
     </Fade>
 
     <Fade delay={300}>
-      <HomeClients></HomeClients>
+      <HomeClients data={homepage}></HomeClients>
     </Fade>
 
     <Fade delay={300}>
