@@ -5,7 +5,8 @@ import { Link } from "gatsby"
 
 const Wrapper = tw.div `
     bg-green
-    py-24
+    py-2 md:py-24
+    mt-8
 `
 
 const WorkGrid = tw.div `
@@ -47,7 +48,8 @@ const WorkBlock = tw.div`
 `
 
 const WorkImage = tw.div`
-    bg-gray-200 mb-6 overflow-hidden
+    mb-6 
+    overflow-hidden
 `
 
 const Image = tw.img `

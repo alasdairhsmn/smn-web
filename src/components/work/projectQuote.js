@@ -5,7 +5,7 @@ import { RichText } from 'prismic-reactjs'
 const Block = tw.div `
     py-16 md:py-24
     md:min-h-screen
-    bg-orange 
+    bg-blue 
     flex 
     items-center
 `
@@ -16,18 +16,21 @@ const Wrapper = tw.div `
 `
 
 const QuoteBody = tw.div `
-    text-3xl md:text-5xl 
+    text-3xl md:text-6xl 
     text-white 
-    leading-snug 
-    font-display 
-    font-extrabold
+    leading-tight 
+    font-title 
+    font-bold
+    border-b-8
+    border-white
+    pb-12
 `
 
 const QuoteCaption = tw.div `
     text-lg md:text-xl 
     text-white 
     mt-6 
-    opacity-75
+    tracking-wide
 `
 
 

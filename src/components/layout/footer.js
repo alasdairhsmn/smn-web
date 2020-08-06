@@ -2,9 +2,11 @@ import tw from "twin.macro"
 import React from "react"
 import { Link } from "gatsby"
 
+import SMN from "../../assets/SomethingMoreNear.svg"
+
 const Wrapper = tw.div`
   bg-black 
-  pb-12 md:pb-48 
+  pb-6 md:pb-6 
   text-white
 `
 
@@ -13,22 +15,38 @@ const Grid = tw.div`
   md:mx-auto 
   grid 
   gap-4
-  md:grid-cols-3 
+  grid-cols-2 md:grid-cols-12 
   text-lg md:text-2xl 
   leading-relaxed 
   font-light
-  py-16
+  py-8 md:py-16
+  min-h-screen80
 `
 
-const CTA = tw.div`
-  hidden
-  bg-gray-400 
-  w-auto 
-  py-16 
-  mb-16 
-  text-black 
-  text-3xl 
-  text-center
+const Rule = tw.div `
+  w-full
+  border-b-8
+  border-white
+  my-8
+  col-span-12
+`
+
+const LogoBlock = tw.div `
+  col-span-5
+  border-r-2
+  border-white
+  pr-4
+  h-full
+`
+
+const TextBlock = tw.div `
+  col-span-6
+  col-start-7
+  md:flex
+`
+
+const InnerText = tw.div `
+  flex-grow
 `
 
 
@@ -37,32 +55,39 @@ export default function Footer () {
     return (
         <Wrapper>
 
-          <CTA>
-            Something More Near / Real / Serious / Social / Practical
-          </CTA>
-
           <Grid>
 
-            <div>
-              <p>Something More Near</p>
-            </div>
+            <LogoBlock>
 
-            <div>
-             <p> <Link to={'/about'}>About</Link></p>
+              <Link to={'/'}>
+                <SMN />
+              </Link>
+
+            </LogoBlock>
+
+            <TextBlock>
+              
+            <InnerText>
+              <p><Link to={'/about'}>About</Link></p>
               <p><Link to={'/changework'}>Changework</Link></p>
               <p><Link to={'/blog'}>Blog</Link></p>
               <p><Link to={'/contact'}>Contact</Link></p>
-            </div>
+            </InnerText>  
 
-            <div>
-              <p>Something More Near</p>
-              <p>114–118 Lower Marsh</p>
-              <p>Waterloo</p>
-              <p>London</p>
-              <p>SE1 7AE</p>
-            </div>
+            <InnerText>
+              <p>hello@somethingmorenear.com</p>
+              <p><Link to={'/about'}>About</Link></p>
+              <p><Link to={'/changework'}>Changework</Link></p>
+              <p><Link to={'/blog'}>Blog</Link></p>
+              <p><Link to={'/contact'}>Contact</Link></p>
+            </InnerText>  
+
+
+            </TextBlock>
 
           </Grid>
+
+
 
         </Wrapper>
     )

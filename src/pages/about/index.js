@@ -7,6 +7,7 @@ import AboutHero from "../../components/about/hero"
 import AboutTeam from "../../components/about/team"
 import AboutExperience from "../../components/about/experience"
 import AboutEditorial from "../../components/about/editorial"
+import PageTitle from "../../components/shared/pageTitle"
 
 export const query = graphql`
 query AboutQuery {
@@ -75,7 +76,7 @@ export default function AboutIndex ({ data }) {
         </Fade>
 
         <Fade delay={300}>
-            <AboutHero 
+            <PageTitle 
             title={'get in touch'} 
             sub={'We’re interested in working with disruptors, evolutionaries etc'} />
         </Fade>

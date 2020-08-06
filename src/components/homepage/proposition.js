@@ -10,23 +10,23 @@ import workshop from "../../images/sample/workshop.jpg"
 const Wrapper = tw.div `
     min-h-screen90
     flex
-    items-center
-    my-32
+    md:items-center
+    my-16 md:my-32
 `
 
 const Container = tw.div `
     container
     mx-auto
-    grid
+    md:grid
     grid-cols-12
     gap-4
     min-h-screen80
 `
 
 const Major = tw.div `
-    col-span-7
-    border-r-2
-    border-black
+    md:col-span-7
+    md:border-r-2
+    md:border-black
     h-auto
     flex
     items-end
@@ -35,16 +35,16 @@ const Major = tw.div `
 const ImageBlock = tw.div `
     w-auto
     pr-4
-    h-lg
+    md:h-lg
     overflow-hidden
 `
 
 const Minor = tw.div `
-    col-span-5
+    md:col-span-5
 `
 
 const Title = tw.div `
-    text-8xl
+    text-6xl md:text-8xl
     font-title
     font-bold
     tracking-tight

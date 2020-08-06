@@ -4,7 +4,6 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Wrapper = tw.div `
-    my-24
     w-full
     min-h-screen80
     flex
@@ -16,13 +15,13 @@ const Container = tw.div `
     mx-auto
     w-full
     grid
-    grid-cols-12
+    grid-cols-2 md:grid-cols-12
     gap-4
+    py-24
 `
 
 const Person = tw.div `
     col-span-2
-    h-lg
     font-sans
     text-xl
     leading-tight

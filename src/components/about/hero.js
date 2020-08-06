@@ -9,27 +9,27 @@ const Container = tw.div `
     mx-auto
     w-full
     h-auto
-    grid
+    md:grid
     grid-cols-12
     gap-4
-    mb-24
+    mb-12 md:mb-24
     mt-8
-    min-h-screen80
+    md:min-h-screen80
 `
 
 const Major = tw.div `
-    border-r-2
+    md:border-r-2
     border-black
     col-span-7
 `
 
 const Title = tw.div `
-    text-16xl
+    text-8xl md:text-16xl
     font-title
     font-bold
     tracking-tight
     leading-extra-tight
-    mb-20
+    mb-10 md:mb-20
     uppercase
 `
 
@@ -51,9 +51,9 @@ const Minor = tw.div `
 
 const Body = tw.div `
     font-sans
-    text-5xl
+    text-3xl md:text-5xl
     leading-none
-    pr-12
+    md:pr-12
     font-normal
 `
 

@@ -8,31 +8,29 @@ import HomeAnimation from "./animation"
 
 import workshop from "../../images/sample/workshop.jpg"
 
-const Hero = styled.div`
-    ${tw`
-        flex 
+const Hero = tw.div`
         w-full
-        min-h-screen50 md:min-h-screen90
-        py-12
+        min-h-screen60 md:min-h-screen
         relative
         bg-cover
-    `}
+        flex
+        items-center
 `
 
 const Block = tw.div`
     container
     mx-auto   
-    grid
+    md:grid
     grid-cols-12
     gap-0
 `
 
 const Subhead = tw.div `
-    col-span-5
+    md:col-span-5
     col-start-8
     leading-tight
-    mt-4
-    text-5xl
+    mt-6
+    text-3xl md:text-5xl
     leading-none
 `
 

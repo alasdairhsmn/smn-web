@@ -53,7 +53,7 @@ export default function ProjectHero ( {data} ) {
             <RichText render={data.title} />
         </MainTitle>
 
-        <Rule />
+      
 
         </Container>
 

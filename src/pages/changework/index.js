@@ -15,6 +15,7 @@ query ChangeworkQuery {
             ... on PRISMIC_Project {
               title
               subheading
+              challenge
               lead_image
               _meta {
                 uid
@@ -35,11 +36,6 @@ export default function ProjectsIndex ({ data }) {
 
     return (
        <Layout>
-
-        <PageTitle
-          title={"Changework"}
-          sub={"Imaginative work to help organisations evolve, together"}
-        />
 
         <ProjectGrid data={projects}></ProjectGrid>
             

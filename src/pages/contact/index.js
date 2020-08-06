@@ -21,7 +21,7 @@ export default function Contact () {
     return (
        <Layout>
 
-           <PageTitle></PageTitle>
+           <PageTitle title={'Get in Touch'} sub={'We always want to hear from ambitious organisations and people'} />
 
            <Placeholder>
                <div>Contact</div>

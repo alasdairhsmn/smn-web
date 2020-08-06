@@ -9,11 +9,11 @@ const Editorial = tw.div `
     container
     mx-auto
     items-center 
-    min-h-screen80
-    py-32
+    md:min-h-screen80
+    py-16 md:py-32
     border-b-8
     border-black
-    grid 
+    md:grid 
     grid-cols-12
 `
 
@@ -28,13 +28,13 @@ const EditorialTitle = tw.div `
     font-title 
     font-semibold 
     uppercase
-    text-2xl md:text-10xl
+    text-6xl md:text-10xl
     leading-extra-tight
     mb-16
 `
 const EditorialBody = tw.div `
     text-lg 
-    md:text-3xl 
+    text-2xl md:text-3xl 
     font-light
     leading-tight
 `

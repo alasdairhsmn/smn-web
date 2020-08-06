@@ -5,39 +5,60 @@ import { Link } from "gatsby"
 import { RichText } from 'prismic-reactjs'
 
 
-const Grid = tw.div `
-    grid 
-    md:grid-cols-2 
-    gap-16 md:gap-32 
-    container 
-    md:mx-auto 
-    mb-32
+const WorkGrid = tw.div `
+    container
+    mx-auto
+    grid
+    grid-cols-3
+    gap-16
+    mb-48
 `
 
-const BlogItem = tw.div ` 
-    w-auto 
-    hover:opacity-75 
+const BlogItem = tw.div`
+    hover:opacity-75
 `
 
-const BlogImage = tw.div `
-    bg-gray-200 
-    mb-6 
-    w-full
+const TextBlock = tw.div `
+    pr-16
+`
+
+const Title = tw.div `
+    text-2xl md:text-4xl 
+    font-title
+    font-bold 
+    uppercase
+    leading-extra-tight
+    my-4
+`
+
+const Subhead = tw.div `
+    text-lg md:text-xl 
+    font-sans 
+    leading-tight
+    mb-2
+`
+
+const MoreLink = tw.div `
+    font-sans
+    uppercase
+    tracking-widest
+    text-lg
+    hover:underline
+`
+
+const ImageBlock = tw.div `
+    mt-0
+`
+
+const Item = tw.div `
     overflow-hidden
+    mt-8
 `
 
-const Image = tw.img `
-    h-sm md:h-med 
-    w-full    
+const ItemImage = tw.img `
+    h-med md:h-sm
+    w-full
     object-cover
-`
-
-const BlogTitle = tw.div`
-    text-3xl font-display font-extrabold leading-none font-bold
-`
-
-const BlogSub = tw.div `
-    font-light text-xl leading-tight mt-4
 `
 
 const BlogTags = tw.div`
@@ -48,41 +69,53 @@ const BlogTags = tw.div`
 
 export default function BlogGrid ( {data} ) {
 
-    const blocks = data.map(function(post){
-        return (
+    const blocks = data.map(function(post, i){
 
-            <Fade delay={300}>
-            <Link to={`/blog/${post.node._meta.uid}`}>
-                
-                <BlogItem>
+        if (i === 0) { return null }
 
-                    <BlogImage>
-                        <Image src={post.node.lead_image.url}></Image>
-                    </BlogImage>
+        else return (
 
-                    <BlogTitle>
-                        <RichText render={post.node.title} />
-                    </BlogTitle>
+        <Fade delay={300}>
+        <Link to={`/blog/${post.node._meta.uid}`}>
+            
+        <BlogItem>
 
-                    <BlogSub>
-                        <RichText render={post.node.subhead} />
-                    </BlogSub>
-                    
-                    <BlogTags>
-                        <p>Tags</p>
-                    </BlogTags>
-                    
-                </BlogItem>
+        <ImageBlock>
+            <ItemImage src={post.node.lead_image.url}></ItemImage>
+        </ImageBlock>
 
-            </Link>
-            </Fade>
+        <TextBlock>
+
+            <Title>
+                <RichText render={post.node.title} />
+            </Title>
+
+            <Subhead>
+                <RichText render={post.node.subhead} />
+            </Subhead>
+
+            <MoreLink>
+                <Link to={`/blog/${post.node._meta.uid}`}>Read More &rarr;</Link>   
+            </MoreLink>
+
+        </TextBlock>
+
+        </BlogItem>
+
+        </Link>
+        </Fade>
         )   
     })
 
-        return (
-
-         <Grid>{ blocks } </Grid>
-
-    )
+    return (
+        <>
+        <WorkGrid>
+    
+            { blocks }
+    
+        </WorkGrid>
+        </>
+    
+        )
 
 }

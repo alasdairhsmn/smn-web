@@ -80,6 +80,18 @@ query ProjectQuery($uid: String!) {
                   stat_number
                 }
               }
+              ... on PRISMIC_ProjectBodyEditorial_block {
+                type
+                label
+                fields {
+                  image
+                }
+                primary {
+                  section_summary
+                  section_title
+                  text_location
+                }
+              }
             }
           }
 
@@ -88,6 +100,7 @@ query ProjectQuery($uid: String!) {
               node {
                 title
                 subheading
+                project_sector
                 lead_image
                 _linkType
                 _meta {

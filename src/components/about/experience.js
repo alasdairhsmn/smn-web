@@ -8,7 +8,7 @@ const Wrapper = tw.div `
     py-12
     flex
     items-center
-    min-h-screen90
+    md:min-h-screen90
     w-full
     my-16
 `
@@ -18,13 +18,15 @@ const Container = tw.div `
     mx-auto
     text-white
     font-title
-    text-6xl
-    font-bold
+    text-3xl md:text-6xl
+    font-normal
     leading-tight
 `
 
 const Line = tw.span `
     inline
+    even:font-bold
+    mr-4 md:mr-8
 `
 
 export default function AboutExperience ( {data} ) {
@@ -44,7 +46,7 @@ export default function AboutExperience ( {data} ) {
         <Wrapper>
 
             <Container>
-                <Line>Recently we have…</Line>
+                <Line><strong>Recently we have…</strong></Line>
                 <p>
                 {lines}
                 </p>

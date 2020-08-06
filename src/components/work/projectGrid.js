@@ -6,41 +6,78 @@ import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
 const WorkGrid = tw.div `
-    grid 
-    md:grid-cols-2 
-    gap-16 md:gap-32 
+    
+`
+
+const Container = tw.div`
     container 
     md:mx-auto 
-    mb-32
+    md:flex
+    min-h-screen80
+    space-x-6
+    py-12 md:py-24
+    grid
+    grid-cols-12
 `
 
-const WorkBlock = tw.div`
-    w-auto 
-    hover:opacity-75 
+const Major = tw.div `
+  col-span-12 md:col-span-7
+  md:border-r-2
+  border-black
+  md:pr-6
+  flex
+  flex-wrap
+  items-end
+  h-full
 `
 
-const WorkImage = tw.div`
-    mb-6 
-    w-full
+const Minor = tw.div `
+  col-span-12 md:col-span-5
+  md:flex
+  md:items-center
+`
+
+const TextBlock = tw.div `
+    md:pr-16
+`
+
+const Title = tw.div `
+    text-5xl md:text-8xl 
+    font-title
+    font-bold 
+    uppercase
+    leading-extra-tight
+    mb-10
+`
+
+const Subhead = tw.div `
+    text-xl md:text-2xl 
+    font-sans 
+    leading-tight
+    mb-6
+`
+
+const MoreLink = tw.div `
+    font-sans
+    uppercase
+    tracking-widest
+    text-lg
+    hover:underline
+`
+
+const ImageBlock = tw.div `
+    mt-0
+`
+
+const Item = tw.div `
     overflow-hidden
+    mt-8
 `
 
-const Image = tw.img `
-    h-sm md:h-med 
-    w-full    
+const ItemImage = tw.img `
+    h-med md:h-lg
+    w-full
     object-cover
-`
-
-const WorkTitle = tw.div`
-    text-3xl font-display font-extrabold leading-none font-bold
-`
-
-const WorkSub = tw.div `
-    font-light text-lg leading-tight mt-4
-`
-
-const WorkTags = tw.div`
-    font-mono mt-4 uppercase tracking-widest text-gray-500
 `
 
 export default function ProjectGrid ( {data} ) {
@@ -49,28 +86,37 @@ export default function ProjectGrid ( {data} ) {
     
         return (
 
-            <Fade delay={300}>
+        <Fade delay={300}>
             <Link to={`/changework/${block.project._meta.uid}`}>
             
-            <WorkBlock>
+        <Container>
 
-            <WorkImage>
-                <Image src={block.project.lead_image.url}></Image>
-            </WorkImage>
+            <Major>
+                <ImageBlock>
+                    <ItemImage src={block.project.lead_image.url}></ItemImage>
+                </ImageBlock>
+            </Major>
 
-            <WorkTitle>
-                <RichText render={block.project.title} />
-            </WorkTitle>
+            <Minor>
+                <TextBlock>
+                    <Title>
+                        <RichText render={block.project.title} />
+                    </Title>
 
-            <WorkSub>
-                <RichText render={block.project.subheading} />
-            </WorkSub>
+                    <Subhead>
+                        <RichText render={block.project.challenge} />
+                    </Subhead>
 
-            <WorkTags>project tag</WorkTags>
+                    <MoreLink>
+                        <Link to={`/changework/${block.project._meta.uid}`}>Learn More &rarr;</Link>   
+                    </MoreLink>
+                </TextBlock>
+            </Minor>
 
-            </WorkBlock>
+        </Container>
+
             </Link>
-            </Fade>
+        </Fade>
         )
     
     })

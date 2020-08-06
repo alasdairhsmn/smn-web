@@ -46,6 +46,15 @@ module.exports = {
           id: 'vak6jai'
         }
       }
+    },
+
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
     }
 
   ],

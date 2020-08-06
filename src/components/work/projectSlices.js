@@ -3,6 +3,7 @@ import Fade from 'react-reveal/Fade'
 
 import ProjectQuote from "./projectQuote"
 import ProjectImageGrid from "./projectImageGrid"
+import ProjectEditorialBlock from "./projectEditorialBlock"
 import ProjectCarousel from "./projectCarousel"
 import ProjectStats from "./projectStats"
 import BodyText from "../shared/bodyText"
@@ -29,6 +30,14 @@ export default function ProjectSlices ( {data} ) {
         return (
         <Fade delay={300}>
            <ProjectImageGrid data={slice} />
+        </Fade>
+        )
+
+    } else if(slice.type === 'editorial_block') {
+
+        return (
+        <Fade delay={300}>
+           <ProjectEditorialBlock data={slice} />
         </Fade>
         )
 

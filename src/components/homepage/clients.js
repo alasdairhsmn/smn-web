@@ -21,14 +21,14 @@ const Wrapper = tw.div `
 const Container = tw.div `
     container
     mx-auto
-    grid
+    md:grid
     grid-cols-12
     gap-4
 `
 
 const Major = tw.div `
     col-span-7
-    border-l-2
+    md:border-l-2
     border-black
     h-auto
     flex
@@ -37,8 +37,8 @@ const Major = tw.div `
 
 const Gallery = tw.div `
     grid
-    grid-cols-3
-    w-5/6
+    grid-cols-2 md:grid-cols-3
+    md:w-5/6
     gap-0
     mx-auto
 `
@@ -57,7 +57,7 @@ const Minor = tw.div `
 `
 
 const Title = tw.div `
-    text-8xl
+    text-6xl md:text-8xl
     font-title
     font-bold
     tracking-tight

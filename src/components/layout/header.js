@@ -162,6 +162,10 @@ const Header = () => {
                     <HeadLink>Blog</HeadLink>
                 </Link>
 
+                <Link to={'/contact'}>
+                    <HeadLink>Contact</HeadLink>
+                </Link>
+
                 </HeadNav>
 
                 </HeadLinks>
