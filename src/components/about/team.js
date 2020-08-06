@@ -19,8 +19,8 @@ const Container = tw.div `
     grid
     grid-cols-2 md:grid-cols-12
     gap-8
-    py-12
-    mb-32
+    py-16
+    mb-16
     border-b-4
     border-black
 `

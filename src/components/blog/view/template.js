@@ -17,6 +17,7 @@ query BlogPostQuery($uid: String!) {
             standfirst
             body
             lead_image
+            date_published
             _meta {
                 uid
             }

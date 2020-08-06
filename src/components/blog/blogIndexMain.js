@@ -7,7 +7,6 @@ import { RichText } from 'prismic-reactjs'
 const Wrapper = tw.div `
     w-auto
     mb-16
-    mt-32
 `
 
 const Container = tw.div `
@@ -20,11 +19,11 @@ const Container = tw.div `
 `
 
 const ImageBlock = tw.div `
-    col-span-7
+    col-span-12
     w-full
-    h-lg
     bg-white
     overflow-hidden
+    max-h-screen80
 `
 
 const ItemImage = tw.img `
@@ -34,31 +33,30 @@ const ItemImage = tw.img `
 `
 
 const TextBlock = tw.div `
-    col-span-5
+    col-span-7
 `
 
 const Title = tw.div `
-    text-4xl md:text-8xl 
-    font-title
-    font-bold 
-    uppercase
-    leading-extra-tight
-    mb-12
+    text-xl md:text-xl 
+    font-semibold 
+    mb-2
 `
 
 const Subhead = tw.div `
     text-lg md:text-xl 
     font-sans 
+    tracking-wide
     leading-tight
     mb-2
+    text-midgrey
 `
 
 const MoreLink = tw.div `
     font-sans
     uppercase
     tracking-widest
-    text-lg
     hover:underline
+    text-midgrey
 `
 
 
@@ -71,6 +69,10 @@ export default function BlogIndexMain ( {data} ) {
 
     <Link to={`/blog/${data.node._meta.uid}`}>
         <Container>
+
+        <ImageBlock>
+            <ItemImage src={data.node.lead_image.url}></ItemImage>
+        </ImageBlock>
 
         <TextBlock>
 
@@ -87,10 +89,6 @@ export default function BlogIndexMain ( {data} ) {
             </MoreLink>
 
         </TextBlock>
-
-        <ImageBlock>
-            <ItemImage src={data.node.lead_image.url}></ItemImage>
-        </ImageBlock>
 
         </Container>
     </Link>    

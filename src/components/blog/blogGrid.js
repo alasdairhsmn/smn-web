@@ -19,35 +19,34 @@ const BlogItem = tw.div`
 `
 
 const TextBlock = tw.div `
-    pr-16
 `
 
 const Title = tw.div `
-    text-2xl md:text-4xl 
-    font-title
-    font-bold 
-    uppercase
-    leading-extra-tight
-    my-4
+    text-xl md:text-xl 
+    font-semibold 
+    mb-2
 `
 
 const Subhead = tw.div `
     text-lg md:text-xl 
     font-sans 
+    tracking-wide
     leading-tight
     mb-2
+    text-midgrey
 `
 
 const MoreLink = tw.div `
     font-sans
     uppercase
     tracking-widest
-    text-lg
     hover:underline
+    text-midgrey
 `
 
 const ImageBlock = tw.div `
     mt-0
+    mb-4
 `
 
 const ItemImage = tw.img `

@@ -15,7 +15,7 @@ const Text = styled.div `
     font-bold
     font-display
     text-3xl
-    leading-normal
+    leading-tight
     mb-8
     `}
     p     {

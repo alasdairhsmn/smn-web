@@ -7,21 +7,22 @@ import BlogGrid from "../../components/blog/blogGrid"
 
 export const query = graphql`
 query BlogQuery {
-    prismic {
-      allBlog_posts {
-        edges {
-          node {
-            title
-            subhead
-            lead_image
-            _meta {
-              uid
-            }
+  prismic {
+    allBlog_posts(sortBy: date_published_DESC) {
+      edges {
+        node {
+          title
+          subhead
+          lead_image
+          _meta {
+            uid
           }
+          date_published
         }
       }
     }
   }
+}
 `;
 
 
