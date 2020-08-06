@@ -11,6 +11,7 @@ const Hero = tw.div`
         bg-cover
         flex
         items-center
+        mb-16
 `
 
 const Block = tw.div`
@@ -22,8 +23,7 @@ const Block = tw.div`
 `
 
 const Subhead = tw.div `
-    md:col-span-5
-    col-start-8
+    md:col-span-7
     leading-tight
     mt-6
     text-3xl md:text-5xl

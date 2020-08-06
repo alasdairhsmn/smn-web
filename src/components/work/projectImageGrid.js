@@ -8,7 +8,6 @@ const Block = tw.div `
     flex 
     text-6xl 
     mb-8 md:mb-16 
-    mt-12 md:mt-24 
     py-16
 `
 
@@ -24,16 +23,13 @@ const ImageBlock = tw.div `
 `
 
 const Item = tw.div `
-    bg-lightgrey 
-    w-1/3
-    flex-auto
-    even:flex-grow
+    w-1/2
     mb-4 md:mb-6
     overflow-hidden
 `
 
 const ItemImage = tw.img `
-    h-med md:h-lg 
+    h-full
     w-full
     object-cover
 `
@@ -57,7 +53,7 @@ export default function ProjectImageGrid ( {data} ) {
     <Block>
         <Wrapper>
 
-            <ProjectImageGridTitle data={data.primary} string={RichText.asText(data.primary.section_title)} />
+            <ProjectImageGridTitle data={data.primary} />
 
             <ImageBlock>
 

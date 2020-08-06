@@ -109,8 +109,6 @@ export default function BlogRow ({data}) {
             <WorkSub>
                 <RichText render={block.node.subhead} />
             </WorkSub>
-
-            <WorkTags>post type</WorkTags>
             
             </WorkBlock>
             </Link>

@@ -34,6 +34,7 @@ query HomeQuery {
             title
             subheading
             project_sector
+            challenge
             lead_image
             _meta {
               uid

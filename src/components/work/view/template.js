@@ -103,6 +103,7 @@ query ProjectQuery($uid: String!) {
                 title
                 subheading
                 project_sector
+                challenge
                 lead_image
                 _linkType
                 _meta {

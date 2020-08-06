@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout/layout"
+import Fade from 'react-reveal/Fade'
 
 import BlogIndexMain from "../../components/blog/blogIndexMain"
 import BlogGrid from "../../components/blog/blogGrid"
@@ -34,7 +35,9 @@ export default function BlogIndex ( {data} ) {
     return (
        <Layout>
          
+         <Fade delay={300}>
         <BlogIndexMain data={posts[0]} />
+        </Fade>
 
         <BlogGrid data={posts}></BlogGrid>
         

@@ -1,6 +1,8 @@
 import tw from "twin.macro"
 import React from "react"
 import Layout from "../../layout/layout"
+import Fade from 'react-reveal/Fade'
+
 import BodyText from "../../shared/bodyText"
 
 import BlogHead from "../blogHead"
@@ -71,14 +73,19 @@ export default function BlogView ({data}) {
     return (
        <Layout>
 
+        <Fade delay={300}>
         <Block>
             <BlogHead data={post}></BlogHead>
-        </Block>    
+        </Block>   
+        </Fade>
 
+        <Fade delay={300}> 
         <Hero>
            <img src={post.lead_image.url} alt={post.lead_image.alt}></img>
         </Hero>
+        </Fade>
 
+        <Fade delay={300}>
         <Block>
           <BlogStandfirst data={post.standfirst}></BlogStandfirst>
         </Block>
@@ -86,12 +93,17 @@ export default function BlogView ({data}) {
         <Block>
             <BodyText data={post.body}></BodyText>
         </Block>
+        </Fade>   
 
+        <Fade delay={300}>
         <Block>
             <BlogEnd data={post}></BlogEnd>
         </Block>
+        </Fade>   
            
-        <BlogRow data={nextposts}></BlogRow>   
+        <Fade delay={300}>
+        <BlogRow data={nextposts}></BlogRow>  
+        </Fade>    
             
        </Layout>
     )

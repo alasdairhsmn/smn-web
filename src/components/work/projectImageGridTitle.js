@@ -4,8 +4,7 @@ import { RichText } from 'prismic-reactjs'
 
 
 const TextBlock = tw.div `
-    border-t-8
-    border-black    
+ 
 `
 
 const TextCol = tw.div `
@@ -29,9 +28,8 @@ const Subhead = tw.div `
 
 
 
-export default function ProjectImageGridTitle ( {data, string} ) {
+export default function ProjectImageGridTitle ( {data} ) {
 
-    if(string.length !== 0 ) {
 
         return (
             <>
@@ -56,9 +54,6 @@ export default function ProjectImageGridTitle ( {data, string} ) {
         
             )
         
-    } else {
-        return null
-    }
 
 
 

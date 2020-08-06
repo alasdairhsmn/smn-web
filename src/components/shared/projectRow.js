@@ -6,7 +6,6 @@ import { Link } from "gatsby"
 const Wrapper = tw.div `
     bg-green
     py-12
-    mt-16
 `
 
 const WorkGrid = tw.div `
@@ -108,12 +107,8 @@ export default function ProjectRow ({data}) {
                 </WorkTitle>
 
                 <WorkSub>
-                    <RichText render={block.node.subheading} />
+                    <RichText render={block.node.challenge} />
                 </WorkSub>
-
-                <WorkTags>
-                    <RichText render={block.node.project_sector} />
-                </WorkTags>
 
             </WorkBlock>
             </Link>
