@@ -14,20 +14,21 @@ const Wrapper = tw.div `
 `
 
 const AuthorBlock = tw.div `
-    flex
-    space-x-8
+    md:flex
+    md:space-x-8
     items-end
 `
 
 const AuthorImage = tw.img `
     flex-grow
     h-sm
-    w-auto
+    w-full md:w-auto
     object-cover
+    mb-4 md:mb-0
 `
 
 const TextBlock = tw.div `
-    w-2/3
+    w-full md:w-2/3
 `
 
 const NameTitle = tw.div `

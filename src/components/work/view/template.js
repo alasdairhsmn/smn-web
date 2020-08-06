@@ -58,30 +58,6 @@ query ProjectQuery($uid: String!) {
                   image
                 }
               }
-              ... on PRISMIC_ProjectBodyImage_carousel {
-                type
-                label
-                primary {
-                  section_title
-                  section_summary
-                }
-                fields {
-                  caption
-                  image
-                }
-              }
-              ... on PRISMIC_ProjectBodyProject_stats {
-                type
-                label
-                primary {
-                  section_title
-                  section_summary
-                }
-                fields {
-                  stat_caption
-                  stat_number
-                }
-              }
               ... on PRISMIC_ProjectBodyEditorial_block {
                 type
                 label

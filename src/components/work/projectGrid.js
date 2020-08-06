@@ -13,11 +13,12 @@ const Container = tw.div`
     container 
     md:mx-auto 
     md:flex
-    min-h-screen80
-    space-x-6
-    py-12 md:py-24
-    grid
+    md:min-h-screen80
+    md:space-x-6
+    py-6 md:py-24
+    md:grid
     grid-cols-12
+    mt-6 md:mt-0
 `
 
 const Major = tw.div `
@@ -35,6 +36,7 @@ const Minor = tw.div `
   col-span-12 md:col-span-5
   md:flex
   md:items-center
+  mt-4 md:mt-0
 `
 
 const TextBlock = tw.div `
@@ -47,14 +49,14 @@ const Title = tw.div `
     font-bold 
     uppercase
     leading-extra-tight
-    mb-10
+    mb-4 md:mb-10
 `
 
 const Subhead = tw.div `
     text-xl md:text-2xl 
     font-sans 
     leading-tight
-    mb-6
+    mb-3 md:mb-6
 `
 
 const MoreLink = tw.div `
@@ -66,11 +68,11 @@ const MoreLink = tw.div `
 `
 
 const ImageBlock = tw.div `
-    mt-0
+    
 `
 
 const ItemImage = tw.img `
-    h-med md:h-lg
+    h-sm md:h-lg
     w-full
     object-cover
 `

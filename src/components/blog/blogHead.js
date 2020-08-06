@@ -5,15 +5,13 @@ import {RichText, Date} from 'prismic-reactjs';
 
 
 const Container = tw.div `
-    container
-    mx-auto
     w-full
     h-auto
     md:grid
     grid-cols-12
     gap-4
     mb-12
-    mt-8
+    mt-12 md:mt-8
 `
 
 const Major = tw.div `
@@ -38,7 +36,6 @@ const Aligner = styled.span `
     display: block;
     height: 0;
     width: 0;
-    margin-bottom: -50px;
   }
 `
 

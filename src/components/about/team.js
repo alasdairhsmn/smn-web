@@ -19,7 +19,7 @@ const Container = tw.div `
     grid
     grid-cols-2 md:grid-cols-12
     gap-8
-    py-16
+    py-8 md:py-16
     mb-16
     border-b-4
     border-black
@@ -29,7 +29,7 @@ const Title = tw.div `
     col-span-12
     font-title
     font-bold
-    text-10xl
+    text-5xl md:text-10xl
     uppercase
 `
 
@@ -38,34 +38,38 @@ const TeamGallery = tw.div `
 `
 
 const Person = tw.div `
-    flex
-    space-x-4
+    md:flex
+    md:mx-0
+    md:space-x-4
     items-end
     font-sans
-    text-lg
+    text-base md:text-lg
     leading-normal
+    mr-4 md:mr-0
 `
 
 const PersonText = tw.div `
-    pr-24
+    pr-8 md:pr-24
+    leading-tight
 `
 
 const Image = tw.img `
     object-cover
-    w-5/12
-    h-med
+    w-full md:w-5/12
+    h-sm md:h-med
+    mb-4 md:mb-0
 `
 
 const Name = tw.div `
     font-title
-    text-2xl
+    text-xl md:text-2xl
     font-semibold
     leading-extra-tight
 `
 
 const Role = tw.div `
     font-title
-    text-2xl
+    text-xl md:text-2xl
     font-semibold
     mb-6
 `

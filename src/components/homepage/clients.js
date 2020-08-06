@@ -8,7 +8,7 @@ const Wrapper = tw.div `
     min-h-screen90
     flex
     items-center
-    my-32
+    my-16
 `
 
 const Container = tw.div `
@@ -50,12 +50,12 @@ const Minor = tw.div `
 `
 
 const Title = tw.div `
-    text-6xl md:text-8xl
+    text-5xl md:text-8xl
     font-title
     font-bold
     tracking-tight
     leading-extra-tight
-    mb-12
+    mb-6 md:mb-12
     uppercase
 `
 

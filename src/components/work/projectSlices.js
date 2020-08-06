@@ -41,15 +41,6 @@ export default function ProjectSlices ( {data} ) {
         </Fade>
         )
 
-    } else if(slice.type === 'image_carousel') {
-
-        return (
-            <Fade delay={300}>
-                <ProjectCarousel data={slice} />
-           </Fade>
-        )
-
-
     } else if(slice.type === 'body_text') {
 
         return (
@@ -59,16 +50,7 @@ export default function ProjectSlices ( {data} ) {
         )
 
 
-    } else if(slice.type === 'project_stats') {
-
-        return (
-            <Fade delay={300}>
-                <ProjectStats data={slice}/>
-           </Fade>
-        )
-
-
-    } else {
+    }  else {
         return (
             <p>no template yet</p>
         )

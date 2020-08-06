@@ -31,7 +31,7 @@ const Major = tw.div `
 
 const ImageBlock = tw.div `
     w-auto
-    pr-4
+    md:pr-4
     md:h-lg
     overflow-hidden
 `
@@ -41,13 +41,14 @@ const Minor = tw.div `
 `
 
 const Title = tw.div `
-    text-6xl md:text-8xl
+    text-5xl md:text-8xl
     font-title
     font-bold
     tracking-tight
     leading-extra-tight
-    mb-12
+    mb-6 md:mb-12
     uppercase
+    mt-4 md:mt-0
 `
 
 const Body = styled.div `

@@ -10,15 +10,16 @@ const Hero = tw.div`
 const Container = tw.div `
     container 
     md:mx-auto
-    grid
+    md:grid
     grid-cols-12
+    mt-12 md:mt-0
 `
 
 const MainTitle = tw.div `
     font-title
     uppercase
     font-bold
-    text-10xl
+    text-5xl md:text-10xl
     col-span-7
     leading-extra-tight
     mb-12

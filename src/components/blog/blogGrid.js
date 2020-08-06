@@ -8,14 +8,15 @@ import { RichText } from 'prismic-reactjs'
 const WorkGrid = tw.div `
     container
     mx-auto
-    grid
+    md:grid
     grid-cols-3
     gap-16
-    mb-48
+    mb-24 md:mb-48
 `
 
 const BlogItem = tw.div`
     hover:opacity-75
+    mb-12 md:mb-0
 `
 
 const TextBlock = tw.div `
@@ -50,7 +51,7 @@ const ImageBlock = tw.div `
 `
 
 const ItemImage = tw.img `
-    h-med md:h-sm
+    h-sm md:h-sm
     w-full
     object-cover
 `

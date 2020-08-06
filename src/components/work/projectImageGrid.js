@@ -8,7 +8,7 @@ const Block = tw.div `
     flex 
     text-6xl 
     mb-8 md:mb-16 
-    py-16
+    py-8 md:py-16
 `
 
 const Wrapper = tw.div `
@@ -23,7 +23,7 @@ const ImageBlock = tw.div `
 `
 
 const Item = tw.div `
-    w-1/2
+    w-auto md:w-1/2
     mb-4 md:mb-6
     overflow-hidden
 `

@@ -50,13 +50,18 @@ query BlogPostQuery($uid: String!) {
 `
 
 const Hero = tw.div`
-    bg-yellow 
     mt-12
-    mb-24
+    mb-12 md:mb-24
     w-2/3
     overflow-hidden
     container
     mx-auto
+`
+
+const Image = tw.img `
+  w-full
+  h-full
+  object-cover
 `
 
 const Block = tw.div`
@@ -81,11 +86,10 @@ export default function BlogView ({data}) {
 
         <Fade delay={300}> 
         <Hero>
-           <img src={post.lead_image.url} alt={post.lead_image.alt}></img>
+           <Image src={post.lead_image.url} alt={post.lead_image.alt}></Image>
         </Hero>
         </Fade>
 
-        <Fade delay={300}>
         <Block>
           <BlogStandfirst data={post.standfirst}></BlogStandfirst>
         </Block>
@@ -93,7 +97,7 @@ export default function BlogView ({data}) {
         <Block>
             <BodyText data={post.body}></BodyText>
         </Block>
-        </Fade>   
+
 
         <Fade delay={300}>
         <Block>

@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 
 const Wrapper = tw.div `
     bg-green
-    py-12
+    py-6 md:py-12
 `
 
 const WorkGrid = tw.div `
@@ -13,8 +13,7 @@ const WorkGrid = tw.div `
     md:grid-cols-3 
     col-gap-12 
     container
-    px-0
-    mx-0 md:mx-auto
+    mx-auto
     mb-8
 `
 
@@ -23,7 +22,7 @@ const RowTitle = tw.div `
     mx-auto
     border-b-4
     border-black
-    mb-8
+    mb-4 md:mb-8
     flex
     pb-4
     items-center
@@ -32,23 +31,25 @@ const RowTitle = tw.div `
 const RowTitleMain = tw.div `
     font-title
     font-semibold
-    text-4xl
+    text-2xl md:text-4xl
     flex-grow
 `
 
 const RowTitleLink = tw.div `
-    text-xl
+    pt-2 md:pt-4
+    text-lg 
+    md:text-xl
     hover:underline
 `
 
 const WorkBlock = tw.div`
-    mb-12 
+    mb-6 md:mb-12 
     md:mb-0
     hover:opacity-75 
 `
 
 const WorkImage = tw.div`
-    mb-6 
+    mb-3 md:mb-6 
     overflow-hidden
 `
 
@@ -63,7 +64,7 @@ const WorkTitle = tw.div`
     font-title
     font-semibold 
     uppercase
-    mb-6
+    mb-3 md:mb-6 
     leading-none
 `
 

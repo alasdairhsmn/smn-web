@@ -2,6 +2,14 @@ import tw from "twin.macro"
 import styled from "@emotion/styled"
 import React from "react"
 
+const Wrapper = tw.div `
+    flex
+    items-center
+    md:min-h-screen70
+    mt-12 md:mt-0
+    mb-12 md:mb-24
+`
+
 const Container = tw.div `
     container
     mx-auto
@@ -10,8 +18,6 @@ const Container = tw.div `
     md:grid
     grid-cols-12
     gap-4
-    mb-12 md:mb-24
-    md:min-h-screen70
 `
 
 const Major = tw.div `
@@ -36,7 +42,6 @@ const Aligner = styled.span `
     display: block;
     height: 0;
     width: 0;
-    margin-bottom: -50px;
   }
 `
 
@@ -59,6 +64,8 @@ export default function AboutHero ( {title, sub} ) {
 
     return (
 
+        <Wrapper>
+
         <Container>
 
             <Major>
@@ -72,6 +79,8 @@ export default function AboutHero ( {title, sub} ) {
             </Minor>
 
         </Container>
+
+        </Wrapper>
 
     )
 

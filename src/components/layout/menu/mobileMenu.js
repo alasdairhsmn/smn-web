@@ -14,8 +14,8 @@ const Block = tw.div `
     block
     relative
     w-full
-    font-display
-    text-3xl
+    font-title
+    text-5xl
     pt-4
 `
 
@@ -26,7 +26,16 @@ const Nav = tw.div `
 const HeadLink = tw.div `
     border-b
     py-6
-    font-extrabold
+    font-semibold
+    uppercase
+`
+
+const Meta = tw.div `
+    text-xl
+    font-sans
+    font-normal
+    border-b
+    py-12
 `
 
 export default function MobileMenu () {
@@ -52,13 +61,10 @@ export default function MobileMenu () {
                     <HeadLink>Blog</HeadLink>
                 </Link>
 
-                <Link to={'/'}>
-                    <HeadLink>Contact</HeadLink>
-                </Link>
-
-                <Link to={'/'}>
-                    <HeadLink>Social</HeadLink>
-                </Link>
+                <Meta>
+                    <p>Contact</p>
+                    <a href="mailto:hello@somethingmorenear.com">hello@somethingmorenear.com</a>
+                </Meta>
 
                 </Nav>
 

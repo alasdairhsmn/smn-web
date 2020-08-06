@@ -6,12 +6,12 @@ import { RichText } from 'prismic-reactjs'
 
 const Wrapper = tw.div `
     bg-blue
-    py-24
+    py-12 md:py-24
     flex
     items-center
     md:min-h-screen90
     w-full
-    my-16
+    md:my-16
 `
 
 const Container = tw.div `

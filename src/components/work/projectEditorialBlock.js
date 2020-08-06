@@ -4,7 +4,8 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Wrapper = tw.div `
-  flex items-center 
+  flex 
+  items-center 
   py-16 md:py-32
   min-h-screen80
 `
@@ -13,14 +14,15 @@ const Container = tw.div `
   container 
   md:mx-auto 
   flex
-  min-h-screen80
+  flex-wrap
+  md:min-h-screen80
 `
 
 const Major = tw.div `
-  w-7/12
-  border-l-2
-  border-black
-  pl-6
+  w-full md:w-7/12
+  md:border-l-2
+  md:border-black
+  md:pl-6
   flex
   flex-wrap
   items-end
@@ -28,10 +30,9 @@ const Major = tw.div `
 `
 
 const Minor = tw.div `
-  w-5/12
+  w-full md:w-5/12
   flex
   items-start
-  col-span-5
 `
 
 const TextBlock = tw.div `

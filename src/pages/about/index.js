@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../../components/layout/layout"
 import Fade from 'react-reveal/Fade'
+import { RichText } from 'prismic-reactjs'
 
 import AboutHero from "../../components/about/hero"
 import AboutTeam from "../../components/about/team"
@@ -13,6 +14,10 @@ query AboutQuery {
     prismic {
       about_page(lang: "en-gb", uid: "about") {
         title
+        main_headline
+        main_subhead
+        footer_title
+        footer_copy
         _meta {
           uid
         }
@@ -57,8 +62,8 @@ export default function AboutIndex ({ data }) {
 
         <Fade delay={300}>
             <AboutHero 
-            title={'change is hard'} 
-            sub={'But it’s possible when you bring the right people in the right way.'} />
+            title={RichText.asText(about.main_headline)} 
+            sub={RichText.asText(about.main_subhead)} />
         </Fade>
 
         <Fade delay={300}>
@@ -77,8 +82,8 @@ export default function AboutIndex ({ data }) {
 
         <Fade delay={300}>
             <PageTitle 
-            title={'get in touch'} 
-            sub={'We’re interested in working with disruptors, evolutionaries etc'} />
+            title={RichText.asText(about.footer_title)} 
+            sub={RichText.asText(about.footer_copy)} />
         </Fade>
 
 

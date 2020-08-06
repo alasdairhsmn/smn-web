@@ -4,25 +4,26 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 const Wrapper = tw.div `
-  flex items-center 
+  flex 
+  items-center 
   py-16 md:py-32
-  min-h-screen70
+  md:min-h-screen70
 `
 
 const Container = tw.div `
   container 
   md:mx-auto 
-  grid
+  md:grid
   grid-cols-12
-  min-h-screen80
+  md:min-h-screen70
 `
 
 const Major = tw.div `
   col-span-7
   col-start-6
-  border-l-2
-  border-black
-  pl-6
+  md:border-l-2
+  md:border-black
+  md:pl-6
   flex
   items-start
   h-full
@@ -105,6 +106,7 @@ export default function ProjectSummary ( {data} ) {
 </Meta>
 
 </Minor>
+
 
     <Major>
 

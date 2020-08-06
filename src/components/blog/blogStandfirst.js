@@ -14,9 +14,9 @@ const Text = styled.div `
     mx-auto
     font-bold
     font-display
-    text-3xl
+    text-xl md:text-3xl
     leading-tight
-    mb-8
+    mb-2 md:mb-8
     `}
     p     {
             margin-bottom: 1em;

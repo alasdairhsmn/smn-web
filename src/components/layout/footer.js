@@ -13,7 +13,7 @@ const Wrapper = tw.div`
 const Grid = tw.div`
   container 
   md:mx-auto 
-  grid 
+  md:grid 
   gap-4
   grid-cols-2 md:grid-cols-12 
   text-lg md:text-2xl 
@@ -25,20 +25,28 @@ const Grid = tw.div`
 
 const LogoBlock = tw.div `
   col-span-5
-  border-r-2
+  md:border-r-2
   border-white
-  pr-4
+  md:pr-4
   h-full
+  w-1/4 md:w-full
+  mb-12 md:mb-0
 `
 
 const TextBlock = tw.div `
   col-span-6
   col-start-7
   md:flex
+  justify-end
+  flex-wrap
 `
 
 const InnerText = tw.div `
-  flex-grow
+  w-auto
+  mb-8
+  pb-8 md:pb-0
+  border-b-2 md:border-b-0
+  border-white
 `
 
 
@@ -58,16 +66,28 @@ export default function Footer () {
             </LogoBlock>
 
             <TextBlock>
-              
+
+
+            <div> 
+
+
             <InnerText>
-              <p><Link to={'/about'}>About</Link></p>
-              <p><Link to={'/changework'}>Changework</Link></p>
-              <p><Link to={'/blog'}>Blog</Link></p>
+              <p>Contact Us</p>
+              <p>hello@somethingmorenear.com</p>
+            </InnerText>
+
+            <InnerText>
+              <p><a href="https://www.linkedin.com/company/something-more-near" target="_blank">Linkedin</a></p>
+              <p><a href="https://www.instagram.com/somethingmorenear" target="_blank">Instagram</a></p>
             </InnerText>  
 
             <InnerText>
-              <p>hello@somethingmorenear.com</p>
-            </InnerText>  
+              <p>114–118 Lower Marsh</p>
+              <p>London</p>
+              <p>SE1 7AE</p>
+            </InnerText> 
+
+            </div>  
 
 
             </TextBlock>

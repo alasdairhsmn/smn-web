@@ -7,12 +7,13 @@ import { RichText } from 'prismic-reactjs'
 const Wrapper = tw.div `
     w-auto
     mb-16
+    mt-12 md:mt-0
 `
 
 const Container = tw.div `
     container
     mx-auto
-    grid
+    md:grid
     grid-cols-12
     gap-4
     w-full

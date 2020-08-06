@@ -6,12 +6,12 @@ import HomeAnimation from "./animation"
 
 const Hero = tw.div`
         w-full
-        min-h-screen60 md:min-h-screen50
+        min-h-screen50
         relative
         bg-cover
         flex
         items-center
-        mb-16
+        md:mb-16
 `
 
 const Block = tw.div`

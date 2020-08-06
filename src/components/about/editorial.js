@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade'
 
 const Editorial = tw.div `
     flex 
+    flex-wrap md:flex
     container
     mx-auto
     items-center 
@@ -23,7 +24,7 @@ const ImageBlock = tw.div `
     h-full
     flex
     items-center
-    pl-8
+    md:pl-8
 `
 
 const Image = tw.img `
@@ -36,15 +37,16 @@ const EditorialBlock = tw.div `
     items-center
     col-span-5
     col-start-2
+    mb-4 md:mb-0
 `
 
 const EditorialTitle = tw.div `
     font-title 
     font-semibold 
     uppercase
-    text-6xl md:text-10xl
+    text-5xl md:text-10xl
     leading-extra-tight
-    mb-16
+    mb-8 md:mb-16
 `
 const EditorialBody = tw.div `
     text-lg 
