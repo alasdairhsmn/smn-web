@@ -1,23 +1,30 @@
 import tw from "twin.macro"
 import React from "react"
 
+import { RichText } from 'prismic-reactjs'
+
 
 const ImageBlock = tw.div `
-    max-h-screen80 
     overflow-hidden
-    flex
-    space-x-4
 `
 
 const ImageItem = tw.div `
-    flex-auto
     overflow-hidden
+    bg-yellow
+    w-full
 `
 
 const Image = tw.img `
-    w-auto
-    h-med md:h-lg 
+    w-full
+    h-full
     object-cover
+`
+
+const Caption = tw.div `
+    font-sans
+    text-lg
+    text-midgrey
+    
 `
 
 export default function ProjectLeadImage ({data}) {
@@ -27,10 +34,16 @@ export default function ProjectLeadImage ({data}) {
         const blocks = data.context_images.map(function(image){
 
             return (
-                
+
+                <>
                 <ImageItem>
                     <Image src={image.image.url}></Image>
-                </ImageItem>    
+                </ImageItem>
+                
+                <Caption>
+                    <RichText render={image.caption} />
+                </Caption>
+                </>
                 
             )
     

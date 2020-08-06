@@ -32,9 +32,11 @@ query ProjectQuery($uid: String!) {
             }
             project_sector
             services
+            date_range
             lead_image
             context_images {
               image
+              caption
             }
             body {
               ... on PRISMIC_ProjectBodyQuote {

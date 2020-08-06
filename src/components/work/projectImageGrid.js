@@ -2,6 +2,8 @@ import tw from "twin.macro"
 import React from "react"
 import { RichText } from 'prismic-reactjs'
 
+import ProjectImageGridTitle from "./projectImageGridTitle"
+
 const Block = tw.div `
     flex 
     text-6xl 
@@ -13,8 +15,6 @@ const Block = tw.div `
 const Wrapper = tw.div `
     container 
     md:mx-auto
-    border-t-8
-    border-black
 `
 
 const TextBlock = tw.div `
@@ -60,7 +60,6 @@ const ItemImage = tw.img `
 
 export default function ProjectImageGrid ( {data} ) {
 
-
     const images = data.fields.map(function(image){
 
         return (
@@ -71,25 +70,13 @@ export default function ProjectImageGrid ( {data} ) {
 
     })
 
-
     return (
     <>
 
     <Block>
         <Wrapper>
 
-            <TextBlock>
-
-            <Title>
-                <RichText render={data.primary.section_title} />
-            </Title>
-
-            <Subhead>
-                <RichText render={data.primary.section_summary} />
-            </Subhead>
-
-            </TextBlock>
-
+            <ProjectImageGridTitle data={data.primary} string={RichText.asText(data.primary.section_title)} />
 
             <ImageBlock>
 

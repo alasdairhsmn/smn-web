@@ -7,7 +7,7 @@ import { Link } from "gatsby"
 const Wrapper = tw.div `
   flex items-center 
   py-16 md:py-32
-  min-h-screen80
+  min-h-screen70
 `
 
 const Container = tw.div `
@@ -60,7 +60,7 @@ const Meta = tw.div `
 
 const MetaText = tw.div `
   font-light 
-  text-gray-500 
+  text-midgrey
   mt-4
 `
 
@@ -99,8 +99,9 @@ export default function ProjectSummary ( {data} ) {
     </MetaText>
 
     <MetaText>
-      <MetaHead>Sector</MetaHead>
-      <RichText render={data.project_sector} />
+      <MetaHead>
+        <RichText render={data.date_range} />
+      </MetaHead>
     </MetaText>
 </Meta>
 

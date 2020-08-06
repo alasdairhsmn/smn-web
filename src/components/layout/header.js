@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 
 import MobileMenu from "./menu/mobileMenu"
 
+
 const Wrapper = tw.div`
     block 
     bg-white md:bg-transparent
@@ -41,6 +42,10 @@ const HeadNav = tw.div `
     hidden md:block
 `
 
+const LogoLink = tw.div `
+    bg-yellow
+`
+
 const SMNLink = tw.div ` 
     inline-block 
     flex-grow
@@ -53,12 +58,9 @@ const SMNLink = tw.div `
 
 const HeadLink = tw.div `
     inline-block
-    hover:text-blue 
-    font-light 
-    font-display
-    text-sm
-    text-lightgrey
-    uppercase
+    hover:text-green 
+    font-sans
+    text-lg
     tracking-widest
 `
 
@@ -160,10 +162,6 @@ const Header = () => {
 
                 <Link to={'/blog'}>
                     <HeadLink>Blog</HeadLink>
-                </Link>
-
-                <Link to={'/contact'}>
-                    <HeadLink>Contact</HeadLink>
                 </Link>
 
                 </HeadNav>

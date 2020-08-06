@@ -71,15 +71,10 @@ export default function Footer () {
               <p><Link to={'/about'}>About</Link></p>
               <p><Link to={'/changework'}>Changework</Link></p>
               <p><Link to={'/blog'}>Blog</Link></p>
-              <p><Link to={'/contact'}>Contact</Link></p>
             </InnerText>  
 
             <InnerText>
               <p>hello@somethingmorenear.com</p>
-              <p><Link to={'/about'}>About</Link></p>
-              <p><Link to={'/changework'}>Changework</Link></p>
-              <p><Link to={'/blog'}>Blog</Link></p>
-              <p><Link to={'/contact'}>Contact</Link></p>
             </InnerText>  
 
 
