@@ -1,7 +1,9 @@
 import tw from "twin.macro"
-import styled from "@emotion/styled"
 import React from "react"
 import { RichText } from 'prismic-reactjs'
+
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const Wrapper = tw.div `
     w-full
@@ -16,20 +18,41 @@ const Container = tw.div `
     w-full
     grid
     grid-cols-2 md:grid-cols-12
-    gap-4
-    py-24
+    gap-8
+    py-12
+    mb-32
+    border-b-4
+    border-black
+`
+
+const Title = tw.div `
+    col-span-12
+    font-title
+    font-bold
+    text-10xl
+    uppercase
+`
+
+const TeamGallery = tw.div `
+    col-span-12
 `
 
 const Person = tw.div `
-    col-span-2
+    flex
+    space-x-4
+    items-end
     font-sans
-    text-xl
-    leading-tight
+    text-lg
+    leading-normal
+`
+
+const PersonText = tw.div `
+    pr-24
 `
 
 const Image = tw.img `
     object-cover
-    w-full
+    w-5/12
     h-med
 `
 
@@ -37,16 +60,14 @@ const Name = tw.div `
     font-title
     text-2xl
     font-semibold
-    uppercase
     leading-extra-tight
-    py-4
 `
 
 const Role = tw.div `
-   font-bold
-`
-
-const Summary = tw.div `
+    font-title
+    text-2xl
+    font-semibold
+    mb-6
 `
 
 
@@ -56,10 +77,12 @@ export default function AboutTeam ( {data} ) {
     const team = data.map(function(person){
 
         return (
+            <Slide>
             <Person>
 
                 <Image src={person.team_member.image.url}></Image>
 
+                <PersonText>
                 <Name>
                     <RichText render={person.team_member.name} />
                 </Name>
@@ -69,8 +92,10 @@ export default function AboutTeam ( {data} ) {
                 </Role>
 
                 <RichText render={person.team_member.in_brief} />
+                </PersonText>
 
             </Person>
+            </Slide>
         )
 
     })
@@ -80,7 +105,29 @@ export default function AboutTeam ( {data} ) {
     <Wrapper>
         <Container>
 
-            {team}
+            <Title>
+                Meet the team
+            </Title>
+
+            <TeamGallery>
+
+            <CarouselProvider
+        naturalSlideWidth={100}
+        totalSlides={data.length}
+        infinite={true}
+        isPlaying={true}
+        visibleSlides={2}
+        isIntrinsicHeight={true}
+      >
+
+        <Slider>
+          {team}
+        </Slider>
+
+      </CarouselProvider>
+
+      </TeamGallery>
+
 
         </Container>
     </Wrapper>    

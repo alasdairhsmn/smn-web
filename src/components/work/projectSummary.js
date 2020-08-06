@@ -2,7 +2,6 @@ import tw from "twin.macro"
 import React from "react"
 
 import { RichText } from 'prismic-reactjs'
-import { Link } from "gatsby"
 
 const Wrapper = tw.div `
   flex items-center 

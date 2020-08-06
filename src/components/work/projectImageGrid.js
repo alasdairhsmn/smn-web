@@ -17,25 +17,6 @@ const Wrapper = tw.div `
     md:mx-auto
 `
 
-const TextBlock = tw.div `
-    md:w-7/12
-`
-
-const Title = tw.div `
-    text-2xl md:text-5xl 
-    font-title
-    font-semibold 
-    uppercase
-    leading-extra-tight
-    pt-6
-    pb-8
-`
-
-const Subhead = tw.div `
-    text-lg md:text-xl 
-    font-sans 
-`
-
 const ImageBlock = tw.div `
     md:flex
     flex-wrap 

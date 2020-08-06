@@ -5,8 +5,8 @@ import { Link } from "gatsby"
 
 const Wrapper = tw.div `
     bg-green
-    py-2 md:py-24
-    mt-8
+    py-12
+    mt-16
 `
 
 const WorkGrid = tw.div `
@@ -16,6 +16,7 @@ const WorkGrid = tw.div `
     container
     px-0
     mx-0 md:mx-auto
+    mb-8
 `
 
 const RowTitle = tw.div `
@@ -25,7 +26,7 @@ const RowTitle = tw.div `
     border-black
     mb-8
     flex
-    py-4
+    pb-4
     items-center
 `
 

@@ -24,13 +24,6 @@ const MainTitle = tw.div `
     mb-12
 `
 
-const Rule = tw.div `
-    col-span-12
-    border-b-8
-    border-black
-    mb-8
-`
-
 const HeroImage = tw.div`
     max-h-screen80 
     overflow-hidden

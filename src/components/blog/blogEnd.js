@@ -34,7 +34,7 @@ export default function BlogEnd ( {data} ) {
         <AuthorBlock>
         
         <AuthorImage>
-            <img src={data.author.image.url}></img>
+            <img src={data.author.image.url} alt={RichText.asText(data.author.name)}></img>
         </AuthorImage>
         
         <div>

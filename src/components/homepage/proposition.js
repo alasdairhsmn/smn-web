@@ -4,9 +4,6 @@ import React from "react"
 import { Link } from "gatsby"
 import { RichText } from 'prismic-reactjs'
 
-import workshop from "../../images/sample/workshop.jpg"
-
-
 const Wrapper = tw.div `
     min-h-screen90
     flex
@@ -76,7 +73,7 @@ export default function HomeProp ( {data} ) {
 
             <Major>
                 <ImageBlock>
-                    <img src={data.proposition_image.url}></img>
+                    <img src={data.proposition_image.url} alt={''}></img>
                 </ImageBlock>
             </Major>
 

@@ -10,18 +10,32 @@ const Editorial = tw.div `
     mx-auto
     items-center 
     md:min-h-screen80
-    py-16 md:py-32
+    py-12 md:py-24
     border-b-8
     border-black
     md:grid 
     grid-cols-12
 `
 
+const ImageBlock = tw.div `
+    col-span-4
+    col-start-8
+    h-full
+    flex
+    items-center
+    pl-8
+`
+
+const Image = tw.img `
+    w-full
+    h-auto
+`
+
 const EditorialBlock = tw.div `
     mx-auto 
     items-center
     col-span-5
-    col-start-3
+    col-start-2
 `
 
 const EditorialTitle = tw.div `
@@ -45,7 +59,11 @@ export default function AboutEditorial ( {data} ) {
 
         return (
         <Editorial>
+
+
+
         <EditorialBlock>
+           
            <div>
 
            <EditorialTitle>
@@ -58,6 +76,11 @@ export default function AboutEditorial ( {data} ) {
            </div>
 
         </EditorialBlock>
+
+            <ImageBlock>
+                <Image src={block.primary.image.url}></Image>
+            </ImageBlock>
+
         </Editorial>
         )
 

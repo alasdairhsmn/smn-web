@@ -50,19 +50,10 @@ const ImageBlock = tw.div `
     mt-0
 `
 
-const Item = tw.div `
-    overflow-hidden
-    mt-8
-`
-
 const ItemImage = tw.img `
     h-med md:h-sm
     w-full
     object-cover
-`
-
-const BlogTags = tw.div`
-    font-mono mt-4 uppercase tracking-widest text-gray-500
 `
 
 

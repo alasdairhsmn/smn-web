@@ -1,7 +1,6 @@
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import React from "react"
-import { RichText } from 'prismic-reactjs'
 
 
 const Container = tw.div `

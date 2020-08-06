@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout/layout"
 
-import PageTitle from "../../components/shared/pageTitle"
 import BlogIndexMain from "../../components/blog/blogIndexMain"
 import BlogGrid from "../../components/blog/blogGrid"
 

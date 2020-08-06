@@ -2,14 +2,10 @@ import React from "react"
 import Layout from "../components/layout/layout"
 import Fade from 'react-reveal/Fade'
 
-import { RichText } from 'prismic-reactjs'
-
 import HomeHero from '../components/homepage/hero'
-import HomeSecond from "../components/homepage/secondary"
 import HomeProp from "../components/homepage/proposition"
 import HomeClients from "../components/homepage/clients"
 
-import PageTitle from "../components/shared/pageTitle"
 import ProjectRow from "../components/shared/projectRow"
 import BlogRow from "../components/shared/blogRow"
 

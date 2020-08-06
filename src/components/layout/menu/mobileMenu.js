@@ -19,10 +19,6 @@ const Block = tw.div `
     pt-4
 `
 
-const Title = tw.div `
-    font-extrabold
-`
-
 const Nav = tw.div `
    
 `

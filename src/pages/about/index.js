@@ -1,4 +1,3 @@
-import tw from "twin.macro"
 import React from "react"
 import Layout from "../../components/layout/layout"
 import Fade from 'react-reveal/Fade'
@@ -24,6 +23,7 @@ query AboutQuery {
             primary {
               copy
               heading
+              image
             }
           }
         }

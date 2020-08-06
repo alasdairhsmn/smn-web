@@ -23,14 +23,6 @@ const Grid = tw.div`
   min-h-screen80
 `
 
-const Rule = tw.div `
-  w-full
-  border-b-8
-  border-white
-  my-8
-  col-span-12
-`
-
 const LogoBlock = tw.div `
   col-span-5
   border-r-2

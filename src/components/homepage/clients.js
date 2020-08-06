@@ -4,13 +4,6 @@ import React from "react"
 import { Link } from "gatsby"
 import { RichText } from 'prismic-reactjs'
 
-import paypal from "../../images/sample/paypal.png"
-import allianz from "../../images/sample/allianz.png"
-import ce from "../../images/sample/clientearth.png"
-import franco from "../../images/sample/francomanca.png"
-import mol from "../../images/sample/mol.png"
-import ted from "../../images/sample/ted.png"
-
 const Wrapper = tw.div `
     min-h-screen90
     flex

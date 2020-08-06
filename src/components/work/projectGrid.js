@@ -69,11 +69,6 @@ const ImageBlock = tw.div `
     mt-0
 `
 
-const Item = tw.div `
-    overflow-hidden
-    mt-8
-`
-
 const ItemImage = tw.img `
     h-med md:h-lg
     w-full

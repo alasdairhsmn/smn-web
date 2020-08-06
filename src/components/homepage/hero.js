@@ -1,16 +1,12 @@
 import tw from "twin.macro"
-import styled from "@emotion/styled"
 import React from "react"
-import TextLoop from "react-text-loop";
 import { RichText } from 'prismic-reactjs'
 
 import HomeAnimation from "./animation"
 
-import workshop from "../../images/sample/workshop.jpg"
-
 const Hero = tw.div`
         w-full
-        min-h-screen60 md:min-h-screen
+        min-h-screen60 md:min-h-screen50
         relative
         bg-cover
         flex

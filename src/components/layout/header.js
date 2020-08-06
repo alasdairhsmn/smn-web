@@ -42,10 +42,6 @@ const HeadNav = tw.div `
     hidden md:block
 `
 
-const LogoLink = tw.div `
-    bg-yellow
-`
-
 const SMNLink = tw.div ` 
     inline-block 
     flex-grow

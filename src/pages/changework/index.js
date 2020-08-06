@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../../components/layout/layout"
 
-import PageTitle from "../../components/shared/pageTitle"
 import ProjectGrid from "../../components/work/projectGrid"
 
 

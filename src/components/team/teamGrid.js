@@ -3,7 +3,6 @@ import React from "react"
 import Fade from 'react-reveal/Fade'
 
 import { RichText } from 'prismic-reactjs'
-import { Link } from "gatsby"
 
 const WorkGrid = tw.div `
     grid 
@@ -41,10 +40,6 @@ const TeamTitle = tw.div`
 
 const TeamSub = tw.div `
     font-light text-xl leading-tight mt-4
-`
-
-const WorkTags = tw.div`
-    font-mono mt-4 uppercase tracking-widest text-gray-500
 `
 
 export default function TeamGrid ( {data} ) {

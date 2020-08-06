@@ -1,8 +1,6 @@
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import React from "react"
-import { RichText } from 'prismic-reactjs'
-
 
 const Container = tw.div `
     container
@@ -13,8 +11,7 @@ const Container = tw.div `
     grid-cols-12
     gap-4
     mb-12 md:mb-24
-    mt-8
-    md:min-h-screen80
+    md:min-h-screen70
 `
 
 const Major = tw.div `
