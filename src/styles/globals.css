@@ -21,3 +21,7 @@ html {
 html.wf-active {
   opacity: 1;
 }
+
+body.home .logo {
+  display: none;
+}
