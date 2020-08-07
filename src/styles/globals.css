@@ -13,3 +13,7 @@
   background-color: white;
 
 }
+
+.wf-loading {
+  opacity: 0;
+}
