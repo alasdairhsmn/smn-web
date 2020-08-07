@@ -134,7 +134,7 @@ const Header = () => {
 
                 <SMNLink>
                     <Link to={'/'}>
-                        <img alt="SOMETHING MORE NEAR" src={logo} style="height: 64px; width: 115px;" />
+                        <img alt="SOMETHING MORE NEAR" height="64" src={logo} width="115" />
                     </Link>    
                 </SMNLink>
 
