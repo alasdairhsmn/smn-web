@@ -8,6 +8,7 @@ import HomeClients from "../components/homepage/clients"
 
 import ProjectRow from "../components/shared/projectRow"
 import BlogRow from "../components/shared/blogRow"
+import Helmet from 'react-helmet'
 
 
 
@@ -66,6 +67,9 @@ export default function Home ( { data } ) {
   const blogposts = data.prismic.allBlog_posts.edges
 
   return (
+  <Helmet>
+    <body className="home" />
+  </Helmet>
   <Layout>
 
     <Fade delay={300}>
