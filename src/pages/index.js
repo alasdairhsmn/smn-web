@@ -67,11 +67,12 @@ export default function Home ( { data } ) {
   const blogposts = data.prismic.allBlog_posts.edges
 
   return (
-  <Helmet>
-    <body className="home" />
-  </Helmet>
   <Layout>
-
+    
+    <Helmet>
+      <body className="home" />
+    </Helmet>
+    
     <Fade delay={300}>
       <HomeHero data={homepage} />
     </Fade>  
