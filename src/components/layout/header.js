@@ -4,7 +4,6 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 
 import MobileMenu from "./menu/mobileMenu"
-import logo from "../../assets/SomethingMoreNear_Black.svg"
 
 
 const Wrapper = tw.div`
@@ -134,7 +133,7 @@ const Header = () => {
 
                 <SMNLink>
                     <Link to={'/'}>
-                        <img alt="SOMETHING MORE NEAR" height="64" src={logo} width="115" />
+                        <img alt="SOMETHING MORE NEAR" height="64" src={'/logo.svg'} width="115" />
                     </Link>    
                 </SMNLink>
 
