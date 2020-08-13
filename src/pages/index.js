@@ -80,13 +80,13 @@ export default function Home ( { data } ) {
     <Fade delay={300}>
       {<ProjectRow data={homepage.projects}></ProjectRow>}
     </Fade>
-
+    
     <Fade delay={300}>
-      <HomeProp data={homepage}></HomeProp>
+      <HomeClients data={homepage}></HomeClients>
     </Fade>
 
     <Fade delay={300}>
-      <HomeClients data={homepage}></HomeClients>
+      <HomeProp data={homepage}></HomeProp>
     </Fade>
 
     <Fade delay={300}>
