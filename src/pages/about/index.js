@@ -63,7 +63,7 @@ export default function AboutIndex ({ data }) {
         <Fade delay={300}>
             <AboutHero 
             title={RichText.asText(about.main_headline)} 
-            sub={RichText.asHtml(about.main_subhead)} />
+            sub={RichText.render(about.main_subhead)} />
         </Fade>
 
         <Fade delay={300}>
