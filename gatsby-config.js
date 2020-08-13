@@ -55,7 +55,14 @@ module.exports = {
           include: /assets/
         }
       }
+    },
+    
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-125950580-1'
+      }
     }
-
+    
   ],
 }
