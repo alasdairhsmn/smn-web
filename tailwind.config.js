@@ -72,6 +72,7 @@ module.exports = {
   variants: {},
   plugins: [],
   purge: [
-    './src/**/*.js'
+    './src/components/**/*.js',
+    './src/pages/**/*.js'
   ]
 }
