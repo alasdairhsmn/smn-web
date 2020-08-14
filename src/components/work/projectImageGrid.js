@@ -18,12 +18,11 @@ const Wrapper = tw.div `
 
 const ImageBlock = tw.div `
     md:flex
-    flex-wrap 
     mt-12
 `
 
 const Item = tw.div `
-    w-auto md:w-1/2
+    w-auto
     mb-4 md:mb-6
     overflow-hidden
 `
