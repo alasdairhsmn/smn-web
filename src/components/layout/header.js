@@ -11,6 +11,8 @@ const Wrapper = tw.div`
     bg-white
     font-display
     fixed
+    left-0
+    top-0
     z-50
     w-full
 `
