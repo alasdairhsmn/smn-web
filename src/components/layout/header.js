@@ -125,62 +125,68 @@ const Header = () => {
     const [navbarOpen, setNavbarOpen] = useState(false)
 
     return (
-        <Wrapper>
-           
-            <Container>
+        <div>
+        
+            <div className="header-holder"></div>
+        
+            <Wrapper>
 
-                <HeadLinks>
+                <Container>
 
-                <SMNLink>
-                    <Link to={'/'}>
-                        <img alt="SOMETHING MORE NEAR" className="logo" height="48" src={'/logo.svg'} width="86" />
-                    </Link>    
-                </SMNLink>
+                    <HeadLinks>
 
-                <Toggle
-                    navbarOpen={navbarOpen}
-                    onClick={() => setNavbarOpen(!navbarOpen)}
-                >
+                    <SMNLink>
+                        <Link to={'/'}>
+                            <img alt="SOMETHING MORE NEAR" className="logo" height="48" src={'/logo.svg'} width="86" />
+                        </Link>    
+                    </SMNLink>
 
-                {navbarOpen ? <Hamburger open /> : <Hamburger />}
+                    <Toggle
+                        navbarOpen={navbarOpen}
+                        onClick={() => setNavbarOpen(!navbarOpen)}
+                    >
 
-                </Toggle>
+                    {navbarOpen ? <Hamburger open /> : <Hamburger />}
 
-                <HeadNav>
+                    </Toggle>
 
-                <Link to={'/about'}>
-                    <HeadLink>About</HeadLink>
-                </Link>
+                    <HeadNav>
 
-                <Link to={'/changework'}>
-                    <HeadLink>Changework</HeadLink>
-                </Link>
+                    <Link to={'/about'}>
+                        <HeadLink>About</HeadLink>
+                    </Link>
 
-                <Link to={'/blog'}>
-                    <HeadLink>Blog</HeadLink>
-                </Link>
+                    <Link to={'/changework'}>
+                        <HeadLink>Changework</HeadLink>
+                    </Link>
 
-                </HeadNav>
+                    <Link to={'/blog'}>
+                        <HeadLink>Blog</HeadLink>
+                    </Link>
 
-                </HeadLinks>
+                    </HeadNav>
+
+                    </HeadLinks>
 
 
 
-            
 
-            </Container>
 
-            {navbarOpen ? (
-            <Navbox>
-                <MobileMenu />
-            </Navbox>
-            ) : (
-            <Navbox open>
-                <MobileMenu />
-            </Navbox>
-            )}
+                </Container>
 
-        </Wrapper>
+                {navbarOpen ? (
+                <Navbox>
+                    <MobileMenu />
+                </Navbox>
+                ) : (
+                <Navbox open>
+                    <MobileMenu />
+                </Navbox>
+                )}
+
+            </Wrapper>
+
+        </div>
     )
 
 }
