@@ -37,3 +37,20 @@ html.wf-active {
         display: none;
     }
 }
+
+.carousel__dot-group {
+    margin: 24px 0 0 0;
+    text-align: center;
+}
+
+.carousel__dot {
+    background: #000;
+    border-radius: 50%;
+    height: 12px;
+    margin: 0 2px;
+    width: 12px;
+}
+
+.carousel__dot--selected {
+    background: rgb(5, 250, 189);
+}
