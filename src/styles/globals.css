@@ -15,11 +15,11 @@
 }
 
 html {
-  opacity: 0;
+    opacity: 0;
 }
 
 html.wf-active {
-  opacity: 1;
+    opacity: 1;
 }
 
 .header-holder {
@@ -32,6 +32,8 @@ html.wf-active {
     }
 }
 
-body.home .logo {
-  display: none;
+@media (min-width: 768px) {
+    body.home .logo {
+        display: none;
+    }
 }
