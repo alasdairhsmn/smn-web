@@ -61,12 +61,9 @@ const Image = tw.img `
 `
 
 const WorkTitle = tw.div`
-    text-2xl md:text-4xl 
-    font-title
+    text-xl md:text-xl 
     font-semibold 
-    uppercase
-    mb-3 md:mb-6 
-    leading-none
+    mb-2
 `
 
 const WorkSub = tw.div `
