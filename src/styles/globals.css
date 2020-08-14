@@ -22,6 +22,16 @@ html.wf-active {
   opacity: 1;
 }
 
+.header-holder {
+    height: 64px;
+}
+
+@media (min-width: 768px) {
+    .header-holder {
+        height: 75px;
+    }
+}
+
 body.home .logo {
   display: none;
 }
