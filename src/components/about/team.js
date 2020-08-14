@@ -128,6 +128,8 @@ export default function AboutTeam ( {data} ) {
           {team}
         </Slider>
         
+        <ButtonBack />
+        <ButtonNext />
         <DotGroup />
 
       </CarouselProvider>
