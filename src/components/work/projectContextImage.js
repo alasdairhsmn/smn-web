@@ -33,19 +33,21 @@ export default function ProjectLeadImage ({data}) {
 
         const blocks = data.context_images.map(function(image){
 
-            return (
+            if (image !== null) {
+                return (
 
-                <>
-                <ImageItem>
-                    <Image src={image.image.url}></Image>
-                </ImageItem>
-                
-                <Caption>
-                    <RichText render={image.caption} />
-                </Caption>
-                </>
-                
-            )
+                    <>
+                    <ImageItem>
+                        <Image src={image.image.url}></Image>
+                    </ImageItem>
+
+                    <Caption>
+                        <RichText render={image.caption} />
+                    </Caption>
+                    </>
+
+                )
+            }
     
         })
     
