@@ -52,7 +52,7 @@ const Subhead = tw.div `
 `
 
 const ImageBlock = tw.div `
-    mt-32
+    md:mt-32
 `
 
 const Item = tw.div `
