@@ -79,7 +79,7 @@ export default function ProjectEditorialBlock ( {data} ) {
     })
 
 
-    if (data.primary) {
+    if (data.primary.section_title || data.primary.section_summary) {
         return (
             <>
 
