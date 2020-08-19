@@ -6,6 +6,7 @@ const Block = tw.div `
     py-16 md:py-24
     md:min-h-screen80
     bg-orange
+    m-16
 `
 
 const Container = tw.div `
