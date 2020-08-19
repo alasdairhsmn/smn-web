@@ -87,7 +87,7 @@ export default function HomeProp ( {data} ) {
                     <RichText render={data.proposition_copy} />
                 </Body>  
 
-                <Link>Learn more about us</Link>
+                <Link>Learn more</Link>
 
             </Minor>    
 
