@@ -10,7 +10,7 @@ const Hero = tw.div`
         bg-cover
         flex
         items-center
-        md:mb-16
+        mb-16
 `
 
 const Block = tw.div`
