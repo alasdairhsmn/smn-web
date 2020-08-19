@@ -99,7 +99,7 @@ export default function HomeClients ( {data} ) {
                 <RichText render={data.clients_copy} />
             </Body>  
 
-            <Link>Learn more about us</Link>
+            <Link>Learn more</Link>
 
         </Minor>   
 
