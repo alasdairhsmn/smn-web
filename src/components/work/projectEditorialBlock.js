@@ -79,39 +79,60 @@ export default function ProjectEditorialBlock ( {data} ) {
     })
 
 
+    if (data.primary) {
+        return (
+            <>
 
-    return (
-        <>
-    
-    <Wrapper>
-    
-        <Container>
-    
-        <Minor>
+        <Wrapper>
 
-            <TextBlock>
-                <Title>
-                    <RichText render={data.primary.section_title} />
-                </Title>
+            <Container>
 
-                <Subhead>
-                    <RichText render={data.primary.section_summary} />
-                </Subhead>
-            </TextBlock>
+            <Minor>
 
-        </Minor>
-    
-        <Major> 
-            <ImageBlock>
-                { images }
-            </ImageBlock>
-        </Major>
-    
-            </Container>
-        
-        </Wrapper>
-        </>
-    
-        )
+                <TextBlock>
+                    <Title>
+                        <RichText render={data.primary.section_title} />
+                    </Title>
+
+                    <Subhead>
+                        <RichText render={data.primary.section_summary} />
+                    </Subhead>
+                </TextBlock>
+
+            </Minor>
+
+            <Major> 
+                <ImageBlock>
+                    { images }
+                </ImageBlock>
+            </Major>
+
+                </Container>
+
+            </Wrapper>
+            </>
+
+            )
+    } else {
+        return (
+            <>
+
+        <Wrapper>
+
+            <Container>
+
+            <Major> 
+                <ImageBlock>
+                    { images }
+                </ImageBlock>
+            </Major>
+
+                </Container>
+
+            </Wrapper>
+            </>
+
+            )
+    }
 
 }
