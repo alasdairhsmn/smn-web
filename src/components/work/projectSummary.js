@@ -34,6 +34,7 @@ const Minor = tw.div `
   items-end
   col-span-2
   col-start-4
+  mb-4
 `
 
 const Subtitle = tw.div `
