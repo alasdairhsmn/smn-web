@@ -6,7 +6,6 @@ import HomeAnimation from "./animation"
 
 const Hero = tw.div`
         w-full
-        min-h-screen50
         relative
         bg-cover
         flex
