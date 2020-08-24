@@ -8,7 +8,6 @@ const Block = tw.div `
     flex 
     text-6xl 
     mb-8 md:mb-16 
-    py-8 md:py-16
 `
 
 const Wrapper = tw.div `
@@ -18,7 +17,6 @@ const Wrapper = tw.div `
 
 const ImageBlock = tw.div `
     md:flex
-    mt-12
     flex-wrap
 `
 
@@ -26,7 +24,7 @@ const Item = tw.div `
     flex-1
     mb-4 md:mb-6
     overflow-hidden
-    px-4
+    md:px-4
 `
 
 const ItemImage = tw.img `

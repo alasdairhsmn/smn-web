@@ -34,7 +34,7 @@ const Minor = tw.div `
 `
 
 const TextBlock = tw.div `
-    pr-16
+    md:pr-16
 `
 
 const Title = tw.div `

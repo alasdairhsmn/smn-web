@@ -4,7 +4,8 @@ import { RichText } from 'prismic-reactjs'
 
 
 const TextBlock = tw.div `
- 
+    py-8 md:py-16
+    my-6 
 `
 
 const TextCol = tw.div `
@@ -30,11 +31,11 @@ const Subhead = tw.div `
 
 export default function ProjectImageGridTitle ( {data} ) {
 
+    if(data.section_title != null) { 
+
 
         return (
             <>
-        
-        
                     <TextBlock>
 
                     <TextCol>
@@ -53,6 +54,8 @@ export default function ProjectImageGridTitle ( {data} ) {
             </>
         
             )
+
+        } else return null
         
 
 
