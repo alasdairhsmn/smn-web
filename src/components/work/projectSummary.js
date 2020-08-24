@@ -16,6 +16,8 @@ const Container = tw.div `
   md:grid
   grid-cols-12
   md:min-h-screen70
+  flex
+  flex-wrap
 `
 
 const Major = tw.div `
@@ -27,6 +29,7 @@ const Major = tw.div `
   flex
   items-start
   h-full
+  w-full md:w-auto
 `
 
 const Minor = tw.div `
@@ -35,6 +38,8 @@ const Minor = tw.div `
   col-span-2
   col-start-4
   mb-8
+  order-last md:order-first
+  mt-8 md:mt-0
 `
 
 const Subtitle = tw.div `
