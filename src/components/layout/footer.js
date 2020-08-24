@@ -60,7 +60,7 @@ export default function Footer () {
             <LogoBlock>
 
               <Link to={'/'}>
-                <SMN />
+                <SMN css={tw`fill-current text-white`} />
               </Link>
 
             </LogoBlock>

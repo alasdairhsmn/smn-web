@@ -2,6 +2,8 @@ import tw from "twin.macro"
 import styled from "@emotion/styled"
 import React from "react"
 
+import SMN from "../../assets/SomethingMoreNear.svg"
+
 
 const Heading = tw.div`
     text-6xl md:text-12xl 
@@ -15,7 +17,6 @@ const Heading = tw.div`
     border-black
     pb-10
 `
-
 const Aligner = styled.p `
 ::before {
     content: '';
@@ -35,9 +36,7 @@ export default function HomeAnimation () {
 
         <Heading>
             
-        <Aligner>SOMETHING</Aligner>
-            <p>MORE</p>
-            <p>NEAR</p>
+        <SMN css={tw`fill-current text-black w-7/12`} />
 
         </Heading>
 

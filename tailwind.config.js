@@ -55,6 +55,9 @@ module.exports = {
         'screen90': '90vh',
       },
       maxHeight: {
+        'lg': '30rem',
+        'med': '22rem',
+        'sm': '15rem',
         'screen60': '60vh',
         'screen70': '70vh',
         'screen80': '80vh',

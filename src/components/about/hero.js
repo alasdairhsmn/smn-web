@@ -27,7 +27,7 @@ const Major = tw.div `
 `
 
 const Title = tw.div `
-    text-8xl xl:text-16xl
+    text-8xl md:text-10xl lg:text-12xl xl:text-16xl
     font-title
     font-bold
     tracking-tight
@@ -36,12 +36,13 @@ const Title = tw.div `
     uppercase
 `
 
-const Aligner = styled.span `
+const Aligner = styled.p `
 ::before {
     content: '';
     display: block;
     height: 0;
     width: 0;
+    margin-bottom: -25px;
   }
 `
 
@@ -53,10 +54,11 @@ const Minor = tw.div `
 
 const Body = tw.div `
     font-sans
-    text-3xl md:text-5xl
+    text-3xl md:text-4xl
     leading-none
-    md:pr-12
     font-normal
+    md:pt-64
+    md:pr-16
 `
 
 

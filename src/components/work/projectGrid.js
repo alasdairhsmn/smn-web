@@ -16,13 +16,10 @@ const Container = tw.div`
     md:min-h-screen80
     md:space-x-6
     py-6 md:py-24
-    md:grid
-    grid-cols-12
     mt-6 md:mt-0
 `
 
 const Major = tw.div `
-  col-span-12 md:col-span-7
   md:border-r-2
   border-black
   md:pr-6
@@ -30,13 +27,16 @@ const Major = tw.div `
   flex-wrap
   items-end
   h-full
+  md:w-7/12
+  flex-1
 `
 
 const Minor = tw.div `
-  col-span-12 md:col-span-5
   md:flex
   md:items-center
   mt-4 md:mt-0
+  md:w-5/12
+  flex-1
 `
 
 const TextBlock = tw.div `

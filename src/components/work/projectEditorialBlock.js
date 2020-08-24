@@ -80,7 +80,7 @@ const Item = tw.div `
 `
 
 const ItemImage = tw.img `
-    h-med md:h-lg
+    max-h-med md:max-h-lg
     w-full
     object-cover
 `

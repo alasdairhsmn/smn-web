@@ -64,6 +64,14 @@ const Body = styled.div `
             }
 `
 
+const MoreLink = tw.div `
+    font-sans
+    uppercase
+    tracking-widest
+    text-lg
+    hover:underline
+`
+
 export default function HomeProp ( {data} ) {
 
     return (
@@ -87,7 +95,9 @@ export default function HomeProp ( {data} ) {
                     <RichText render={data.proposition_copy} />
                 </Body>  
 
-                <Link>Learn more</Link>
+                <MoreLink>
+                    <Link to={`/about/`}>Learn More &rarr;</Link>   
+                </MoreLink>
 
             </Minor>    
 

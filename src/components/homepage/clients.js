@@ -72,6 +72,14 @@ const Body = styled.div `
             }
 `
 
+const MoreLink = tw.div `
+    font-sans
+    uppercase
+    tracking-widest
+    text-lg
+    hover:underline
+`
+
 export default function HomeClients ( {data} ) {
 
     const logos = data.client_logos.map(function(logo){
@@ -99,7 +107,9 @@ export default function HomeClients ( {data} ) {
                 <RichText render={data.clients_copy} />
             </Body>  
 
-            <Link>Learn more</Link>
+            <MoreLink>
+                <Link to={`/changework/`}>learn more &rarr;</Link>   
+            </MoreLink>
 
         </Minor>   
 
