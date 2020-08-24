@@ -19,30 +19,59 @@ const Wrapper = tw.div `
 const ImageBlock = tw.div `
     md:flex
     mt-12
+    flex-wrap
 `
 
 const Item = tw.div `
-    w-auto
+    flex-1
     mb-4 md:mb-6
     overflow-hidden
+    px-4
 `
 
 const ItemImage = tw.img `
-    h-full
+    min-h-full
     w-full
     object-cover
+`
+
+const Break = tw.div `
+    w-full
+    flex-none
 `
 
 
 export default function ProjectImageGrid ( {data} ) {
 
-    const images = data.fields.map(function(image){
+    const images = data.fields.map(function(image, i){
 
-        return (
+        if (i % 2 != 0 ) {
+            
+            return (
+            
+            <>
+
             <Item>
                 <ItemImage src={image.image.url}></ItemImage>
             </Item>
+
+            <Break />
+
+            </>
         )
+
+        } else {
+
+            return (
+    
+                <Item>
+                    <ItemImage src={image.image.url}></ItemImage>
+                </Item>
+
+            )
+            
+        }
+        
 
     })
 
