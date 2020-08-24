@@ -51,9 +51,8 @@ const ImageBlock = tw.div `
 `
 
 const ItemImage = tw.img `
-    h-sm md:h-sm
     w-full
-    object-cover
+    h-auto
 `
 
 

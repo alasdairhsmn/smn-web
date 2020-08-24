@@ -36,7 +36,7 @@ export default function BlogIndex ( {data} ) {
        <Layout>
          
          <Fade delay={300}>
-        <BlogIndexMain data={posts[0]} />
+          <BlogIndexMain data={posts[0]} />
         </Fade>
 
         <BlogGrid data={posts}></BlogGrid>

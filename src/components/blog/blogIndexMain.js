@@ -24,7 +24,6 @@ const ImageBlock = tw.div `
     w-full
     bg-white
     overflow-hidden
-    max-h-screen80
 `
 
 const ItemImage = tw.img `

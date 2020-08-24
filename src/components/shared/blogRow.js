@@ -55,9 +55,8 @@ const WorkImage = tw.div`
 `
 
 const Image = tw.img `
-    w-full md:w-full 
-    h-sm md:h-sm
-    object-cover
+    w-full
+    h-auto
 `
 
 const WorkTitle = tw.div`
