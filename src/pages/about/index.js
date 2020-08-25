@@ -64,14 +64,12 @@ export default function AboutIndex ({ data }) {
     <Helmet>
           <title>About &mdash; Something More Near</title>
           <link rel="canonical" href={"https://www.somethingmorenear.com/about"} />
-          <meta name="description" content={"We are specialists in participatory change. We help organisations tackle major strategic and creative challenges through collaborative processes that inspire their teams, invite audiences in and harness the energy of uncommon talent."} />
-          <meta name="title" content={"About – Something More Near"} />
 
-          <meta property="og:type" content="article" />
-          <meta property="og:title" content={"Something More Near"} />
-          <meta property="og:description" content={"We are specialists in participatory change. We help organisations tackle major strategic and creative challenges through collaborative processes that inspire their teams, invite audiences in and harness the energy of uncommon talent."} />
-          <meta property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
-          <meta property="og:url" content={"https://www.somethingmorenear.com"} />
+          <meta name="type" property="og:type" content="article" />
+          <meta name="title" property="og:title" content={"About – Something More Near"} />
+          <meta name="description" property="og:description" content={"We are specialists in participatory change. We help organisations tackle major strategic and creative challenges through collaborative processes that inspire their teams, invite audiences in and harness the energy of uncommon talent."} />
+          <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
+          <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
     </Helmet>
 
 

@@ -122,13 +122,12 @@ export default function ProjectView ({data}) {
 <Helmet>
           <title>{RichText.asText(project.title)} &mdash; Something More Near</title>
           <link rel="canonical" href={`https://www.somethingmorenear.com/changework/${project.uid}`} />
-          <meta name="description" content={RichText.asText(project.subheading)} />
 
-          <meta property="og:type" content="article" />
-          <meta property="og:title" content={`${RichText.asText(project.title)} – Something More Near`} />
-          <meta property="og:description" content={RichText.asText(project.subheading)} />
-          <meta property="og:image" content={project.lead_image.url} />
-          <meta property="og:url" content={`https://www.somethingmorenear.com/changework/${project.uid}`} />
+          <meta name="type" property="og:type" content="article" />
+          <meta name="title" property="og:title" content={`${RichText.asText(project.title)} – Something More Near`} />
+          <meta name="description" property="og:description" content={RichText.asText(project.challenge)} />
+          <meta name="image" property="og:image" content={project.lead_image.url} />
+          <meta name="url" property="og:url" content={`https://www.somethingmorenear.com/changework/${project.uid}`} />
           
       </Helmet>
 

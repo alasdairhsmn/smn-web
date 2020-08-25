@@ -41,14 +41,12 @@ export default function ProjectsIndex ({ data }) {
       <Helmet>
           <title>Changework &mdash; Something More Near</title>
           <link rel="canonical" href={"https://www.somethingmorenear.com/changework"} />
-          <meta name="description" content={"Helping organisations evolve with imagination and impact"} />
-          <meta name="title" content={"Changework – Something More Near"} />
+          <meta name="title" property="og:title" content={"Changework – Something More Near"} />
 
-          <meta property="og:type" content="article" />
-          <meta property="og:title" content={"Something More Near"} />
-          <meta property="og:description" content={"Helping organisations evolve with imagination and impact"} />
-          <meta property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
-          <meta property="og:url" content={"https://www.somethingmorenear.com"} />
+          <meta name="type" property="og:type" content="article" />
+          <meta name="description" property="og:description" content={"Helping organisations evolve with imagination and impact"} />
+          <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
+          <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
       </Helmet>
 
         <ProjectGrid data={projects}></ProjectGrid>
