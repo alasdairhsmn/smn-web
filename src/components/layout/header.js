@@ -131,7 +131,7 @@ const Header = () => {
         
             <div className="header-holder"></div>
         
-            <Wrapper>
+            <Wrapper id="header">
 
                 <Container>
 
