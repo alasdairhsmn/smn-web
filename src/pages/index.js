@@ -80,6 +80,7 @@ export default function Home ( { data } ) {
           <meta name="description" property="og:description" content={"We are specialists in participatory change. We help organisations tackle major strategic and creative challenges through collaborative processes that inspire their teams, invite audiences in and harness the energy of uncommon talent."} />
           <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
           <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
+          <script src="/script.js"></script>
     </Helmet>
     
     <Fade delay={300}>
