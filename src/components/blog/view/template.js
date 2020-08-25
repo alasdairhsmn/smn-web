@@ -83,11 +83,11 @@ export default function BlogView ({data}) {
 
     <Helmet>
           <title>{RichText.asText(post.title)} &mdash; Something More Near</title>
-          <link rel="canonical" href={"http://www.somethingmorenear.com/about"} />
+          <link rel="canonical" href={`https://www.somethingmorenear.com/blog/${post.uid}`} />
           <meta name="description" content={RichText.asText(post.subhead)} />
 
           <meta property="og:type" content="article" />
-          <meta property="og:title" content={"Something More Near"} />
+          <meta property="og:title" content={`${RichText.asText(post.title)} – Something More Near`} />
           <meta property="og:description" content={RichText.asText(post.subhead)} />
       </Helmet>
 

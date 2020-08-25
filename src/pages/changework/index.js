@@ -40,7 +40,7 @@ export default function ProjectsIndex ({ data }) {
          
       <Helmet>
           <title>Changework &mdash; Something More Near</title>
-          <link rel="canonical" href={"http://www.somethingmorenear.com/about"} />
+          <link rel="canonical" href={"https://www.somethingmorenear.com/changework"} />
           <meta name="description" content={"Helping organisations evolve with imagination and impact"} />
 
           <meta property="og:type" content="article" />

@@ -74,7 +74,7 @@ export default function Home ( { data } ) {
       <body className="home" />
 
           <title>Something More Near — Helping organisations evolve with imagination and impact</title>
-          <link rel="canonical" href={"hhtp://www.somethingmorenear.com"} />
+          <link rel="canonical" href={"https://www.somethingmorenear.com"} />
           <meta name="description" content={"description"} />
 
           <meta property="og:type" content="article" />
