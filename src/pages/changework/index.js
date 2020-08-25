@@ -46,6 +46,8 @@ export default function ProjectsIndex ({ data }) {
           <meta property="og:type" content="article" />
           <meta property="og:title" content={"Something More Near"} />
           <meta property="og:description" content={"Helping organisations evolve with imagination and impact"} />
+          <meta property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
+          <meta property="og:url" content={"https://www.somethingmorenear.com"} />
       </Helmet>
 
         <ProjectGrid data={projects}></ProjectGrid>

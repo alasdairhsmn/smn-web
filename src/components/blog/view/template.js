@@ -89,6 +89,8 @@ export default function BlogView ({data}) {
           <meta property="og:type" content="article" />
           <meta property="og:title" content={`${RichText.asText(post.title)} – Something More Near`} />
           <meta property="og:description" content={RichText.asText(post.subhead)} />
+          <meta property="og:image" content={post.lead_image.url} />
+          <meta property="og:url" content={`https://www.somethingmorenear.com/blog/${post.uid}`} />
       </Helmet>
 
         <Fade delay={300}>

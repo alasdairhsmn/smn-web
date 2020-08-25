@@ -127,6 +127,9 @@ export default function ProjectView ({data}) {
           <meta property="og:type" content="article" />
           <meta property="og:title" content={`${RichText.asText(project.title)} – Something More Near`} />
           <meta property="og:description" content={RichText.asText(project.subheading)} />
+          <meta property="og:image" content={project.lead_image.url} />
+          <meta property="og:url" content={`https://www.somethingmorenear.com/changework/${project.uid}`} />
+          
       </Helmet>
 
         <Fade delay={300}>
