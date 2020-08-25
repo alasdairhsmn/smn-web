@@ -1,67 +1,26 @@
-// This is taken directly from the official gatsby-starter-default
-// https://github.com/gatsbyjs/gatsby-starter-default
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
+const SEO = ({ post }) => {
 
-function SEO({ description, lang, meta, title }) {
-
-  const metaDescription = description 
+  const title = "About" || "Something More Near";
+  const description = "About" || "Social Changework";
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s – Something More Near`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
+    <Helmet>
+      <title>{title}</title>
+      <link rel="canonical" href={"somethingmorenear.com"} />
+      <meta name="description" content={description} />
 
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  )
-}
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+    </Helmet>
+  );
+};
 
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
-
-export default SEO
+export default SEO;

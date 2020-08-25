@@ -1,6 +1,9 @@
 import tw from "twin.macro"
 import React from "react"
 import Layout from "../../layout/layout"
+import { Helmet } from 'react-helmet'
+import { RichText } from 'prismic-reactjs'
+
 import Fade from 'react-reveal/Fade'
 
 import BodyText from "../../shared/bodyText"
@@ -77,6 +80,16 @@ export default function BlogView ({data}) {
 
     return (
        <Layout>
+
+    <Helmet>
+          <title>{RichText.asText(post.title)} &mdash; Something More Near</title>
+          <link rel="canonical" href={"http://www.somethingmorenear.com/about"} />
+          <meta name="description" content={RichText.asText(post.subhead)} />
+
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content={"Something More Near"} />
+          <meta property="og:description" content={RichText.asText(post.subhead)} />
+      </Helmet>
 
         <Fade delay={300}>
         <Block>

@@ -1,5 +1,8 @@
 import React from "react"
 import { graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
+import { RichText } from 'prismic-reactjs'
+
 import tw from "twin.macro"
 
 import Fade from 'react-reveal/Fade'
@@ -115,6 +118,16 @@ export default function ProjectView ({data}) {
 
     return (
        <Layout>
+
+      <Helmet>
+          <title>{RichText.asText(project.title)} &mdash; Something More Near</title>
+          <link rel="canonical" href={"http://www.somethingmorenear.com/about"} />
+          <meta name="description" content={RichText.asText(project.subheading)} />
+
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content={"Something More Near"} />
+          <meta property="og:description" content={RichText.asText(project.subheading)} />
+      </Helmet>
 
         <Fade delay={300}>
             <ProjectHero data={project}></ProjectHero>

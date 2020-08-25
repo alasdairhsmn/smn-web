@@ -36,7 +36,7 @@ export default function HomeAnimation () {
 
         <Heading>
             
-        <SMN css={tw`fill-current text-black w-7/12`} />
+        <SMN css={tw`fill-current text-black md:w-7/12`} />
 
         </Heading>
 

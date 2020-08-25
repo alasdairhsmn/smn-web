@@ -7,6 +7,7 @@ module.exports = {
     image: "/images/icon.png", // Path to your image you placed in the 'static' folder
     author: `Something More Near`,
     twitterUsername: "@occlumency",
+    baseUrl: "http://www.somethingmorenear.com"
   },
   plugins: [
     `gatsby-plugin-emotion`,

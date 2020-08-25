@@ -1,5 +1,7 @@
 import React from "react"
 import { graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
+
 import Layout from "../../components/layout/layout"
 
 import ProjectGrid from "../../components/work/projectGrid"
@@ -35,6 +37,16 @@ export default function ProjectsIndex ({ data }) {
 
     return (
        <Layout>
+         
+      <Helmet>
+          <title>Changework &mdash; Something More Near</title>
+          <link rel="canonical" href={"http://www.somethingmorenear.com/about"} />
+          <meta name="description" content={"Helping organisations evolve with imagination and impact"} />
+
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content={"Something More Near"} />
+          <meta property="og:description" content={"Helping organisations evolve with imagination and impact"} />
+      </Helmet>
 
         <ProjectGrid data={projects}></ProjectGrid>
             

@@ -21,13 +21,6 @@ const Block = tw.div`
     gap-0
 `
 
-const Logo = tw.div `
-    w-full
-    col-span-7
-    text-black
-    fill-current
-`
-
 const Subhead = tw.div `
     md:col-span-7
     leading-tight

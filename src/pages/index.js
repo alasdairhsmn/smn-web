@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout/layout"
+
 import Fade from 'react-reveal/Fade'
 
 import HomeHero from '../components/homepage/hero'
@@ -71,6 +72,14 @@ export default function Home ( { data } ) {
     
     <Helmet>
       <body className="home" />
+
+          <title>Something More Near — Helping organisations evolve with imagination and impact</title>
+          <link rel="canonical" href={"hhtp://www.somethingmorenear.com"} />
+          <meta name="description" content={"description"} />
+
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content={"Something More Near"} />
+          <meta property="og:description" content={"Helping organisations evolve with imagination and impact"} />
     </Helmet>
     
     <Fade delay={300}>
