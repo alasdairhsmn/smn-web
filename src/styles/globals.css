@@ -32,10 +32,13 @@ html.wf-active {
     }
 }
 
-@media (min-width: 768px) {
-    body.home .logo {
-        display: none;
-    }
+body.home .logo {
+    opacity: 0;
+    transition: opacity 250ms;
+}
+
+body.home .logo.active {
+    opacity: 1;
 }
 
 .carousel__dot-group {
