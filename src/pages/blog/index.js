@@ -40,11 +40,11 @@ export default function BlogIndex ( {data} ) {
       <Helmet>
           <title>Blog &mdash; Something More Near</title>
           <link rel="canonical" href={"https://www.somethingmorenear.com/blog"} />
-          <meta name="description" content={"Helping organisations evolve with imagination and impact"} />
+          <meta name="description" content={"We are specialists in participatory change. We help organisations tackle major strategic and creative challenges through collaborative processes that inspire their teams, invite audiences in and harness the energy of uncommon talent."} />
 
           <meta property="og:type" content="article" />
           <meta property="og:title" content={"Something More Near"} />
-          <meta property="og:description" content={"Helping organisations evolve with imagination and impact"} />
+          <meta property="og:description" content={"We are specialists in participatory change. We help organisations tackle major strategic and creative challenges through collaborative processes that inspire their teams, invite audiences in and harness the energy of uncommon talent."} />
           <meta property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
           <meta property="og:url" content={"https://www.somethingmorenear.com"} />
       </Helmet>
