@@ -18,7 +18,8 @@ html {
     opacity: 0;
 }
 
-html.wf-active {
+html.wf-active,
+html.wf-inactive {
     opacity: 1;
 }
 
