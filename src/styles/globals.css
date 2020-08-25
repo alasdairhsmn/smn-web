@@ -37,7 +37,7 @@ body.home .logo {
     transition: opacity 250ms;
 }
 
-body.home .logo.active {
+body.home #header .logo {
     opacity: 1;
 }
 
