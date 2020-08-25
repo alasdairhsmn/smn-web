@@ -44,13 +44,13 @@ html.wf-active {
 }
 
 .carousel__dot {
-    background: #000;
+    background: rgb(200, 200, 200);
     border-radius: 50%;
-    height: 12px;
-    margin: 0 2px;
-    width: 12px;
+    height: 8px;
+    margin: 0 4px;
+    width: 8px;
 }
 
 .carousel__dot--selected {
-    background: rgb(5, 250, 189);
+    background: rgb(0, 0, 0);
 }

@@ -6,27 +6,28 @@ import HomeAnimation from "./animation"
 
 const Hero = tw.div`
         w-full
-        relative
-        bg-cover
-        flex
-        items-center
-        mb-16
+        mb-2
 `
 
 const Block = tw.div`
-    container
-    mx-auto   
+    w-full
+    px-4  
     md:grid
     grid-cols-12
     gap-0
 `
 
 const Subhead = tw.div `
-    md:col-span-7
+    md:col-span-12
     leading-tight
-    mt-6
-    text-3xl md:text-5xl
+    text-2xl md:text-3xl
     leading-none
+    tracking-wide
+    mt-6
+    mb-8
+    font-title
+    uppercase
+    text-midgrey
 `
 
 
@@ -40,11 +41,13 @@ export default function HomeHero ( {data} ) {
 
         <Block> 
 
-            <HomeAnimation />
+        <HomeAnimation />
 
-            <Subhead>
-                <RichText render={data.splash_subheading} />
-            </Subhead>
+        <Subhead>
+            <RichText render={data.splash_subheading} />
+        </Subhead>
+
+            
         
         </Block>
 

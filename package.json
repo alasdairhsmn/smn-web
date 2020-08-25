@@ -13,6 +13,7 @@
     "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.19.26",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "gatsby": "^2.24.14",

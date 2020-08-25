@@ -59,7 +59,7 @@ const HeadLink = tw.div `
     hover:text-green 
     font-sans
     text-lg
-    tracking-widest
+    tracking-wider
 `
 
 const Toggle = tw.div`

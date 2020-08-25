@@ -7,7 +7,7 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 
 const SMNLayout = tw.div `
-  pt-10 md:pt-12
+  pt-10 md:pt-8
 `
 
 export default function Layout({ children }) {

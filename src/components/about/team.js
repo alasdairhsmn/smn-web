@@ -120,7 +120,7 @@ export default function AboutTeam ( {data} ) {
         totalSlides={data.length}
         infinite={true}
         isPlaying={true}
-        visibleSlides={2}
+        visibleSlides={2.2}
         isIntrinsicHeight={true}
       >
 
