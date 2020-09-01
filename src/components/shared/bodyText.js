@@ -16,6 +16,9 @@ const Text = styled.div `
     p     {
             margin-bottom: 1em;
             }
+    h1, h2, h3, h4 {
+        font-weight: bold;
+    }        
 `
 
 export default function BodyText ({data}) {
