@@ -45,7 +45,7 @@ query HomeQuery {
         }
       }
     }
-    allBlog_posts(first: 3) {
+    allBlog_posts(first: 3, sortBy: date_published_DESC) {
       edges {
         node {
           _meta {
