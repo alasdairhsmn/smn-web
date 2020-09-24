@@ -57,6 +57,22 @@ query HomeQuery {
         }
       }
     }
+    changework_page(lang: "en-gb", uid: "changework") {
+      projects {
+        project {
+          ... on PRISMIC_Project {
+            title
+            subheading
+            project_sector
+            challenge
+            lead_image
+            _meta {
+              uid
+            }
+          }
+        }
+      }
+    }
   }
 }
 `;
@@ -64,6 +80,8 @@ query HomeQuery {
 export default function Home ( { data } ) {
 
   const homepage = data.prismic.homepage
+
+  const changework = data.prismic.changework_page.projects
 
   const blogposts = data.prismic.allBlog_posts.edges
 
@@ -89,7 +107,7 @@ export default function Home ( { data } ) {
     </Fade>  
     
     <Fade delay={300}>
-      {<ProjectRow data={homepage.projects}></ProjectRow>}
+      {<ProjectRow data={changework} uid={'0'}></ProjectRow>}
     </Fade>
     
     <Fade delay={300}>

@@ -91,24 +91,30 @@ const WorkTags = tw.div`
 
 export default function ProjectRow ({data}) {
 
-    const blocks = data.map(function(block){
+    const blocks = data.map(function(block, i){
+
+        if (i > 2) {
+
+            return null
+
+        } else
 
         return (
 
-            <Link to={`/changework/${block.node._meta.uid}`}>
+            <Link to={`/changework/${block.project._meta.uid}`}>
 
             <WorkBlock>
 
             <WorkImage>
-                <Image src={block.node.lead_image.url}></Image>
+                <Image src={block.project.lead_image.url}></Image>
             </WorkImage>
            
                 <WorkTitle>
-                    <RichText render={block.node.title} />
+                    <RichText render={block.project.title} />
                 </WorkTitle>
 
                 <WorkSub>
-                    <RichText render={block.node.challenge} />
+                    <RichText render={block.project.challenge} />
                 </WorkSub>
 
             </WorkBlock>

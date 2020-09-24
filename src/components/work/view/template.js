@@ -92,6 +92,23 @@ query ProjectQuery($uid: String!) {
             }
           }
 
+          changework_page(lang: "en-gb", uid: "changework") {
+            projects {
+              project {
+                ... on PRISMIC_Project {
+                  title
+                  subheading
+                  project_sector
+                  challenge
+                  lead_image
+                  _meta {
+                    uid
+                  }
+                }
+              }
+            }
+          }
+
     }
   }
 `
@@ -112,7 +129,9 @@ export default function ProjectView ({data}) {
 
     const project = data.prismic.project
 
-    const nextprojects = data.prismic.allProjects.edges
+    const uid = project.uid
+
+    const nextprojects = data.prismic.changework_page.projects
 
     if(!project) return null
 
@@ -152,7 +171,7 @@ export default function ProjectView ({data}) {
            <ProjectSlices data={project.body}></ProjectSlices>
 
            <Fade delay={300}>
-           <ProjectRow data={nextprojects}></ProjectRow>
+            <ProjectRow data={nextprojects} uid={uid}></ProjectRow>
            </Fade>
 
             
