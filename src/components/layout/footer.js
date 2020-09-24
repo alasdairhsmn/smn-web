@@ -73,7 +73,7 @@ export default function Footer () {
 
             <InnerText>
               <p>Contact Us</p>
-              <p>hello@somethingmorenear.com</p>
+              <a href="mailto:hello@somethingmorenear.com">hello@somethingmorenear.com</a>
             </InnerText>
 
             <InnerText>
