@@ -129,8 +129,6 @@ export default function ProjectView ({data}) {
 
     const project = data.prismic.project
 
-    const uid = project.uid
-
     const nextprojects = data.prismic.changework_page.projects
 
     if(!project) return null
@@ -171,7 +169,7 @@ export default function ProjectView ({data}) {
            <ProjectSlices data={project.body}></ProjectSlices>
 
            <Fade delay={300}>
-            <ProjectRow data={nextprojects} uid={uid}></ProjectRow>
+            <ProjectRow data={nextprojects} ></ProjectRow>
            </Fade>
 
             

@@ -107,7 +107,7 @@ export default function Home ( { data } ) {
     </Fade>  
     
     <Fade delay={300}>
-      {<ProjectRow data={changework} uid={'0'}></ProjectRow>}
+      {<ProjectRow data={changework}></ProjectRow>}
     </Fade>
     
     <Fade delay={300}>
