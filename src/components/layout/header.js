@@ -8,7 +8,6 @@ import MobileMenu from "./menu/mobileMenu"
 
 const Wrapper = tw.div`
     block 
-    bg-white
     font-display
     fixed
     left-0
@@ -40,7 +39,7 @@ const HeadLinks = tw.div `
 
 const HeadNav = tw.div `
     flex 
-    space-x-8 
+    space-x-6 
     hidden md:block
 `
 

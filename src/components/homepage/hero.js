@@ -6,27 +6,27 @@ import HomeAnimation from "./animation"
 
 const Hero = tw.div`
         w-full
-        mb-2
+        min-h-screen70
 `
 
 const Block = tw.div`
-    w-full
     px-4  
     md:grid
     grid-cols-12
     gap-0
+    container
+    mx-auto
 `
 
 const Subhead = tw.div `
     md:col-span-12
     leading-tight
-    text-2xl md:text-3xl
+    text-xl md:text-2xl
     leading-none
     tracking-wide
-    mt-6
-    mb-8
-    font-title
-    uppercase
+    mt-16
+    font-sans
+    font-thin
     text-midgrey
 `
 

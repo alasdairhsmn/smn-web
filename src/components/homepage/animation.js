@@ -19,6 +19,7 @@ import Grounded from "../../assets/animation/Grounded.svg"
 
 
 const Heading = tw.div`
+    pt-16
     col-span-12
     pb-2
 `

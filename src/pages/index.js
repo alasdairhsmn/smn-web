@@ -1,17 +1,19 @@
 import React from "react"
+import tw from "twin.macro"
 import Layout from "../components/layout/layout"
 
 import Fade from 'react-reveal/Fade'
 
 import HomeHero from '../components/homepage/hero'
+import HomeLead from '../components/homepage/leadBlock'
+import HomeHighlight from "../components/homepage/highlight"
+
 import HomeProp from "../components/homepage/proposition"
 import HomeClients from "../components/homepage/clients"
 
-import ProjectRow from "../components/shared/projectRow"
+import ProjectRow from "../components/homepage/projectRow"
 import BlogRow from "../components/shared/blogRow"
 import Helmet from 'react-helmet'
-
-
 
 
 export const query = graphql`
@@ -77,6 +79,7 @@ query HomeQuery {
 }
 `;
 
+
 export default function Home ( { data } ) {
 
   const homepage = data.prismic.homepage
@@ -103,8 +106,12 @@ export default function Home ( { data } ) {
     <script src="/script.js"></script>
     
     <Fade delay={300}>
-      <HomeHero data={homepage} />
+      <HomeLead />
     </Fade>  
+
+    <Fade delay={300}>
+      <HomeHighlight />
+    </Fade>
     
     <Fade delay={300}>
       {<ProjectRow data={changework}></ProjectRow>}
