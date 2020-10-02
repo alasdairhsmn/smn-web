@@ -128,7 +128,7 @@ const Header = () => {
     return (
         <div>
         
-            <div className="header-holder"></div>
+            
         
             <Wrapper id="header">
 

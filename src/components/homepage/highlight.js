@@ -3,6 +3,7 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 import HomeAnimation from "./animation"
+import { Link } from "gatsby"
 
 const Hero = tw.div`
         w-full
@@ -47,14 +48,18 @@ export default function HomeHighlight ( {data} ) {
 
     <Hero>
 
-        <img src='./images/badges.png'></img>
+    <video autoplay="autoplay" loop="true" muted css={tw`w-full h-full`}>
+      <source src='./video/cui2.mp4' type="video/mp4" />
+    </video>
 
         <Wrapper>
 
+        <Link to={`/changework/museum-of-london`}>
         <Info>
             <Title>Count Us In</Title>
             <Subhead>Creating a platform to bring together one billion worldwide</Subhead>
         </Info>
+        </Link>
 
         </Wrapper>
         

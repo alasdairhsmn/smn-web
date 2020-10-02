@@ -1,15 +1,27 @@
 import tw from "twin.macro"
 import React from "react"
 
+import SMN from "../../assets/SomethingMoreNear.svg"
+
 
 const Hero = tw.div`
         w-full
-        min-h-screen80
-        bg-black
-        font-title
-        font-bold
-        text-white
-        text-6xl
+`
+
+const Wrapper = tw.div `
+    container
+    mx-auto
+    pt-40
+    pb-24
+    w-5/12
+`
+
+const Subhead = tw.div `
+    font-sans
+    text-3xl
+    text-midgrey
+    mt-12
+    text-center
 `
 
 
@@ -21,7 +33,16 @@ export default function HomeLead (  ) {
 
     <Hero>
 
-        <p>Something More Near</p>
+
+        <Wrapper>
+
+        <SMN css={tw`fill-current text-black`} />
+
+        <Subhead>
+        Helping organisations evolve with imagination and impact
+        </Subhead>
+
+        </Wrapper>
         
     </Hero>
 

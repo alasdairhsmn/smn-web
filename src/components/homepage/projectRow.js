@@ -48,6 +48,7 @@ const WorkSub = tw.div `
     text-xl 
     leading-snug 
     mt-3
+    text-midgrey
 `
 
 const WorkTags = tw.div`
