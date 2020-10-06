@@ -8,10 +8,10 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 
 const SMNLayout = tw.div `
-  pt-12 md:pt-24
+  pt-0
 `
 
-export default function Layout({ children }) {
+export default function IndexLayout({ children }) {
   return (
     <div>
 

@@ -54,14 +54,14 @@ export default function HomeHighlight ( {data} ) {
       
     <>
 
+
     <Hero>
-
-
+    <Link to={`/changework/${data.project._meta.uid}`}>
         <BgImage src={data.project.lead_image.url}></BgImage>
 
         <Wrapper>
 
-        <Link to={`/changework/count-us-in`}>
+        
         <Info>
             <Title>
                 <RichText render={data.project.title} />
@@ -70,11 +70,10 @@ export default function HomeHighlight ( {data} ) {
                 <RichText render={data.project.challenge} />
             </Subhead>
         </Info>
-        </Link>
 
         </Wrapper>
         
-        
+        </Link>
     </Hero>
 
     </>

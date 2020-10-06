@@ -3,9 +3,19 @@ import React from 'react';
 
 import { Link } from "gatsby"
 
+import SMN from "../../../assets/SomethingMoreNear.svg"
+
 
 const Wrapper = tw.div`
     w-full
+`
+
+const Logo = tw.div `
+    flex-1
+    flex
+    items-end
+    justify-end
+    pb-4
 `
 
 const Block = tw.div `
@@ -15,19 +25,25 @@ const Block = tw.div `
     relative
     w-full
     font-title
-    text-5xl
-    pt-4
+    text-4xl
+    text-white
+    flex
+    flex-col
+    pt-12
+    h-screen
 `
 
 const Nav = tw.div `
-   
+    flex-none
 `
 
 const HeadLink = tw.div `
     border-b
-    py-6
+    border-white
     font-semibold
     uppercase
+    pb-4
+    pt-2
 `
 
 const Meta = tw.div `
@@ -35,7 +51,21 @@ const Meta = tw.div `
     font-sans
     font-normal
     border-b
-    py-12
+    border-white
+    py-4
+`
+
+const MetaLink = tw.div `
+    py-2
+    flex
+    items-center
+`
+
+const MetaIcon = tw.div `
+    w-4
+    h-4
+    mr-3
+    float-left
 `
 
 export default function MobileMenu () {
@@ -43,9 +73,8 @@ export default function MobileMenu () {
     return (
 
         <Wrapper>
-
+        
             <Block>
-
 
                 <Nav>
             
@@ -62,11 +91,30 @@ export default function MobileMenu () {
                 </Link>
 
                 <Meta>
-                    <p>Contact</p>
-                    <a href="mailto:hello@somethingmorenear.com">hello@somethingmorenear.com</a>
+
+                <MetaLink>
+                    <MetaIcon><img src={'./icons/email.svg'} /></MetaIcon>
+                    <a className={'inline'} href="mailto:hello@somethingmorenear.com">hello@somethingmorenear.com</a>
+                </MetaLink>
+                    
+                <MetaLink>
+                    <MetaIcon><img src={'./icons/linkedin.svg'} /></MetaIcon>
+                    <a className={'inline'} target="_blank" href="https://www.linkedin.com/company/something-more-near/">LinkedIn</a>
+                </MetaLink>
+
+                <MetaLink>
+                    <MetaIcon><img src={'./icons/instagram.svg'} /></MetaIcon>
+                    <a className={'inline'} target="_blank" href="https://www.instagram.com/somethingmorenear/">Instagram</a>
+                </MetaLink>
+   
                 </Meta>
 
                 </Nav>
+
+
+            <Logo>
+                <SMN css={tw`fill-current text-white w-1/2`} />
+            </Logo>
 
             </Block>
 

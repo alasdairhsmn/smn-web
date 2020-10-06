@@ -19,7 +19,7 @@ const Editorial = tw.div `
 `
 
 const ImageBlock = tw.div `
-    col-span-4
+    col-span-5
     col-start-8
     h-full
     flex
@@ -35,22 +35,21 @@ const Image = tw.img `
 const EditorialBlock = tw.div `
     mx-auto 
     items-center
-    col-span-5
-    col-start-2
+    col-span-6
     mb-4 md:mb-0
 `
 
 const EditorialTitle = tw.div `
     font-title 
-    font-semibold 
+    font-bold 
     uppercase
-    text-5xl md:text-10xl
+    text-4xl md:text-8xl
     leading-extra-tight
-    mb-8 md:mb-16
+    mb-4 md:mb-8
 `
 const EditorialBody = tw.div `
     text-lg 
-    text-2xl md:text-3xl 
+    text-xl md:text-3xl 
     font-light
     leading-tight
 `

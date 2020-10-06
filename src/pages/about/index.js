@@ -59,7 +59,7 @@ export default function AboutIndex ({ data }) {
     if (!about) return null
 
     return (
-       <Layout>
+    <Layout>
 
     <Helmet>
           <title>About &mdash; Something More Near</title>

@@ -5,6 +5,8 @@ import { Link } from "gatsby"
 
 import MobileMenu from "./menu/mobileMenu"
 
+import SMN from "../../assets/SomethingMoreNear.svg"
+
 
 const Wrapper = styled.div`
 ${tw`
@@ -41,10 +43,17 @@ const Container = tw.div `
 
 const HeadLinks = tw.div `
     flex 
+    flex-1
     items-center
-    space-x-12
+    justify-end
     w-full
     relative
+`
+
+const Spacer = tw.div `
+    flex
+    flex-1
+    h-2
 `
 
 const HeadNav = styled.div `
@@ -59,13 +68,14 @@ const HeadNav = styled.div `
 `
 
 const SMNLink = tw.div ` 
-    inline-block 
-    flex-grow
+    flex-none
     hover:text-blue 
     tracking-widest
     font-extrabold
     uppercase
     font-title
+    w-16 md:w-24
+    h-auto
 `
 
 const HeadLink = tw.div `
@@ -89,7 +99,7 @@ const Toggle = tw.div`
 `
 
 const Hamburger = styled.div`
-  background-color: #111;
+  background-color: ${props => (props.open ? "white" : "black")};
   width: 21px;
   height: 3px;
   transition: all .1s linear;
@@ -101,7 +111,7 @@ const Hamburger = styled.div`
   ::after {
     width: 21px;
     height: 3px;
-    background-color: #111;
+    background-color: ${props => (props.open ? "white" : "black")};
     content: "";
     position: absolute;
     transition: all 0.1s linear;
@@ -122,14 +132,15 @@ const Hamburger = styled.div`
 
 const Navbox = styled.div`
   ${tw`
-    flex
     h-screen
     w-full
     z-20
     fixed
-    bg-white
+    top-0
+    left-0
+    bg-black
     transition-all
-    duration-300
+    duration-200
     ease-in
   `}
     left: ${props => (props.open ? "-100%" : "0")};
@@ -171,9 +182,11 @@ const Header = ({ path }) => {
 
                     <SMNLink>
                         <Link to={'/'}>
-                            <img alt="SOMETHING MORE NEAR" className="logo" height="48" src={'/logo.svg'} width="86" />
+                            <SMN className={'logo'} />
                         </Link>    
                     </SMNLink>
+
+                  <Spacer />
 
                     <Toggle
                         navbarOpen={navbarOpen}

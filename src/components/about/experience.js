@@ -5,62 +5,49 @@ import { RichText } from 'prismic-reactjs'
 
 
 const Wrapper = tw.div `
-    bg-blue
-    py-12 md:py-24
-    flex
-    items-center
-    md:min-h-screen90
+    bg-black
+    py-16 md:py-32
     w-full
     md:my-16
 `
 
 const Container = tw.div `
-    container
-    mx-auto
-    text-white
-    font-title
-    text-3xl md:text-6xl
+    w-full
+    flex-none
+    grid
+    grid-cols-5
+    font-sans
+    text-xl md:text-3xl
     font-normal
     leading-tight
+    text-white
 `
 
+const Experience = tw.div `
+    col-span-1
+`
 
-const Line = tw.span `
-    inline
+const Line = tw.div `
     odd:font-semibold
     mr-4 md:mr-4
 `
 
-const Bullet = tw.span `
-    font-bold
-    ml-2
+const Title = tw.div `
+    col-span-5
 `
 
 export default function AboutExperience ( {data} ) {
 
     const lines = data.map(function(line, i){
-
-        if (i + 1  < data.length) {
-
-        return (
-            <>
-            <Line>
-                {RichText.asText(line.text)}  <Bullet>&bull;</Bullet>
-            </Line>
-            </>
-        ) 
-        } else {
-
             return (
-            <>
-            <Line>
-                {RichText.asText(line.text)}
-            </Line>
-            </>
+
+            <Experience>
+                <Line>
+                    {RichText.asText(line.text)}
+                </Line>
+            </Experience>
+
             )
-
-        }
-
     })
 
     return (
@@ -68,7 +55,7 @@ export default function AboutExperience ( {data} ) {
         <Wrapper>
 
             <Container>
-                <Line><strong>Recently we…</strong></Line>
+                <Title>Recently we…</Title>
                 {lines}
             </Container>
 

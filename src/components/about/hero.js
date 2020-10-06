@@ -52,10 +52,6 @@ export default function AboutHero ( {title, sub} ) {
 
         <Wrapper>
 
-        <Image>
-            <img src={'./images/change.jpg'}></img>
-        </Image>
-
         <Container>
 
             <Major>

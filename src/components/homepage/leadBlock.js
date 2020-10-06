@@ -8,8 +8,8 @@ import SMN from "../../assets/SomethingMoreNear.svg"
 
 const Hero = tw.div`
     w-full
-    bg-blue
-    min-h-screen
+    bg-black
+    min-h-screen90
     flex
     items-center
     justify-center
@@ -28,8 +28,9 @@ const Logo = tw.div `
 const Subhead = tw.div `
     font-sans
     text-2xl
-    mt-20
+    mt-12
     text-center
+    text-white
 `
 
 

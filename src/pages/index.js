@@ -1,6 +1,6 @@
 import React from "react"
 import tw from "twin.macro"
-import Layout from "../components/layout/layout"
+import IndexLayout from "../components/layout/indexLayout"
 
 import Fade from 'react-reveal/Fade'
 
@@ -90,7 +90,7 @@ export default function Home ({ data } ) {
 
 
   return (
-  <Layout>
+  <IndexLayout>
     
     <Helmet>
       <body className="home" />
@@ -126,7 +126,7 @@ export default function Home ({ data } ) {
       <BlogRow data={blogposts}></BlogRow>
     </Fade>
     
-    </Layout>
+    </IndexLayout>
     )
 
 }

@@ -5,8 +5,8 @@ import { RichText } from 'prismic-reactjs'
 import HomeAnimation from "./animation"
 
 const Hero = tw.div`
-        w-full
-        min-h-screen70
+    w-full
+    min-h-screen70
 `
 
 const Block = tw.div`
