@@ -86,10 +86,9 @@ const WorkTags = tw.div`
 `
 
 
-export default function ProjectRow ({data}, {uid}) {
+export default function ProjectRow ({data, id}) {
 
-    const blocks = data.map(function(block, i){
-
+    const blocks = data.filter(block => block.project._meta.uid != id).map(function(block, i){
 
         return (
 
