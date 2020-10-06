@@ -34,8 +34,12 @@ html.wf-inactive {
 }
 
 body.home .logo {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 250ms;
+}
+
+body.home #header {
+    color: white;
 }
 
 body.home #header.active .logo {

@@ -1,31 +1,39 @@
 import tw from "twin.macro"
 import React from "react"
+import { RichText } from 'prismic-reactjs'
 
+import Fade from 'react-reveal/Fade'
 import SMN from "../../assets/SomethingMoreNear.svg"
 
 
 const Hero = tw.div`
-        w-full
+    w-full
+    bg-blue
+    min-h-screen
+    flex
+    items-center
+    justify-center
 `
 
 const Wrapper = tw.div `
-    container
+    w-full
+    flex
+    items-center
+`
+
+const Logo = tw.div `
     mx-auto
-    pt-40
-    pb-24
-    w-5/12
 `
 
 const Subhead = tw.div `
     font-sans
-    text-3xl
-    text-midgrey
-    mt-12
+    text-2xl
+    mt-20
     text-center
 `
 
 
-export default function HomeLead (  ) {
+export default function HomeLead ( ) {
 
     return (
       
@@ -33,16 +41,21 @@ export default function HomeLead (  ) {
 
     <Hero>
 
-
+    <Fade delay={300}>
         <Wrapper>
 
-        <SMN css={tw`fill-current text-black`} />
+        <div>
+        <Logo>
+        <SMN css={tw`fill-current text-white`} />
+        </Logo>
 
         <Subhead>
-        Helping organisations evolve with imagination and impact
+            We help organisations evolve with imagination and impact
         </Subhead>
-
+        </div>
+        
         </Wrapper>
+    </Fade>    
         
     </Hero>
 

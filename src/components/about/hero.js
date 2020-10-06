@@ -3,62 +3,46 @@ import styled from "@emotion/styled"
 import React from "react"
 
 const Wrapper = tw.div `
-    flex
-    items-center
     md:min-h-screen70
     mt-12 md:mt-0
     mb-12 md:mb-24
 `
 
+const Image = tw.div `
+    max-h-screen70
+    w-full
+    bg-yellow
+    overflow-hidden
+`
+
 const Container = tw.div `
     container
     mx-auto
-    w-full
-    h-auto
-    md:grid
-    grid-cols-12
-    gap-4
+    w-7/12
 `
 
 const Major = tw.div `
-    md:border-r-2
-    border-black
-    col-span-7
+    mt-4
 `
 
 const Title = tw.div `
-    text-8xl md:text-10xl lg:text-12xl xl:text-16xl
+    text-10xl
     font-title
     font-bold
     tracking-tight
-    leading-extra-tight
-    mb-10 xl:mb-20
     uppercase
 `
 
-const Aligner = styled.p `
-::before {
-    content: '';
-    display: block;
-    height: 0;
-    width: 0;
-    margin-bottom: -25px;
-  }
-`
-
 const Minor = tw.div `
-    col-span-5
-    flex
-    items-end
+
 `
 
 const Body = tw.div `
     font-sans
+    mt-8
     text-3xl md:text-4xl
-    leading-none
+    leading-snug
     font-normal
-    md:pt-64
-    md:pr-16
 `
 
 
@@ -68,12 +52,14 @@ export default function AboutHero ( {title, sub} ) {
 
         <Wrapper>
 
+        <Image>
+            <img src={'./images/change.jpg'}></img>
+        </Image>
+
         <Container>
 
             <Major>
-                <Title>
-                    <Aligner>{title}</Aligner>
-                </Title>
+                <Title>{title}</Title>
             </Major>
 
             <Minor>

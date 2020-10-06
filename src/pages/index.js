@@ -80,13 +80,14 @@ query HomeQuery {
 `;
 
 
-export default function Home ( { data } ) {
+export default function Home ({ data } ) {
 
   const homepage = data.prismic.homepage
 
   const changework = data.prismic.changework_page.projects
 
   const blogposts = data.prismic.allBlog_posts.edges
+
 
   return (
   <Layout>
@@ -103,14 +104,10 @@ export default function Home ( { data } ) {
           <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
     </Helmet>
     
-    <script src="/script.js"></script>
-    
-    <Fade delay={300}>
-      <HomeLead />
-    </Fade>  
+    <HomeLead /> 
 
     <Fade delay={300}>
-      <HomeHighlight />
+      <HomeHighlight data={changework[0]} />
     </Fade>
     
     <Fade delay={300}>

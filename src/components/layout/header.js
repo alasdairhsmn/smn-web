@@ -1,12 +1,13 @@
 import tw from "twin.macro"
 import styled from "@emotion/styled"
-import React, { useState } from "react"
+import React, { useState, useEffect } from 'react';
 import { Link } from "gatsby"
 
 import MobileMenu from "./menu/mobileMenu"
 
 
-const Wrapper = tw.div`
+const Wrapper = styled.div`
+${tw`
     block 
     font-display
     fixed
@@ -14,6 +15,15 @@ const Wrapper = tw.div`
     top-0
     z-50
     w-full
+    transition 
+    duration-300 
+    ease-in-out
+    `}
+    &[data-active='true'] {
+        background-color: white;
+        box-shadow: 0px 0px 7px 0px rgba(214,214,214,0.5);
+        color: black;
+      }
 `
 
 const Container = tw.div `
@@ -25,7 +35,7 @@ const Container = tw.div `
     tracking-wide 
     text-base md:text-lg 
     justify-end
-    py-0 md:py-6
+    py-0 md:py-4
     z-50
 `
 
@@ -37,10 +47,15 @@ const HeadLinks = tw.div `
     relative
 `
 
-const HeadNav = tw.div `
+const HeadNav = styled.div `
+    ${tw `
     flex 
     space-x-6 
     hidden md:block
+    `}
+    &[data-active='true'] {
+        color: black;
+      }
 `
 
 const SMNLink = tw.div ` 
@@ -121,16 +136,34 @@ const Navbox = styled.div`
 `
 
 
-const Header = () => {
+const Header = ({ path }) => {
 
     const [navbarOpen, setNavbarOpen] = useState(false)
 
+    const [scrolled, setScrolled] = useState(false)
+
+      // change state on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(!scrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      // clean up the event handler when the component unmounts
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
+
     return (
         <div>
-        
-            
-        
-            <Wrapper id="header">
+
+            <Wrapper id="header" data-active={scrolled}>
 
                 <Container>
 
@@ -151,7 +184,7 @@ const Header = () => {
 
                     </Toggle>
 
-                    <HeadNav>
+                    <HeadNav data-active={scrolled}>
 
                     <Link to={'/about'}>
                         <HeadLink>About</HeadLink>

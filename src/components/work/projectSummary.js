@@ -21,8 +21,7 @@ const Container = tw.div `
 `
 
 const Major = tw.div `
-  col-span-7
-  col-start-6
+  col-span-8
   md:border-l-2
   md:border-black
   md:pl-6
@@ -36,15 +35,15 @@ const Minor = tw.div `
   flex
   items-end
   col-span-2
-  col-start-4
-  mb-8
+  col-start-3
+  mb-0
   order-last md:order-first
   mt-8 md:mt-0
 `
 
 const Subtitle = tw.div `
   font-title
-  font-semibold
+  font-bold
   text-2xl md:text-4xl 
   uppercase
   mb-4
@@ -59,7 +58,7 @@ const MainText = tw.div `
 
 const Meta = tw.div `
   grid
-  grid-cols-1
+  grid-cols-2 md:grid-cols-1
   col-gap-4
   pr-8
 `
@@ -95,7 +94,7 @@ export default function ProjectSummary ( {data} ) {
     <MetaText>
       <MetaHead>Client</MetaHead>
       <MetaLink href={data.client_url.url} target='blank'>
-        {RichText.asText(data.client_name)} &rarr;
+        {RichText.asText(data.client_name)}
       </MetaLink>
       </MetaText>
 

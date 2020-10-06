@@ -75,6 +75,8 @@ export default function BlogView ({data}) {
 
   const nextposts = data.prismic.allBlog_posts.edges  
   const post = data.prismic.blog_post
+  const postid = post._meta.uid
+
   if(!post) return null
     
 
@@ -120,7 +122,7 @@ export default function BlogView ({data}) {
         </Fade>   
            
         <Fade delay={300}>
-        <BlogRow data={nextposts}></BlogRow>  
+        <BlogRow data={nextposts} uid={postid}></BlogRow>  
         </Fade>    
             
        </Layout>

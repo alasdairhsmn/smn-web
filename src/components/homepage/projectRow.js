@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 
 const Wrapper = tw.div `
     py-6 md:py-12
-    mt-12
+    md:mt-12
 `
 
 const WorkGrid = tw.div `
@@ -18,6 +18,7 @@ const WorkGrid = tw.div `
 `
 
 const WorkBlock = tw.div`
+    md:mt-12
     mb-6 md:mb-12 
     md:mb-0
     hover:opacity-75 
@@ -29,7 +30,6 @@ const WorkImage = tw.div`
 `
 
 const Image = tw.img `
-    w-full md:w-full 
     h-sm md:h-sm
     object-cover
 `
@@ -67,7 +67,7 @@ const WorkTags = tw.div`
 
 export default function ProjectRow ({data}) {
 
-    const blocks = data.map(function(block, i){
+    const blocks = data.slice(1, 4).map(function(block, i){
 
         if (i > 2) {
 

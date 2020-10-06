@@ -13,14 +13,20 @@ const Text = styled.div `
     md:w-2/3
     mx-auto
     font-bold
-    font-display
+    font-sans
     text-xl md:text-3xl
     leading-tight
     mb-2 md:mb-8
     `}
-    p     {
-            margin-bottom: 1em;
-            }
+    p  {
+        margin-bottom: 1em;
+    }
+    a, a:link, a:active, a:visited {
+        text-decoration: underline;
+    }  
+    a:hover {
+        color: #05FABD;
+    }  
 `
 
 
