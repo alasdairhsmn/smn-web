@@ -13,9 +13,9 @@ const Wrapper = tw.div`
 const Logo = tw.div `
     flex-1
     flex
-    items-end
-    justify-end
-    pb-4
+    pb-6
+    border-b
+    border-white
 `
 
 const Block = tw.div `
@@ -25,11 +25,12 @@ const Block = tw.div `
     relative
     w-full
     font-title
-    text-4xl
+    text-5xl
     text-white
     flex
     flex-col
     pt-12
+    pb-8
     h-screen
 `
 
@@ -40,7 +41,7 @@ const Nav = tw.div `
 const HeadLink = tw.div `
     border-b
     border-white
-    font-semibold
+    font-bold
     uppercase
     pb-4
     pt-2
@@ -76,6 +77,13 @@ export default function MobileMenu () {
         
             <Block>
 
+
+            <Logo>
+                <Link to={'/'}>
+                    <SMN css={tw`fill-current text-white w-3/4`} />
+                </Link>
+            </Logo>
+
                 <Nav>
             
                 <Link to={'/about'}>
@@ -110,11 +118,6 @@ export default function MobileMenu () {
                 </Meta>
 
                 </Nav>
-
-
-            <Logo>
-                <SMN css={tw`fill-current text-white w-1/2`} />
-            </Logo>
 
             </Block>
 

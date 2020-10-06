@@ -2,38 +2,50 @@ import tw from "twin.macro"
 import React from "react"
 import { RichText } from 'prismic-reactjs'
 
-
-
 const Wrapper = tw.div `
     bg-black
-    py-16 md:py-32
+    py-12 md:py-24
     w-full
     md:my-16
 `
 
 const Container = tw.div `
     w-full
+    p-12
     flex-none
     grid
-    grid-cols-5
+    grid-cols-4
+    gap-4
     font-sans
-    text-xl md:text-3xl
-    font-normal
+    text-lg md:text-xl
+    font-light
     leading-tight
     text-white
 `
 
 const Experience = tw.div `
     col-span-1
+    border-r-2
+    border-white
+`
+
+const ImageBlock = tw.div `
+    h-32
+    w-full
+    bg-white
 `
 
 const Line = tw.div `
-    odd:font-semibold
-    mr-4 md:mr-4
+    mb-4
 `
 
 const Title = tw.div `
-    col-span-5
+    col-span-6
+    font-title
+    font-bold
+    uppercase
+    mb-6
+    text-5xl
 `
 
 export default function AboutExperience ( {data} ) {
@@ -42,9 +54,13 @@ export default function AboutExperience ( {data} ) {
             return (
 
             <Experience>
+
                 <Line>
                     {RichText.asText(line.text)}
                 </Line>
+
+                <ImageBlock />
+
             </Experience>
 
             )
