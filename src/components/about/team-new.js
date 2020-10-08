@@ -11,9 +11,11 @@ const Wrapper = tw.div `
 `
 
 const Container = tw.div `
-    w-full
+    container
+    mx-auto
     grid
-    grid-cols-2 md:grid-cols-6
+    grid-cols-2 md:grid-cols-8
+    gap-12
     divide-x 
     divide-white
     font-sans
@@ -24,8 +26,8 @@ const Container = tw.div `
 `
 
 const Experience = tw.div `
-    col-span-1
-    px-6
+    col-span-2
+    px-8
     py-1
     flex
     flex-col-reverse md:flex-col
@@ -49,12 +51,13 @@ const Line = tw.div `
 `
 
 const Title = tw.div `
-    col-span-6
+    container
+    mx-auto
     font-title
     font-normal
     uppercase
-    px-6
-    mb-8
+    px-20
+    mb-12
     text-4xl
     text-white
 `

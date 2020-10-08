@@ -42,6 +42,7 @@ query ProjectQuery($uid: String!) {
               caption
             }
             context_video
+            video_embed_code
             _meta {
               uid
             }
@@ -63,6 +64,13 @@ query ProjectQuery($uid: String!) {
                 }
                 fields {
                   image
+                }
+              }
+              ... on PRISMIC_ProjectBodyVideo {
+                type
+                label
+                primary {
+                  iframe_src
                 }
               }
               ... on PRISMIC_ProjectBodyEditorial_block {
