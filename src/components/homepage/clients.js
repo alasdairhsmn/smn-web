@@ -9,7 +9,6 @@ const Wrapper = tw.div `
     items-center
     mt-0 md:mt-24
     mb-12 md:mb-32
-    bg-lightyellow md:bg-white
     py-12 md:py-0
 `
 

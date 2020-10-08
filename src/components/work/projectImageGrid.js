@@ -1,4 +1,5 @@
 import tw from "twin.macro"
+import styled from "@emotion/styled"
 import React from "react"
 import { RichText } from 'prismic-reactjs'
 
@@ -16,21 +17,20 @@ const Wrapper = tw.div `
 `
 
 const ImageBlock = tw.div `
-    md:flex
-    flex-wrap
+    md:grid
+    md:grid-cols-12
+    gap-8
 `
 
-const Item = tw.div `
-    flex-1
-    mb-4 md:mb-6
-    overflow-hidden
-    md:px-4
+const Item = tw.div ` 
+    mb-4 md:mb-0
+    h-full
 `
 
 const ItemImage = tw.img `
-    min-h-full
-    w-full
     object-cover
+    h-full
+    w-full
 `
 
 const Break = tw.div `
@@ -43,33 +43,21 @@ export default function ProjectImageGrid ( {data} ) {
 
     const images = data.fields.map(function(image, i){
 
-        if (i % 2 != 0 ) {
-            
-            return (
-            
-            <>
-
-            <Item>
-                <ItemImage src={image.image.url}></ItemImage>
-            </Item>
-
-            <Break />
-
-            </>
-        )
-
-        } else {
-
             return (
     
+                <div
+                css={{
+                  gridColumn: `span ${image.column_width}`,
+                }}
+              >
+                
                 <Item>
-                    <ItemImage src={image.image.url}></ItemImage>
+                    <ItemImage src={image.image.url} />
                 </Item>
 
+              </div>
+
             )
-            
-        }
-        
 
     })
 

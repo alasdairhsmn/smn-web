@@ -5,6 +5,8 @@ import { RichText } from 'prismic-reactjs'
 import { Fade } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
+import Reveal from 'react-reveal/Fade'
+
 import SMHead from "../../assets/header/SM-head.svg"
 import SM1 from "../../assets/header/SMplus2-02.svg"
 import SM2 from "../../assets/header/SMplus2-04.svg"
@@ -67,6 +69,7 @@ export default function HomeLead ( ) {
 
         <div>
         <Logo>
+
         <SMHead css={tw`fill-current text-white w-full`} />
 
             <Fade {...fadeProperties}>

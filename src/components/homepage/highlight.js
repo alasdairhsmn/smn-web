@@ -7,33 +7,29 @@ import { Link } from "gatsby"
 
 const Hero = tw.div`
     relative
+    container
+    mx-auto
+    mt-12
 `
 
 const ImageWrap = tw.div `
     overflow-hidden
-    bg-yellow
+    h-full
 `
 
 const BgImage =  tw.img ` 
-    object-cover
-    h-sm md:h-full 
+    h-sm md:h-auto
     w-full
-    max-h-screen90 
 `
 
 const Wrapper = tw.div `
-    mt-2
     w-full
     mx-auto
-    md:absolute
-    left-0
-    bottom-0
+
 `
 
 const Info = tw.div `
-    container
-    mx-auto
-    md:py-12
+    w-full
     text-black
     font-sans
 `
@@ -49,7 +45,32 @@ const Title = tw.div `
 const Subhead = tw.div `
     text-xl md:text-2xl
     leading-tight
-    text-midgrey md:text-black
+    text-midgrey
+`
+
+const RowTitle = tw.div `
+    mb-4 md:mb-8
+    flex
+    pb-4
+    items-center
+`
+
+const RowTitleMain = tw.div `
+    font-title
+    font-semibold
+    text-2xl md:text-4xl
+    flex-grow
+`
+
+const RowTitleLink = tw.div `
+    pt-2 md:pt-4
+    text-lg 
+    md:text-xl
+    hover:underline
+`
+
+const HoverWrap = tw.div `
+    hover:opacity-75 
 `
 
 
@@ -61,8 +82,18 @@ export default function HomeHighlight ( {data} ) {
 
 
     <Hero>
-    <Link to={`/changework/${data.project._meta.uid}`}>
 
+    <RowTitle>
+
+        <RowTitleMain>Changework Projects</RowTitleMain>
+            <RowTitleLink>
+                <Link to={`/changework`}>See all &rarr;</Link>     
+        </RowTitleLink>
+
+    </RowTitle>
+
+    <Link to={`/changework/${data.project._meta.uid}`}>
+        <HoverWrap>
         
         <ImageWrap>
             <BgImage src={data.project.lead_image.url}></BgImage>
@@ -79,6 +110,7 @@ export default function HomeHighlight ( {data} ) {
                 </Subhead>
             </Info>
         </Wrapper>
+        </HoverWrap>
 
         </Link>
     </Hero>

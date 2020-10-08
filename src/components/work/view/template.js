@@ -64,6 +64,7 @@ query ProjectQuery($uid: String!) {
                 }
                 fields {
                   image
+                  column_width
                 }
               }
               ... on PRISMIC_ProjectBodyVideo {
