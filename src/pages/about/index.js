@@ -19,6 +19,7 @@ query AboutQuery {
         title
         main_headline
         main_subhead
+        lead_image
         footer_title
         footer_copy
         _meta {
@@ -79,7 +80,9 @@ export default function AboutIndex ({ data }) {
             
             <AboutHero 
             title={RichText.asText(about.main_headline)} 
-            sub={RichText.render(about.main_subhead)} />
+            sub={RichText.render(about.main_subhead)}
+            image = {about.lead_image}
+            />
         
         </Fade>
 

@@ -17,7 +17,8 @@ const ImageWrap = tw.div `
 const BgImage =  tw.img ` 
     object-cover
     h-sm md:h-full 
-    w-auto
+    w-full
+    max-h-screen90 
 `
 
 const Wrapper = tw.div `
@@ -33,7 +34,7 @@ const Info = tw.div `
     container
     mx-auto
     md:py-12
-    text-black md:text-white
+    text-black
     font-sans
 `
 
@@ -48,7 +49,7 @@ const Title = tw.div `
 const Subhead = tw.div `
     text-xl md:text-2xl
     leading-tight
-    text-midgrey
+    text-midgrey md:text-black
 `
 
 

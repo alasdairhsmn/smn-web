@@ -26,7 +26,7 @@ const MainTitle = tw.div `
 `
 
 const HeroImage = tw.div`
-    max-h-screen80 
+    max-h-screen90 
     overflow-hidden
 `
 const Image = tw.img `

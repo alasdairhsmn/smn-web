@@ -196,16 +196,6 @@ const Header = ({ path }) => {
                   <Spacer />
 
                     <Toggle
-                        id='home-toggle'
-                        navbarOpen={navbarOpen}
-                        onClick={() => setNavbarOpen(!navbarOpen)}
-                        data-active={scrolled}
-                    >
-                    {navbarOpen ? <Hamburger open id='hidden-burger' /> : <Hamburger id='home-burger' />}
-                    </Toggle>
-
-                    <Toggle
-                        id='master-toggle'
                         navbarOpen={navbarOpen}
                         onClick={() => setNavbarOpen(!navbarOpen)}
                     >

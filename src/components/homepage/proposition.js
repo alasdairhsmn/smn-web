@@ -30,7 +30,6 @@ const Major = tw.div `
 const ImageBlock = tw.div `
     w-auto
     md:pr-4
-    md:h-lg
     overflow-hidden
 `
 

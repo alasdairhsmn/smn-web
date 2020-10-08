@@ -24,12 +24,12 @@ const Grid = tw.div`
 `
 
 const LogoBlock = tw.div `
-  col-span-5
+  col-span-12 md:col-span-5
   md:border-r-2
   border-white
   md:pr-4
   h-full
-  w-1/4 md:w-full
+  w-1/2 md:w-full
   mb-12 md:mb-0
 `
 

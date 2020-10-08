@@ -6,15 +6,15 @@ import { RichText } from 'prismic-reactjs'
 const Wrapper = tw.div `
     bg-black
     pt-6 md:pt-12
-    pb-8 md:pb-20
+    pb-4 md:pb-20
     w-full
 `
 
 const Container = tw.div `
     w-full
     grid
-    grid-cols-1 md:grid-cols-6
-    md:divide-x 
+    grid-cols-2 md:grid-cols-6
+    divide-x 
     divide-white
     font-sans
     text-base md:text-xl
@@ -27,26 +27,26 @@ const Experience = tw.div `
     col-span-1
     px-6
     md:py-1
-    pb-12 md:pb-0
+    pb-8 md:mb-0
     flex
     items-center
-    flex-row-reverse md:flex-col
+    flex-col-reverse md:flex-col
     text-white
 `
 
 const ImageBlock = tw.div `
     h-auto
-    w-1/2 md:w-full
+    w-full
     bg-white
+    mb-2 md:mb-0
 `
 
 const Line = tw.div `
-    mx-2 md:mx-0
     mb-2 md:mb-16
     font-title
     font-normal md:font-bold
     uppercase
-    text-xl md:text-2xl
+    text-base md:text-2xl
     leading-none
     flex-1
 `

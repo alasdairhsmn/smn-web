@@ -14,8 +14,8 @@ const Container = tw.div `
     w-full
     grid
     grid-cols-2 md:grid-cols-6
-    md:divide-x 
-    md:divide-white
+    divide-x 
+    divide-white
     font-sans
     text-lg md:text-xl
     font-light
@@ -43,7 +43,7 @@ const Line = tw.div `
     font-title
     font-bold
     uppercase
-    text-xl md:text-2xl
+    text-lg md:text-2xl
     leading-none
     flex-1
 `

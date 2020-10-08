@@ -6,7 +6,6 @@ const Wrapper = tw.div `
     mb-6 md:mb-12
 `
 
-
 const Editorial = tw.div `
     flex 
     flex-wrap md:flex
@@ -14,11 +13,12 @@ const Editorial = tw.div `
     mx-auto
     items-center 
     md:min-h-screen60
-    py-12 md:py-24
+    py-4 md:py-8
     border-b-0
     border-black
     md:grid 
     grid-cols-12
+    gap-12
 `
 
 const EditorialBlock = tw.div `
@@ -46,11 +46,10 @@ const EditorialBody = tw.div `
 `
 
 const ImageBlock = tw.div `
-    col-span-5
+    col-span-6
     h-full
     flex
     items-center
-    md:pl-8
 `
 
 const Image = tw.img `
@@ -60,7 +59,7 @@ const Image = tw.img `
 `
 
 
-export default function AboutHero ( {title, sub} ) {
+export default function AboutHero ( {title, sub, image} ) {
 
     return (
         
@@ -70,7 +69,7 @@ export default function AboutHero ( {title, sub} ) {
             <Editorial>
 
             <ImageBlock>
-                <Image></Image>
+                <Image src={image.url}></Image>
             </ImageBlock>
 
                 <EditorialBlock>

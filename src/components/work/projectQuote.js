@@ -15,9 +15,9 @@ const Wrapper = tw.div `
 `
 
 const QuoteBody = tw.div `
-    text-3xl md:text-5xl 
+    text-3xl md:text-6xl 
     text-white 
-    leading-tight 
+    leading-none
     font-sans 
     font-bold
     border-b-8

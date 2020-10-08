@@ -5,9 +5,14 @@ import { RichText } from 'prismic-reactjs'
 import { Fade } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
-import SM1 from "../../assets/header/SMplus1-01.svg"
-import SM2 from "../../assets/header/SMplus1-02.svg"
-import SM3 from "../../assets/header/SMplus1-03.svg"
+import SMHead from "../../assets/header/SM-head.svg"
+import SM1 from "../../assets/header/SMplus2-02.svg"
+import SM2 from "../../assets/header/SMplus2-04.svg"
+import SM3 from "../../assets/header/SMplus2-06.svg"
+import SM4 from "../../assets/header/SMplus2-08.svg"
+import SM5 from "../../assets/header/SMplus2-10.svg"
+import SM6 from "../../assets/header/SMplus2-12.svg"
+
 
 
 const Hero = tw.div`
@@ -46,9 +51,9 @@ const Subhead = tw.div `
 export default function HomeLead ( ) {
 
     const fadeProperties = {
-        duration: 1200,
+        duration: 1000,
         arrows: false,
-        transitionDuration: 400,
+        transitionDuration: 150,
         pauseOnHover: false
       }
 
@@ -62,11 +67,17 @@ export default function HomeLead ( ) {
 
         <div>
         <Logo>
+        <SMHead css={tw`fill-current text-white w-full`} />
+
             <Fade {...fadeProperties}>
-                <SM3 css={tw`fill-current text-white w-full`} />
                 <SM1 css={tw`fill-current text-white w-full`} />
+                <SM5 css={tw`fill-current text-green w-full`} />
+                <SM3 css={tw`fill-current text-red w-full`} />
                 <SM2 css={tw`fill-current text-white w-full`} />
+                <SM6 css={tw`fill-current text-blue w-full`} />
+                <SM4 css={tw`fill-current text-green w-full`} />
             </Fade>
+
         </Logo>
 
         <Subhead>
