@@ -27,6 +27,13 @@ const Caption = tw.div `
     
 `
 
+const VideoBlock = tw.div `
+    w-full
+    h-auto
+    bg-yellow
+    mt-8
+`
+
 export default function ProjectLeadImage ({data}) {
 
     if(data.context_images) {
@@ -63,6 +70,9 @@ export default function ProjectLeadImage ({data}) {
 
     </ImageBlock>
     
+    <VideoBlock dangerouslySetInnerHTML={{ __html: data.context_video.html }} />
+  
+
     </>
 
     )

@@ -41,6 +41,7 @@ query ProjectQuery($uid: String!) {
               image
               caption
             }
+            context_video
             _meta {
               uid
             }
