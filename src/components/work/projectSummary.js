@@ -7,7 +7,6 @@ const Wrapper = tw.div `
   flex 
   items-center 
   py-16 md:py-32
-  md:min-h-screen70
 `
 
 const Container = tw.div `
@@ -15,7 +14,6 @@ const Container = tw.div `
   md:mx-auto 
   md:grid
   grid-cols-12
-  md:min-h-screen70
   flex
   flex-wrap
 `
@@ -25,6 +23,7 @@ const Major = tw.div `
   md:border-l-2
   md:border-black
   md:pl-6
+  md:pb-24
   flex
   items-start
   h-full

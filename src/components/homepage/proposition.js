@@ -16,7 +16,6 @@ const Container = tw.div `
     md:grid
     grid-cols-12
     gap-4
-    min-h-screen80
 `
 
 const Major = tw.div `
@@ -37,6 +36,7 @@ const ImageBlock = tw.div `
 
 const Minor = tw.div `
     md:col-span-5
+    md:pb-20
 `
 
 const Title = tw.div `

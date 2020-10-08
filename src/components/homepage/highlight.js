@@ -6,45 +6,49 @@ import HomeAnimation from "./animation"
 import { Link } from "gatsby"
 
 const Hero = tw.div`
-    w-full
     relative
-    md:min-h-screen60
-    my-8 md:my-0
 `
 
-const BgImage =  tw.img `
+const ImageWrap = tw.div `
+    overflow-hidden
+    bg-yellow
+`
+
+const BgImage =  tw.img ` 
     object-cover
-    w-full
-    h-med md:h-auto
+    h-sm md:h-full 
+    w-auto
 `
 
 const Wrapper = tw.div `
-    md:absolute
-    bottom-0 
-    left-0
+    mt-2
     w-full
+    mx-auto
+    md:absolute
+    left-0
+    bottom-0
 `
 
 const Info = tw.div `
-    text-black md:text-white
-    font-sans
     container
     mx-auto
-    py-4 md:py-12
+    md:py-12
+    text-black md:text-white
+    font-sans
 `
 
 const Title = tw.div `
     font-title
-    text-3xl md:text-5xl
+    text-2xl md:text-4xl
     uppercase
     font-bold
     mb-2
 `
 
 const Subhead = tw.div `
-    text-2xl md:text-3xl
-    md:w-1/2
+    text-xl md:text-2xl
     leading-tight
+    text-midgrey
 `
 
 
@@ -57,22 +61,24 @@ export default function HomeHighlight ( {data} ) {
 
     <Hero>
     <Link to={`/changework/${data.project._meta.uid}`}>
-        <BgImage src={data.project.lead_image.url}></BgImage>
+
+        
+        <ImageWrap>
+            <BgImage src={data.project.lead_image.url}></BgImage>
+        </ImageWrap>
+
 
         <Wrapper>
-
-        
-        <Info>
-            <Title>
-                <RichText render={data.project.title} />
-            </Title>
-            <Subhead>
-                <RichText render={data.project.challenge} />
-            </Subhead>
-        </Info>
-
+            <Info>
+                <Title>
+                    <RichText render={data.project.title} />
+                </Title>
+                <Subhead>
+                    <RichText render={data.project.challenge} />
+                </Subhead>
+            </Info>
         </Wrapper>
-        
+
         </Link>
     </Hero>
 

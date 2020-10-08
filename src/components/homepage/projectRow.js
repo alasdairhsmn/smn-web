@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 
 const Wrapper = tw.div `
     py-6 md:py-12
-    md:mt-12
 `
 
 const WorkGrid = tw.div `

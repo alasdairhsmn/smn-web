@@ -34,16 +34,36 @@ html.wf-inactive {
 }
 
 body.home .logo {
-    opacity: 0;
     transition: opacity 250ms;
+}
+
+body #home-toggle {
+    display: none;
+}
+
+body.home #home-toggle {
+    display: block;
 }
 
 body.home #header {
     color: white;
 }
 
-body.home #header.active .logo {
-    opacity: 1;
+body.home #hidden-burger {
+    display: none;
+}
+
+body.home #home-burger {
+    display: block;
+    background-color: white;
+}
+
+body.home #home-burger::after {
+    background-color: white;
+}
+
+body.home #home-burger::before {
+    background-color: white;
 }
 
 .carousel__dot-group {

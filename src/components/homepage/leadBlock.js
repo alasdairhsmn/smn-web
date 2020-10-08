@@ -13,7 +13,7 @@ import SM3 from "../../assets/header/SMplus1-03.svg"
 const Hero = tw.div`
     w-full
     bg-black
-    min-h-screen90
+    min-h-screen80 md:min-h-screen
     flex
     items-center
     justify-center
@@ -21,19 +21,25 @@ const Hero = tw.div`
 
 const Wrapper = tw.div `
     w-full
+    pt-12
+    container
+    mx-auto
 `
 
 const Logo = tw.div `
+    w-3/4 md:w-1/2
     mx-auto
-    w-5/6 md:w-1/2
 `
 
 const Subhead = tw.div `
     font-sans
-    text-2xl
-    mt-16
+    text-xl md:text-2xl
+    mt-12 md:mt-16
     text-center
-    text-white
+    text-midgrey
+    leading-tight
+    w-3/4 md:w-full
+    mx-auto
 `
 
 
@@ -42,7 +48,8 @@ export default function HomeLead ( ) {
     const fadeProperties = {
         duration: 1200,
         arrows: false,
-        transitionDuration: 400
+        transitionDuration: 400,
+        pauseOnHover: false
       }
 
     return (

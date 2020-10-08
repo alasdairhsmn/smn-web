@@ -67,15 +67,16 @@ const HeadNav = styled.div `
       }
 `
 
-const SMNLink = tw.div ` 
+const SMNLink = styled.div ` 
+  ${tw `
     flex-none
-    hover:text-blue 
-    tracking-widest
-    font-extrabold
-    uppercase
-    font-title
     w-16 md:w-24
     h-auto
+    text-black
+  `}
+  &[data-active='true'] {
+    color: blue;
+  }
 `
 
 const HeadLink = tw.div `
@@ -86,7 +87,8 @@ const HeadLink = tw.div `
     tracking-wider
 `
 
-const Toggle = tw.div`
+const Toggle = styled.div`
+  ${tw `
     cursor-pointer
     flex
     items-center
@@ -96,6 +98,10 @@ const Toggle = tw.div`
     py-8
     px-4
     md:hidden
+    `}
+    &[data-active='true'] {
+      display: none;
+    }
 `
 
 const Hamburger = styled.div`
@@ -106,6 +112,7 @@ const Hamburger = styled.div`
   align-self: center;
   position: relative;
   transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+  
 
   ::before,
   ::after {
@@ -180,21 +187,29 @@ const Header = ({ path }) => {
 
                     <HeadLinks>
 
-                    <SMNLink>
+                    <SMNLink className={'logo'}>
                         <Link to={'/'}>
-                            <SMN className={'logo'} />
+                            <SMN css={tw`fill-current`}/>
                         </Link>    
                     </SMNLink>
 
                   <Spacer />
 
                     <Toggle
+                        id='home-toggle'
+                        navbarOpen={navbarOpen}
+                        onClick={() => setNavbarOpen(!navbarOpen)}
+                        data-active={scrolled}
+                    >
+                    {navbarOpen ? <Hamburger open id='hidden-burger' /> : <Hamburger id='home-burger' />}
+                    </Toggle>
+
+                    <Toggle
+                        id='master-toggle'
                         navbarOpen={navbarOpen}
                         onClick={() => setNavbarOpen(!navbarOpen)}
                     >
-
                     {navbarOpen ? <Hamburger open /> : <Hamburger />}
-
                     </Toggle>
 
                     <HeadNav data-active={scrolled}>

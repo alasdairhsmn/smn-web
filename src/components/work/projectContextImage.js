@@ -16,7 +16,7 @@ const ImageItem = tw.div `
 
 const Image = tw.img `
     w-full
-    h-full
+    h-auto
     object-cover
 `
 

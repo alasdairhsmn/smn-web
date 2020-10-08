@@ -10,10 +10,10 @@ const Editorial = tw.div `
     container
     mx-auto
     items-center 
-    md:min-h-screen80
-    py-12 md:py-24
+    py-20 md:py-40
     border-b-8
     border-black
+    last:border-b-0
     md:grid 
     grid-cols-12
 `
@@ -90,7 +90,9 @@ export default function AboutEditorial ( {data} ) {
     return (
 
         <Fade delay={300}>
-            { blocks }    
+            <div>
+                { blocks }   
+            </div> 
         </Fade>          
 
     )

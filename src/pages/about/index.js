@@ -7,6 +7,7 @@ import { RichText } from 'prismic-reactjs'
 
 import AboutHero from "../../components/about/hero"
 import AboutTeam from "../../components/about/team"
+import AboutTeamNew from "../../components/about/team-new"
 import AboutExperience from "../../components/about/experience"
 import AboutEditorial from "../../components/about/editorial"
 import PageTitle from "../../components/shared/pageTitle"
@@ -36,6 +37,7 @@ query AboutQuery {
         }
         recently_list {
           text
+          image
         }
         team_list {
           team_member {
@@ -92,7 +94,7 @@ export default function AboutIndex ({ data }) {
 
 
         <Fade delay={300}>
-            <AboutTeam data={about.team_list} />
+            <AboutTeamNew data={about.team_list} />
         </Fade>
 
         <Fade delay={300}>
