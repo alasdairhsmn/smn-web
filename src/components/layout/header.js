@@ -1,20 +1,31 @@
 import tw from "twin.macro"
 import styled from "@emotion/styled"
-import React, { useState } from "react"
+import React, { useState, useEffect } from 'react';
 import { Link } from "gatsby"
 
 import MobileMenu from "./menu/mobileMenu"
 
+import SMN from "../../assets/SomethingMoreNear_Black.svg"
 
-const Wrapper = tw.div`
+
+const Wrapper = styled.div`
+${tw`
     block 
-    bg-white
     font-display
     fixed
     left-0
     top-0
     z-50
     w-full
+    transition 
+    duration-300 
+    ease-in-out
+    `}
+    &[data-active='true'] {
+        background-color: white;
+        box-shadow: 0px 0px 7px 0px rgba(214,214,214,0.5);
+        color: black;
+      }
 `
 
 const Container = tw.div `
@@ -26,32 +37,46 @@ const Container = tw.div `
     tracking-wide 
     text-base md:text-lg 
     justify-end
-    py-0 md:py-6
+    py-0 md:py-4
     z-50
 `
 
 const HeadLinks = tw.div `
     flex 
+    flex-1
     items-center
-    space-x-12
+    justify-end
     w-full
     relative
 `
 
-const HeadNav = tw.div `
-    flex 
-    space-x-8 
-    hidden md:block
+const Spacer = tw.div `
+    flex
+    flex-1
+    h-2
 `
 
-const SMNLink = tw.div ` 
-    inline-block 
-    flex-grow
-    hover:text-blue 
-    tracking-widest
-    font-extrabold
-    uppercase
-    font-title
+const HeadNav = styled.div `
+    ${tw `
+    flex 
+    space-x-6 
+    hidden md:block
+    `}
+    &[data-active='true'] {
+        color: black;
+      }
+`
+
+const SMNLink = styled.div ` 
+  ${tw `
+    flex-none
+    w-16 md:w-24
+    h-auto
+    text-black
+  `}
+  &[data-active='true'] {
+    color: blue;
+  }
 `
 
 const HeadLink = tw.div `
@@ -62,7 +87,8 @@ const HeadLink = tw.div `
     tracking-wider
 `
 
-const Toggle = tw.div`
+const Toggle = styled.div`
+  ${tw `
     cursor-pointer
     flex
     items-center
@@ -72,22 +98,27 @@ const Toggle = tw.div`
     py-8
     px-4
     md:hidden
+    `}
+    &[data-active='true'] {
+      display: none;
+    }
 `
 
 const Hamburger = styled.div`
-  background-color: #111;
+  background-color: ${props => (props.open ? "white" : "black")};
   width: 21px;
   height: 3px;
   transition: all .1s linear;
   align-self: center;
   position: relative;
   transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+  
 
   ::before,
   ::after {
     width: 21px;
     height: 3px;
-    background-color: #111;
+    background-color: ${props => (props.open ? "white" : "black")};
     content: "";
     position: absolute;
     transition: all 0.1s linear;
@@ -108,51 +139,70 @@ const Hamburger = styled.div`
 
 const Navbox = styled.div`
   ${tw`
-    flex
     h-screen
     w-full
     z-20
     fixed
-    bg-white
+    top-0
+    left-0
+    bg-black
     transition-all
-    duration-300
+    duration-200
     ease-in
   `}
     left: ${props => (props.open ? "-100%" : "0")};
 `
 
 
-const Header = () => {
+const Header = ({ path }) => {
 
     const [navbarOpen, setNavbarOpen] = useState(false)
 
+    const [scrolled, setScrolled] = useState(false)
+
+      // change state on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(!scrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      // clean up the event handler when the component unmounts
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
+
     return (
         <div>
-        
-            <div className="header-holder"></div>
-        
-            <Wrapper id="header">
+
+            <Wrapper id="header" data-active={scrolled}>
 
                 <Container>
 
                     <HeadLinks>
 
-                    <SMNLink>
+                    <SMNLink className={'logo'}>
                         <Link to={'/'}>
-                            <img alt="SOMETHING MORE NEAR" className="logo" height="48" src={'/logo.svg'} width="86" />
+                            <SMN css={tw`fill-current text-black`}/>
                         </Link>    
                     </SMNLink>
+
+                  <Spacer />
 
                     <Toggle
                         navbarOpen={navbarOpen}
                         onClick={() => setNavbarOpen(!navbarOpen)}
                     >
-
                     {navbarOpen ? <Hamburger open /> : <Hamburger />}
-
                     </Toggle>
 
-                    <HeadNav>
+                    <HeadNav data-active={scrolled}>
 
                     <Link to={'/about'}>
                         <HeadLink>About</HeadLink>

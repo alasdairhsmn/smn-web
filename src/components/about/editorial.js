@@ -10,16 +10,16 @@ const Editorial = tw.div `
     container
     mx-auto
     items-center 
-    md:min-h-screen80
-    py-12 md:py-24
+    py-20 md:py-40
     border-b-8
     border-black
+    last:border-b-0
     md:grid 
     grid-cols-12
 `
 
 const ImageBlock = tw.div `
-    col-span-4
+    col-span-5
     col-start-8
     h-full
     flex
@@ -35,22 +35,21 @@ const Image = tw.img `
 const EditorialBlock = tw.div `
     mx-auto 
     items-center
-    col-span-5
-    col-start-2
+    col-span-6
     mb-4 md:mb-0
 `
 
 const EditorialTitle = tw.div `
     font-title 
-    font-semibold 
+    font-bold 
     uppercase
-    text-5xl md:text-10xl
+    text-4xl md:text-8xl
     leading-extra-tight
-    mb-8 md:mb-16
+    mb-4 md:mb-8
 `
 const EditorialBody = tw.div `
     text-lg 
-    text-2xl md:text-3xl 
+    text-xl md:text-3xl 
     font-light
     leading-tight
 `
@@ -91,7 +90,9 @@ export default function AboutEditorial ( {data} ) {
     return (
 
         <Fade delay={300}>
-            { blocks }    
+            <div>
+                { blocks }   
+            </div> 
         </Fade>          
 
     )

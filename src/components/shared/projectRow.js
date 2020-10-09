@@ -4,8 +4,7 @@ import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
 const Wrapper = tw.div `
-    bg-green
-    py-6 md:py-12
+    py-8 md:py-16
 `
 
 const WorkGrid = tw.div `
@@ -20,8 +19,6 @@ const WorkGrid = tw.div `
 const RowTitle = tw.div `
     container 
     mx-auto
-    border-b-4
-    border-black
     mb-4 md:mb-8
     flex
     pb-4
@@ -49,22 +46,21 @@ const WorkBlock = tw.div`
 `
 
 const WorkImage = tw.div`
-    mb-3 md:mb-6 
+    mb-2 md:mb-4 
     overflow-hidden
 `
 
 const Image = tw.img `
-    w-full md:w-full 
     h-sm md:h-sm
     object-cover
 `
 
 const WorkTitle = tw.div`
-    text-2xl md:text-4xl 
+    text-2xl md:text-3xl 
     font-title
-    font-semibold 
+    font-bold 
     uppercase
-    mb-3 md:mb-6 
+    mb-2 md:mb-4 
     leading-none
 `
 
@@ -73,6 +69,7 @@ const WorkSub = tw.div `
     text-xl 
     leading-snug 
     mt-3
+    text-midgrey
 `
 
 const WorkTags = tw.div`
@@ -89,15 +86,9 @@ const WorkTags = tw.div`
 `
 
 
-export default function ProjectRow ({data}) {
+export default function ProjectRow ({data, id}) {
 
-    const blocks = data.map(function(block, i){
-
-        if (i > 2) {
-
-            return null
-
-        } else
+    const blocks = data.filter(block => block.project._meta.uid != id).map(function(block, i){
 
         return (
 
@@ -137,7 +128,9 @@ export default function ProjectRow ({data}) {
         </RowTitle>
 
         <WorkGrid>
-                { blocks }
+                { blocks[0] }
+                { blocks[1] }
+                { blocks[2] }
         </WorkGrid>
     
     </Wrapper>

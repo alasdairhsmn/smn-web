@@ -41,6 +41,11 @@ query ProjectQuery($uid: String!) {
               image
               caption
             }
+            context_video
+            video_embed_code
+            _meta {
+              uid
+            }
             body {
               ... on PRISMIC_ProjectBodyQuote {
                 type
@@ -59,6 +64,14 @@ query ProjectQuery($uid: String!) {
                 }
                 fields {
                   image
+                  column_width
+                }
+              }
+              ... on PRISMIC_ProjectBodyVideo {
+                type
+                label
+                primary {
+                  iframe_src
                 }
               }
               ... on PRISMIC_ProjectBodyEditorial_block {
@@ -138,7 +151,7 @@ export default function ProjectView ({data}) {
 
 <Helmet>
           <title>{RichText.asText(project.title)} &mdash; Something More Near</title>
-          <link rel="canonical" href={`https://www.somethingmorenear.com/changework/${project.uid}`} />
+          <link rel="canonical" href={`https://www.somethingmorenear.com/changework/${project._meta.uid}`} />
 
           <meta name="type" property="og:type" content="article" />
           <meta name="title" property="og:title" content={`${RichText.asText(project.title)} – Something More Near`} />
@@ -168,9 +181,9 @@ export default function ProjectView ({data}) {
 
            <ProjectSlices data={project.body}></ProjectSlices>
 
-           <Fade delay={300}>
-            <ProjectRow data={nextprojects} ></ProjectRow>
-           </Fade>
+          <Fade delay={300}>
+            <ProjectRow data={nextprojects} id={project._meta.uid} ></ProjectRow>
+          </Fade>
 
             
        </Layout>

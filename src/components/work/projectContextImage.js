@@ -1,4 +1,5 @@
 import tw from "twin.macro"
+import styled from "@emotion/styled"
 import React from "react"
 
 import { RichText } from 'prismic-reactjs'
@@ -16,7 +17,7 @@ const ImageItem = tw.div `
 
 const Image = tw.img `
     w-full
-    h-full
+    h-auto
     object-cover
 `
 
@@ -27,9 +28,40 @@ const Caption = tw.div `
     
 `
 
+const VideoBlock = styled.div `
+    ${tw ` 
+    h-auto
+    relative
+    mx-auto
+    pt-48
+    block
+    `}
+    padding-top: 56.25%;
+`
+
+const VideoFrame = tw.iframe `
+    h-full
+    w-full
+    absolute
+    top-0
+    left-0
+`
+
 export default function ProjectLeadImage ({data}) {
 
-    if(data.context_images) {
+    if(data.video_embed_code) {
+
+        return (
+            
+            <VideoBlock>
+                <VideoFrame src={RichText.asText(data.video_embed_code)} allow="autoplay; fullscreen" allowfullscreen></VideoFrame>
+            </VideoBlock>
+
+        )
+
+    }
+
+    else if(data.context_images) {
 
         const blocks = data.context_images.map(function(image){
 
@@ -62,7 +94,7 @@ export default function ProjectLeadImage ({data}) {
         {blocks}
 
     </ImageBlock>
-    
+
     </>
 
     )

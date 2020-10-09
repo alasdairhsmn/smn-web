@@ -7,6 +7,7 @@ import { RichText } from 'prismic-reactjs'
 
 import AboutHero from "../../components/about/hero"
 import AboutTeam from "../../components/about/team"
+import AboutTeamNew from "../../components/about/team-new"
 import AboutExperience from "../../components/about/experience"
 import AboutEditorial from "../../components/about/editorial"
 import PageTitle from "../../components/shared/pageTitle"
@@ -18,6 +19,7 @@ query AboutQuery {
         title
         main_headline
         main_subhead
+        lead_image
         footer_title
         footer_copy
         _meta {
@@ -36,6 +38,8 @@ query AboutQuery {
         }
         recently_list {
           text
+          image
+          section_title
         }
         team_list {
           team_member {
@@ -59,7 +63,7 @@ export default function AboutIndex ({ data }) {
     if (!about) return null
 
     return (
-       <Layout>
+    <Layout>
 
     <Helmet>
           <title>About &mdash; Something More Near</title>
@@ -74,9 +78,13 @@ export default function AboutIndex ({ data }) {
 
 
         <Fade delay={300}>
+            
             <AboutHero 
             title={RichText.asText(about.main_headline)} 
-            sub={RichText.render(about.main_subhead)} />
+            sub={RichText.render(about.main_subhead)}
+            image = {about.lead_image}
+            />
+        
         </Fade>
 
         <Fade delay={300}>
@@ -90,7 +98,7 @@ export default function AboutIndex ({ data }) {
 
 
         <Fade delay={300}>
-            <AboutTeam data={about.team_list} />
+            <AboutTeamNew data={about.team_list} />
         </Fade>
 
         <Fade delay={300}>

@@ -7,6 +7,7 @@ import ProjectEditorialBlock from "./projectEditorialBlock"
 import ProjectCarousel from "./projectCarousel"
 import ProjectStats from "./projectStats"
 import BodyText from "../shared/bodyText"
+import ProjectVideo from "./projectVideo"
 
 
 export default function ProjectSlices ( {data} ) {
@@ -48,9 +49,18 @@ export default function ProjectSlices ( {data} ) {
                 <BodyText data={slice} />
            </Fade>
         )
+    }
+    
+    else if(slice.type === 'video') {
 
-
-    }  else {
+        return (
+            <Fade delay={300}>
+                <ProjectVideo data={slice} />
+           </Fade>
+        )
+    }
+    
+    else {
         return (
             <p>no template yet</p>
         )

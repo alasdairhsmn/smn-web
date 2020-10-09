@@ -3,73 +3,105 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 
 
-
 const Wrapper = tw.div `
-    bg-blue
-    py-12 md:py-24
-    flex
-    items-center
-    md:min-h-screen90
+    bg-black
+    pt-6 md:pt-12
+    pb-8 md:pb-20
     w-full
-    md:my-16
 `
 
 const Container = tw.div `
-    container
     mx-auto
-    text-white
-    font-title
-    text-3xl md:text-6xl
-    font-normal
+    w-full
+    pr-4 md:pr-12
+    pl-4 md:pl-6
+    grid
+    grid-cols-2 md:grid-cols-12
+    gap-6
+    md:divide-x 
+    divide-white
+    font-sans
+    text-lg md:text-xl
+    font-light
     leading-tight
+    text-white
 `
 
-
-const Line = tw.span `
-    inline
-    odd:font-semibold
-    mr-4 md:mr-4
+const Experience = tw.div `
+    col-span-1 md:col-span-2
+    py-1
+    flex
+    flex-col-reverse md:flex-col
+    text-white
+    md:pl-6
 `
 
-const Bullet = tw.span `
+const ImageBlock = tw.div `
+    h-auto
+    w-full
+    bg-white
+    mb-2 md:mb-0
+`
+
+const Line = tw.div `
+    mb-2 md:mb-8
+    font-title
     font-bold
-    ml-2
+    uppercase
+    text-base md:text-2xl
+    leading-none
+    flex-1
+`
+
+const Subhead = tw.div `
+    mt-2
+    font-normal
+`
+
+const Title = tw.div `
+    mx-auto
+    font-title
+    font-normal
+    uppercase
+    px-4 md:px-12
+    mb-4 md:mb-12
+    text-2xl md:text-4xl
+    text-white
 `
 
 export default function AboutExperience ( {data} ) {
 
     const lines = data.map(function(line, i){
-
-        if (i + 1  < data.length) {
-
-        return (
-            <>
-            <Line>
-                {RichText.asText(line.text)}  <Bullet>&bull;</Bullet>
-            </Line>
-            </>
-        ) 
-        } else {
-
             return (
-            <>
-            <Line>
-                {RichText.asText(line.text)}
-            </Line>
-            </>
+
+            <Experience>
+
+                <Line>
+                    {RichText.asText(line.text)}
+                    <Subhead>{RichText.asText(line.section_title)}</Subhead>
+                </Line>
+
+                <ImageBlock>
+                    <img src={line.image.url} />
+                </ImageBlock>
+
+            </Experience>
+
             )
-
-        }
-
     })
 
     return (
     
         <Wrapper>
 
+            <Title>
+                Recently we have...
+            </Title>
+
             <Container>
-                <Line><strong>Recently we…</strong></Line>
+
                 {lines}
+
             </Container>
 
         </Wrapper>

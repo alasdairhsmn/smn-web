@@ -5,10 +5,9 @@ import { Link } from "gatsby"
 import { RichText } from 'prismic-reactjs'
 
 const Wrapper = tw.div `
-    min-h-screen90
     flex
     md:items-center
-    my-16 md:my-32
+    my-12 md:my-24
 `
 
 const Container = tw.div `
@@ -17,7 +16,6 @@ const Container = tw.div `
     md:grid
     grid-cols-12
     gap-4
-    min-h-screen80
 `
 
 const Major = tw.div `
@@ -32,16 +30,16 @@ const Major = tw.div `
 const ImageBlock = tw.div `
     w-auto
     md:pr-4
-    md:h-lg
     overflow-hidden
 `
 
 const Minor = tw.div `
     md:col-span-5
+    md:pb-20
 `
 
 const Title = tw.div `
-    text-5xl md:text-8xl
+    text-4xl md:text-8xl
     font-title
     font-bold
     tracking-tight
@@ -54,9 +52,9 @@ const Title = tw.div `
 const Body = styled.div `
     ${tw`   
     font-sans
-    text-2xl
+    text-xl
     leading-tight
-    pr-12
+    md:pr-12
     font-normal
     `}
     p     {

@@ -3,29 +3,21 @@ import styled from "@emotion/styled"
 import React from "react"
 
 const Wrapper = tw.div `
-    flex
-    items-center
-    md:min-h-screen70
-    mt-12 md:mt-0
-    mb-12 md:mb-24
+    mb-6 md:mb-12
 `
 
-const Container = tw.div `
+const Editorial = tw.div `
     container
     mx-auto
-    w-full
-    h-auto
-    md:grid
-    grid-cols-12
-    gap-4
-`
-
-const Major = tw.div `
-    md:border-r-2
+    w-3/4 md:w-1/2
+    text-center
+    md:min-h-screen60
+    py-8 md:py-8
+    border-b-0
     border-black
-    col-span-7
 `
 
+<<<<<<< HEAD
 const Title = tw.div `
     text-6xl md:text-8xl lg:text-10xl xl:text-12xl
     font-title
@@ -33,54 +25,56 @@ const Title = tw.div `
     tracking-tight
     leading-extra-tight
     mb-10 xl:mb-20
+=======
+const EditorialTitle = tw.div `
+    font-title 
+    font-bold 
+>>>>>>> design_update
     uppercase
+    text-5xl md:text-8xl
+    leading-extra-tight
+    mb-10 md:mb-12
 `
 
-const Aligner = styled.p `
-::before {
-    content: '';
-    display: block;
-    height: 0;
-    width: 0;
-    margin-bottom: -25px;
-  }
+const EditorialBody = tw.div `
+    text-lg 
+    text-xl md:text-2xl 
+    font-light
+    leading-tight
 `
 
-const Minor = tw.div `
-    col-span-5
+const ImageBlock = tw.div `
+    col-span-6
+    h-full
     flex
-    items-end
+    items-center
 `
 
-const Body = tw.div `
-    font-sans
-    text-3xl md:text-4xl
-    leading-none
-    font-normal
-    md:pt-64
-    md:pr-16
+const Image = tw.img `
+    w-full
+    h-auto
+    bg-red
 `
 
 
-export default function AboutHero ( {title, sub} ) {
+export default function AboutHero ( {title, sub, image} ) {
 
     return (
+        
 
         <Wrapper>
 
-        <Container>
+            <Editorial>
 
-            <Major>
-                <Title>
-                    <Aligner>{title}</Aligner>
-                </Title>
-            </Major>
+                <EditorialTitle>
+                    {title}
+                </EditorialTitle>
 
-            <Minor>
-                <Body>{sub}</Body>
-            </Minor>
+                <EditorialBody>
+                    {sub}
+                </EditorialBody>
 
-        </Container>
+            </Editorial>
 
         </Wrapper>
 

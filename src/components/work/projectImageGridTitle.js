@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs'
 
 
 const TextBlock = tw.div `
-    py-8 md:py-16
+    py-8 md:py-8
     my-6 
 `
 

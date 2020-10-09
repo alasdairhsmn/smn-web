@@ -10,6 +10,8 @@ const Wrapper = tw.div `
     min-h-screen80
     flex
     items-center
+    bg-black
+    text-white
 `
 
 const Container = tw.div `

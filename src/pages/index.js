@@ -1,17 +1,16 @@
 import React from "react"
-import Layout from "../components/layout/layout"
+import IndexLayout from "../components/layout/indexLayout"
 
 import Fade from 'react-reveal/Fade'
 
-import HomeHero from '../components/homepage/hero'
-import HomeProp from "../components/homepage/proposition"
+import HomeLead from '../components/homepage/leadBlock'
+import HomeHighlight from "../components/homepage/highlight"
+
 import HomeClients from "../components/homepage/clients"
 
-import ProjectRow from "../components/shared/projectRow"
+import ProjectRow from "../components/homepage/projectRow"
 import BlogRow from "../components/shared/blogRow"
 import Helmet from 'react-helmet'
-
-
 
 
 export const query = graphql`
@@ -77,7 +76,8 @@ query HomeQuery {
 }
 `;
 
-export default function Home ( { data } ) {
+
+export default function Home ({ data } ) {
 
   const homepage = data.prismic.homepage
 
@@ -85,8 +85,9 @@ export default function Home ( { data } ) {
 
   const blogposts = data.prismic.allBlog_posts.edges
 
+
   return (
-  <Layout>
+  <IndexLayout>
     
     <Helmet>
       <body className="home" />
@@ -100,11 +101,11 @@ export default function Home ( { data } ) {
           <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
     </Helmet>
     
-    <script src="/script.js"></script>
-    
+    <HomeLead data={homepage} /> 
+
     <Fade delay={300}>
-      <HomeHero data={homepage} />
-    </Fade>  
+      <HomeHighlight data={changework[0]} />
+    </Fade>
     
     <Fade delay={300}>
       {<ProjectRow data={changework}></ProjectRow>}
@@ -115,14 +116,10 @@ export default function Home ( { data } ) {
     </Fade>
 
     <Fade delay={300}>
-      <HomeProp data={homepage}></HomeProp>
-    </Fade>
-
-    <Fade delay={300}>
       <BlogRow data={blogposts}></BlogRow>
     </Fade>
     
-    </Layout>
+    </IndexLayout>
     )
 
 }

@@ -6,7 +6,7 @@ module.exports = {
         sm: '1rem',
         md: '1rem',
         lg: '1rem',
-        xl: '1rem',
+        xl: '2rem',
       },
     },
     extend: {
@@ -58,14 +58,21 @@ module.exports = {
         'lg': '30rem',
         'med': '22rem',
         'sm': '15rem',
+        'screen50': '50vh',
         'screen60': '60vh',
         'screen70': '70vh',
         'screen80': '80vh',
+        'screen90': '90vh',
       },
       height: {
         'lg': '30rem',
         'med': '22rem',
         'sm': '15rem',
+        'screen50': '50vh',
+        'screen60': '60vh',
+        'screen70': '70vh',
+        'screen80': '80vh',
+        'screen90': '90vh',
       },
       width: {
         'lg': '34rem'

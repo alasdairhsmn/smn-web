@@ -11,8 +11,7 @@ const Container = tw.div `
     md:grid
     grid-cols-12
     gap-4
-    mb-12 md:mb-24
-    mt-8
+    py-16 md:py-32
     md:min-h-screen50
 `
 
@@ -23,7 +22,7 @@ const Major = tw.div `
 `
 
 const Title = tw.div `
-    text-7xl md:text-14xl
+    text-5xl md:text-14xl
     font-title
     font-bold
     tracking-tight

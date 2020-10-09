@@ -6,14 +6,13 @@ import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
 const WorkGrid = tw.div `
-    
+    md:mb-24
 `
 
 const Container = tw.div`
     container 
     md:mx-auto 
     md:flex
-    md:min-h-screen80
     md:space-x-6
     py-6 md:py-24
     mt-6 md:mt-0

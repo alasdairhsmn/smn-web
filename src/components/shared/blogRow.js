@@ -86,9 +86,9 @@ const WorkTags = tw.div`
 `
 
 
-export default function BlogRow ({data}) {
+export default function BlogRow ({data, id}) {
 
-    const blocks = data.map(function(block){ 
+    const blocks = data.filter(block => block.node._meta.uid != id).map(function(block, i){ 
 
         return (
 
@@ -129,7 +129,9 @@ export default function BlogRow ({data}) {
         </RowTitle>
 
         <WorkGrid>
-                { blocks }
+                { blocks[0] }
+                { blocks[1] }
+                { blocks[2] }
         </WorkGrid>
     
     </Wrapper>

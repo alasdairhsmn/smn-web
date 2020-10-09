@@ -12,13 +12,22 @@ const Text = styled.div `
     text-lg md:text-2xl
     leading-normal
     tracking-wide
+    transition-colors
+    duration-300 
+    ease-in-out
     `}
     p     {
             margin-bottom: 1em;
             }
     h1, h2, h3, h4 {
         font-weight: bold;
-    }        
+    } 
+    a, a:link, a:active, a:visited {
+        text-decoration: underline;
+    }  
+    a:hover {
+        color: #05FABD;
+    }     
 `
 
 export default function BodyText ({data}) {
