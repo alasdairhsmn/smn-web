@@ -77,9 +77,6 @@ const HoverWrap = tw.div `
 export default function HomeHighlight ( {data} ) {
 
     return (
-      
-    <>
-
 
     <Hero>
 
@@ -93,8 +90,9 @@ export default function HomeHighlight ( {data} ) {
     </RowTitle>
 
     <Link to={`/changework/${data.project._meta.uid}`}>
-        <HoverWrap>
         
+        <HoverWrap>
+
         <ImageWrap>
             <BgImage src={data.project.lead_image.url}></BgImage>
         </ImageWrap>
@@ -114,8 +112,6 @@ export default function HomeHighlight ( {data} ) {
 
         </Link>
     </Hero>
-
-    </>
 
     )
 
