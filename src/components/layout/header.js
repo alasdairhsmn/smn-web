@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 
 import MobileMenu from "./menu/mobileMenu"
 
-import SMN from "../../assets/SomethingMoreNear.svg"
+import SMN from "../../assets/SomethingMoreNear_Black.svg"
 
 
 const Wrapper = styled.div`
@@ -189,7 +189,7 @@ const Header = ({ path }) => {
 
                     <SMNLink className={'logo'}>
                         <Link to={'/'}>
-                            <SMN css={tw`fill-current`}/>
+                            <SMN css={tw`fill-current text-black`}/>
                         </Link>    
                     </SMNLink>
 

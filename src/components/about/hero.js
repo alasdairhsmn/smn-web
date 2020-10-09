@@ -7,40 +7,28 @@ const Wrapper = tw.div `
 `
 
 const Editorial = tw.div `
-    flex 
-    flex-wrap md:flex
     container
     mx-auto
-    items-center 
+    w-3/4 md:w-1/2
+    text-center
     md:min-h-screen60
-    py-4 md:py-8
+    py-8 md:py-8
     border-b-0
     border-black
-    md:grid 
-    grid-cols-12
-    gap-12
-`
-
-const EditorialBlock = tw.div `
-    mx-auto 
-    items-center
-    col-span-6
-    mb-4 md:mb-0
 `
 
 const EditorialTitle = tw.div `
     font-title 
     font-bold 
     uppercase
-    text-5xl md:text-10xl
+    text-5xl md:text-8xl
     leading-extra-tight
     mb-10 md:mb-12
-    w-full md:w-3/4
 `
 
 const EditorialBody = tw.div `
     text-lg 
-    text-xl md:text-3xl 
+    text-xl md:text-2xl 
     font-light
     leading-tight
 `
@@ -68,12 +56,6 @@ export default function AboutHero ( {title, sub, image} ) {
 
             <Editorial>
 
-            <ImageBlock>
-                <Image src={image.url}></Image>
-            </ImageBlock>
-
-                <EditorialBlock>
-
                 <EditorialTitle>
                     {title}
                 </EditorialTitle>
@@ -81,8 +63,6 @@ export default function AboutHero ( {title, sub, image} ) {
                 <EditorialBody>
                     {sub}
                 </EditorialBody>
-
-                </EditorialBlock>
 
             </Editorial>
 

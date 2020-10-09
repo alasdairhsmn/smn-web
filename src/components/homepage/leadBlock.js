@@ -50,7 +50,7 @@ const Subhead = tw.div `
 `
 
 
-export default function HomeLead ( ) {
+export default function HomeLead ({data} ) {
 
     const fadeProperties = {
         duration: 1000,
@@ -84,7 +84,7 @@ export default function HomeLead ( ) {
         </Logo>
 
         <Subhead>
-            We help organisations evolve with imagination and impact
+            <RichText render={data.splash_subheading} />
         </Subhead>
         </div>
         

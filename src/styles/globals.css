@@ -35,6 +35,7 @@ html.wf-inactive {
 
 body.home .logo {
     transition: opacity 250ms;
+    color: black;
 }
 
 body #home-toggle {

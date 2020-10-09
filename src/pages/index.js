@@ -1,14 +1,11 @@
 import React from "react"
-import tw from "twin.macro"
 import IndexLayout from "../components/layout/indexLayout"
 
 import Fade from 'react-reveal/Fade'
 
-import HomeHero from '../components/homepage/hero'
 import HomeLead from '../components/homepage/leadBlock'
 import HomeHighlight from "../components/homepage/highlight"
 
-import HomeProp from "../components/homepage/proposition"
 import HomeClients from "../components/homepage/clients"
 
 import ProjectRow from "../components/homepage/projectRow"
@@ -104,7 +101,7 @@ export default function Home ({ data } ) {
           <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
     </Helmet>
     
-    <HomeLead /> 
+    <HomeLead data={homepage} /> 
 
     <Fade delay={300}>
       <HomeHighlight data={changework[0]} />
@@ -116,10 +113,6 @@ export default function Home ({ data } ) {
     
     <Fade delay={300}>
       <HomeClients data={homepage}></HomeClients>
-    </Fade>
-
-    <Fade delay={300}>
-      <HomeProp data={homepage}></HomeProp>
     </Fade>
 
     <Fade delay={300}>

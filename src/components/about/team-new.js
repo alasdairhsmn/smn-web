@@ -11,12 +11,14 @@ const Wrapper = tw.div `
 `
 
 const Container = tw.div `
-    container
     mx-auto
+    w-full
+    pr-4 md:pr-12
+    pl-4 md:pl-6
     grid
-    grid-cols-2 md:grid-cols-8
-    gap-12
-    divide-x 
+    grid-cols-2 md:grid-cols-12
+    gap-6
+    md:divide-x 
     divide-white
     font-sans
     text-lg md:text-xl
@@ -26,12 +28,12 @@ const Container = tw.div `
 `
 
 const Experience = tw.div `
-    col-span-2
-    px-8
+    col-span-1 md:col-span-2
     py-1
     flex
     flex-col-reverse md:flex-col
     text-white
+    md:pl-6
 `
 
 const ImageBlock = tw.div `
@@ -41,7 +43,7 @@ const ImageBlock = tw.div `
 `
 
 const Line = tw.div `
-    mb-8 md:mb-16
+    mb-4 md:mb-16
     font-title
     font-bold
     uppercase
@@ -51,14 +53,13 @@ const Line = tw.div `
 `
 
 const Title = tw.div `
-    container
     mx-auto
     font-title
     font-normal
     uppercase
-    px-20
-    mb-12
-    text-4xl
+    px-4 md:px-12
+    mb-4 md:mb-12
+    text-2xl md:text-4xl
     text-white
 `
 
@@ -69,7 +70,8 @@ const Role = tw.div `
 const Body = tw.div `
     font-sans
     font-light
-    text-base md:text-lg
+    text-base md:text-base
+    leading-tight
     mt-4
     normal-case
 `
@@ -95,11 +97,10 @@ export default function AboutTeamNew ( {data} ) {
                 </Body>
             </Line>
 
-
-
             <ImageBlock>
                 <img src={person.team_member.image.url} />
             </ImageBlock>
+
 
         </Experience>
 

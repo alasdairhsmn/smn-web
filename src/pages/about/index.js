@@ -39,6 +39,7 @@ query AboutQuery {
         recently_list {
           text
           image
+          section_title
         }
         team_list {
           team_member {
