@@ -44,9 +44,9 @@ const ImageBlock = tw.div `
 `
 
 const Line = tw.div `
-    mb-2 md:mb-16
+    mb-2 md:mb-8
     font-title
-    font-normal
+    font-bold
     uppercase
     text-base md:text-2xl
     leading-none
@@ -54,7 +54,8 @@ const Line = tw.div `
 `
 
 const Subhead = tw.div `
-    font-bold
+    mt-2
+    font-normal
 `
 
 const Title = tw.div `
@@ -76,9 +77,8 @@ export default function AboutExperience ( {data} ) {
             <Experience>
 
                 <Line>
-                <Subhead>{RichText.asText(line.section_title)}</Subhead>
                     {RichText.asText(line.text)}
-                    
+                    <Subhead>{RichText.asText(line.section_title)}</Subhead>
                 </Line>
 
                 <ImageBlock>

@@ -110,7 +110,7 @@ export default function HomeClients ( {data} ) {
             </Body>  
 
             <MoreLink>
-                <Link to={`/changework/`}>learn more &rarr;</Link>   
+                <Link to={`/about`}>About Us &rarr;</Link>   
             </MoreLink>
 
         </Minor>   
