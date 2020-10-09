@@ -17,19 +17,9 @@ const Editorial = tw.div `
     border-black
 `
 
-<<<<<<< HEAD
-const Title = tw.div `
-    text-6xl md:text-8xl lg:text-10xl xl:text-12xl
-    font-title
-    font-bold
-    tracking-tight
-    leading-extra-tight
-    mb-10 xl:mb-20
-=======
 const EditorialTitle = tw.div `
     font-title 
     font-bold 
->>>>>>> design_update
     uppercase
     text-5xl md:text-8xl
     leading-extra-tight
