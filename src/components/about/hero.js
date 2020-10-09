@@ -27,7 +27,7 @@ const Major = tw.div `
 `
 
 const Title = tw.div `
-    text-8xl md:text-10xl lg:text-12xl xl:text-16xl
+    text-6xl md:text-8xl lg:text-10xl xl:text-12xl
     font-title
     font-bold
     tracking-tight
