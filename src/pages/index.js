@@ -96,7 +96,7 @@ export default function Home ({ data } ) {
           <link rel="canonical" href={"https://www.somethingmorenear.com"} />
           <meta name="type" property="og:type" content="article" />
           <meta name="title" property="og:title" content={"Something More Near — Helping organisations evolve with imagination and impact"} />
-          <meta name="description" property="og:description" content={"We are specialists in participatory change. We help organisations tackle major strategic and creative challenges through collaborative processes that inspire their teams, invite audiences in and harness the energy of uncommon talent."} />
+          <meta name="description" property="og:description" content={"We are specialists in participatory approaches to innovation, strategy and brand experience. We call it social changework."} />
           <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
           <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
     </Helmet>

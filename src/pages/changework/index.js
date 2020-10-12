@@ -44,7 +44,7 @@ export default function ProjectsIndex ({ data }) {
           <meta name="title" property="og:title" content={"Changework – Something More Near"} />
 
           <meta name="type" property="og:type" content="article" />
-          <meta name="description" property="og:description" content={"Helping organisations evolve with imagination and impact"} />
+          <meta name="description" property="og:description" content={"We are specialists in participatory approaches to innovation, strategy and brand experience. We call it social changework."} />
           <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
           <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
       </Helmet>
