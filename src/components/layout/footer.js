@@ -63,7 +63,9 @@ const MetaLink = tw.a `
 
 const MetaIcon = tw.span `
     w-4
+    h-4
     mr-3
+    inline
 `
 
 
