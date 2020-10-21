@@ -99,13 +99,17 @@ export default function Footer () {
                 </MetaLink>
                     
                 <MetaLink target="_blank" href="https://www.linkedin.com/company/something-more-near/">
-                    <MetaIcon><LI /></MetaIcon>
-                    <a className={'inline'} >LinkedIn</a>
+                    <MetaIcon>
+                    <LI />
+                    </MetaIcon>
+                    <span>LinkedIn</span>
                 </MetaLink>
 
                 <MetaLink target="_blank" href="https://www.instagram.com/somethingmorenear/">
-                    <MetaIcon><IG /></MetaIcon>
-                    <a className={'inline'} >Instagram</a>
+                    <MetaIcon>
+                    <IG />
+                    </MetaIcon>
+                    <span>Instagram</span>
                 </MetaLink>
 
 
