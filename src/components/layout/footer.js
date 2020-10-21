@@ -55,17 +55,15 @@ const InnerText = tw.div `
 `
 
 const MetaLink = tw.a `
-    py-2
+    hover:underline
+    mb-4
     flex
     items-center
-    hover:underline
 `
 
-const MetaIcon = tw.div `
+const MetaIcon = tw.span `
     w-4
-    h-4
     mr-3
-    float-left
 `
 
 
@@ -89,9 +87,9 @@ export default function Footer () {
 
             <div> 
 
-            <MetaLink href="mailto:hello@somethingmorenear.com">
-                    <MetaIcon><EM /></MetaIcon>
-                    <a className={'inline'} >hello@somethingmorenear.com</a>
+                <MetaLink href="mailto:hello@somethingmorenear.com">
+                      <MetaIcon><EM /></MetaIcon>
+                      <span>hello@somethingmorenear.com</span>
                 </MetaLink>
                     
                 <MetaLink target="_blank" href="https://www.linkedin.com/company/something-more-near/">
