@@ -4,6 +4,10 @@ import { Link } from "gatsby"
 
 import SMN from "../../assets/SomethingMoreNear.svg"
 
+import LI from "../../assets/icons/linkedin.svg"
+import EM from "../../assets/icons/email.svg"
+import IG from "../../assets/icons/instagram.svg"
+
 const Wrapper = tw.div`
   bg-black 
   pb-6 md:pb-6 
@@ -86,17 +90,17 @@ export default function Footer () {
             <div> 
 
             <MetaLink href="mailto:hello@somethingmorenear.com">
-                    <MetaIcon><img src={'../icons/email.svg'} /></MetaIcon>
+                    <MetaIcon><EM /></MetaIcon>
                     <a className={'inline'} >hello@somethingmorenear.com</a>
                 </MetaLink>
                     
                 <MetaLink target="_blank" href="https://www.linkedin.com/company/something-more-near/">
-                    <MetaIcon><img src={'../icons/linkedin.svg'} /></MetaIcon>
+                    <MetaIcon><LI /></MetaIcon>
                     <a className={'inline'} >LinkedIn</a>
                 </MetaLink>
 
                 <MetaLink target="_blank" href="https://www.instagram.com/somethingmorenear/">
-                    <MetaIcon><img src={'../icons/instagram.svg'} /></MetaIcon>
+                    <MetaIcon><IG /></MetaIcon>
                     <a className={'inline'} >Instagram</a>
                 </MetaLink>
 
