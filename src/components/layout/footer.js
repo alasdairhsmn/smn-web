@@ -66,6 +66,8 @@ const MetaIcon = tw.span `
     h-4
     mr-3
     inline
+    text-white
+    fill-current
 `
 
 
@@ -90,7 +92,9 @@ export default function Footer () {
             <div> 
 
                 <MetaLink href="mailto:hello@somethingmorenear.com">
-                      <MetaIcon><EM /></MetaIcon>
+                      <MetaIcon>
+                      <EM />
+                      </MetaIcon>
                       <span>hello@somethingmorenear.com</span>
                 </MetaLink>
                     
