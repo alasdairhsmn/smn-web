@@ -21,6 +21,9 @@ const Text = styled.div `
             }
     h1, h2, h3, h4 {
         font-weight: bold;
+    }
+    strong {
+        font-weight: bold;
     } 
     a, a:link, a:active, a:visited {
         text-decoration: underline;
