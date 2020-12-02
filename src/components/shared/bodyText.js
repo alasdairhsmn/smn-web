@@ -22,6 +22,13 @@ const Text = styled.div `
     h1, h2, h3, h4 {
         font-weight: bold;
     }
+    h3 {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-size: 3em;
+        line-height: 0.9em;
+        color: #793FFF;
+    }
     strong {
         font-weight: bold;
     } 
