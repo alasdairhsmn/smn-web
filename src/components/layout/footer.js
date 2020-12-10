@@ -105,20 +105,6 @@ export default function Footer () {
                     <span>LinkedIn</span>
                 </MetaLink>
 
-                <MetaLink target="_blank" href="https://www.instagram.com/somethingmorenear/">
-                    <MetaIcon>
-                    <IG />
-                    </MetaIcon>
-                    <span>Instagram</span>
-                </MetaLink>
-
-
-            <InnerText>
-              <p>114–118 Lower Marsh</p>
-              <p>London</p>
-              <p>SE1 7AE</p>
-            </InnerText> 
-
             </div>  
 
 
