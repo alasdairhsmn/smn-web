@@ -210,7 +210,7 @@ const Header = ({ path }) => {
                     </Link>
 
                     <Link to={'/changework'}>
-                        <HeadLink>Changework</HeadLink>
+                        <HeadLink>Projects</HeadLink>
                     </Link>
 
                     <Link to={'/blog'}>
