@@ -82,7 +82,7 @@ export default function AboutExperience ( {data} ) {
                 </Line>
 
                 <ImageBlock>
-                    <img src={line.image.url} />
+                    <img alt="" src={line.image.url} />
                 </ImageBlock>
 
             </Experience>

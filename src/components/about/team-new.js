@@ -98,7 +98,7 @@ export default function AboutTeamNew ( {data} ) {
             </Line>
 
             <ImageBlock>
-                <img src={person.team_member.image.url} />
+                <img alt="" src={person.team_member.image.url} />
             </ImageBlock>
 
 
