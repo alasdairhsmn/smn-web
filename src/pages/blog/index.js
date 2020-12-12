@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from 'gatsby'
 import Layout from "../../components/layout/layout"
 import { Helmet } from 'react-helmet'
 
@@ -29,32 +30,32 @@ query BlogQuery {
 `;
 
 
-export default function BlogIndex ( {data} ) {
+export default function BlogIndex({ data }) {
 
-    const posts = data.prismic.allBlog_posts.edges
-    if (!posts) return null
+  const posts = data.prismic.allBlog_posts.edges
+  if (!posts) return null
 
-    return (
-       <Layout>
+  return (
+    <Layout>
 
       <Helmet>
-          <title>Blog &mdash; Something More Near</title>
-          <link rel="canonical" href={"https://www.somethingmorenear.com/blog"} />
+        <title>Blog &mdash; Something More Near</title>
+        <link rel="canonical" href={"https://www.somethingmorenear.com/blog"} />
 
-          <meta name="type" property="og:type" content="article" />
-          <meta name="title" property="og:title" content={"Blog – Something More Near"} />
-          <meta name="description" property="og:description" content={"We are specialists in participatory change. We help organisations tackle major strategic and creative challenges through collaborative processes that inspire their teams, invite audiences in and harness the energy of uncommon talent."} />
-          <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
-          <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
+        <meta name="type" property="og:type" content="article" />
+        <meta name="title" property="og:title" content={"Blog – Something More Near"} />
+        <meta name="description" property="og:description" content={"We are specialists in participatory change. We help organisations tackle major strategic and creative challenges through collaborative processes that inspire their teams, invite audiences in and harness the energy of uncommon talent."} />
+        <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
+        <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
       </Helmet>
-         
-         <Fade delay={300}>
-          <BlogIndexMain data={posts[0]} />
-        </Fade>
 
-        <BlogGrid data={posts}></BlogGrid>
-        
-        </Layout>
-    )
+      <Fade delay={300}>
+        <BlogIndexMain data={posts[0]} />
+      </Fade>
+
+      <BlogGrid data={posts}></BlogGrid>
+
+    </Layout>
+  )
 
 }

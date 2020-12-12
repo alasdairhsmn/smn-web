@@ -1,5 +1,6 @@
 import tw from "twin.macro"
 import React from "react"
+import { graphql } from 'gatsby'
 import Layout from "../../layout/layout"
 import { Helmet } from 'react-helmet'
 import { RichText } from 'prismic-reactjs'
@@ -61,7 +62,7 @@ const Hero = tw.div`
     mx-auto
 `
 
-const Image = tw.img `
+const Image = tw.img`
   w-full
   h-full
   object-cover
@@ -71,60 +72,60 @@ const Block = tw.div`
   container mx-auto
 `
 
-export default function BlogView ({data}) {
+export default function BlogView({ data }) {
 
-  const nextposts = data.prismic.allBlog_posts.edges  
+  const nextposts = data.prismic.allBlog_posts.edges
   const post = data.prismic.blog_post
 
-  if(!post) return null
-    
+  if (!post) return null
 
-    return (
-       <Layout>
 
-    <Helmet>
-          <title>{RichText.asText(post.title)} &mdash; Something More Near</title>
-          <link rel="canonical" href={`https://www.somethingmorenear.com/blog/${post.uid}`} />
+  return (
+    <Layout>
 
-          <meta name="type" property="og:type" content="article" />
-          <meta name="title" property="og:title" content={`${RichText.asText(post.title)} – Something More Near`} />
-          <meta name="description" property="og:description" content={RichText.asText(post.subhead)} />
-          <meta name="image" property="og:image" content={post.lead_image.url} />
-          <meta name="url" property="og:url" content={`https://www.somethingmorenear.com/blog/${post.uid}`} />
+      <Helmet>
+        <title>{RichText.asText(post.title)} &mdash; Something More Near</title>
+        <link rel="canonical" href={`https://www.somethingmorenear.com/blog/${post.uid}`} />
+
+        <meta name="type" property="og:type" content="article" />
+        <meta name="title" property="og:title" content={`${RichText.asText(post.title)} – Something More Near`} />
+        <meta name="description" property="og:description" content={RichText.asText(post.subhead)} />
+        <meta name="image" property="og:image" content={post.lead_image.url} />
+        <meta name="url" property="og:url" content={`https://www.somethingmorenear.com/blog/${post.uid}`} />
       </Helmet>
 
-        <Fade delay={300}>
+      <Fade delay={300}>
         <Block>
-            <BlogHead data={post}></BlogHead>
-        </Block>   
-        </Fade>
+          <BlogHead data={post}></BlogHead>
+        </Block>
+      </Fade>
 
-        <Fade delay={300}> 
+      <Fade delay={300}>
         <Hero>
-           <Image src={post.lead_image.url} alt={post.lead_image.alt}></Image>
+          <Image src={post.lead_image.url} alt={post.lead_image.alt}></Image>
         </Hero>
-        </Fade>
+      </Fade>
 
+      <Block>
+        <BlogStandfirst data={post.standfirst}></BlogStandfirst>
+      </Block>
+
+      <Block>
+        <BodyText data={post.body}></BodyText>
+      </Block>
+
+
+      <Fade delay={300}>
         <Block>
-          <BlogStandfirst data={post.standfirst}></BlogStandfirst>
+          <BlogEnd data={post}></BlogEnd>
         </Block>
+      </Fade>
 
-        <Block>
-            <BodyText data={post.body}></BodyText>
-        </Block>
+      <Fade delay={300}>
+        <BlogRow data={nextposts} id={post._meta.uid}></BlogRow>
+      </Fade>
 
-
-        <Fade delay={300}>
-        <Block>
-            <BlogEnd data={post}></BlogEnd>
-        </Block>
-        </Fade>   
-           
-        <Fade delay={300}>
-          <BlogRow data={nextposts} id={post._meta.uid}></BlogRow>  
-        </Fade>    
-            
-       </Layout>
-    )
+    </Layout>
+  )
 
 }

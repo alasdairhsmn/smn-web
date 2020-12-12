@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from 'gatsby'
 import Layout from "../../components/layout/layout"
 import { Helmet } from 'react-helmet'
 
@@ -57,59 +58,59 @@ query AboutQuery {
 `;
 
 
-export default function AboutIndex ({ data }) {
+export default function AboutIndex({ data }) {
 
-    const about = data.prismic.about_page
-    if (!about) return null
+  const about = data.prismic.about_page
+  if (!about) return null
 
-    return (
+  return (
     <Layout>
 
-    <Helmet>
-          <title>About &mdash; Something More Near</title>
-          <link rel="canonical" href={"https://www.somethingmorenear.com/about"} />
+      <Helmet>
+        <title>About &mdash; Something More Near</title>
+        <link rel="canonical" href={"https://www.somethingmorenear.com/about"} />
 
-          <meta name="type" property="og:type" content="article" />
-          <meta name="title" property="og:title" content={"About – Something More Near"} />
-          <meta name="description" property="og:description" content={"We are specialists in participatory approaches to innovation, strategy and brand experience. We call it social changework."} />
-          <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
-          <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
-    </Helmet>
-
-
-        <Fade delay={300}>
-            
-            <AboutHero 
-            title={RichText.asText(about.main_headline)} 
-            sub={RichText.render(about.main_subhead)}
-            image = {about.lead_image}
-            />
-        
-        </Fade>
-
-        <Fade delay={300}>
-            <AboutExperience data={about.recently_list} />
-        </Fade>
+        <meta name="type" property="og:type" content="article" />
+        <meta name="title" property="og:title" content={"About – Something More Near"} />
+        <meta name="description" property="og:description" content={"We are specialists in participatory approaches to innovation, strategy and brand experience. We call it social changework."} />
+        <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
+        <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
+      </Helmet>
 
 
-        <Fade delay={300}>
-            <AboutEditorial data={about.body} />
-        </Fade>
+      <Fade delay={300}>
+
+        <AboutHero
+          title={RichText.asText(about.main_headline)}
+          sub={RichText.render(about.main_subhead)}
+          image={about.lead_image}
+        />
+
+      </Fade>
+
+      <Fade delay={300}>
+        <AboutExperience data={about.recently_list} />
+      </Fade>
 
 
-        <Fade delay={300}>
-            <AboutTeamNew data={about.team_list} />
-        </Fade>
-
-        <Fade delay={300}>
-            <PageTitle 
-            title={RichText.asText(about.footer_title)} 
-            sub={RichText.asText(about.footer_copy)} />
-        </Fade>
+      <Fade delay={300}>
+        <AboutEditorial data={about.body} />
+      </Fade>
 
 
+      <Fade delay={300}>
+        <AboutTeamNew data={about.team_list} />
+      </Fade>
 
-       </Layout>
-    )
+      <Fade delay={300}>
+        <PageTitle
+          title={RichText.asText(about.footer_title)}
+          sub={RichText.asText(about.footer_copy)} />
+      </Fade>
+
+
+
+    </Layout>
+  )
 
 }

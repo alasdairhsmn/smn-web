@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from 'gatsby'
 import IndexLayout from "../components/layout/indexLayout"
 
 import Fade from 'react-reveal/Fade'
@@ -77,7 +78,7 @@ query HomeQuery {
 `;
 
 
-export default function Home ({ data } ) {
+export default function Home({ data }) {
 
   const homepage = data.prismic.homepage
 
@@ -87,39 +88,39 @@ export default function Home ({ data } ) {
 
 
   return (
-  <IndexLayout>
-    
-    <Helmet>
-      <body className="home" />
+    <IndexLayout>
 
-          <title>Something More Near — Helping organisations evolve with imagination and impact</title>
-          <link rel="canonical" href={"https://www.somethingmorenear.com"} />
-          <meta name="type" property="og:type" content="article" />
-          <meta name="title" property="og:title" content={"Something More Near — Helping organisations evolve with imagination and impact"} />
-          <meta name="description" property="og:description" content={"We are specialists in participatory approaches to innovation, strategy and brand experience. We call it social changework."} />
-          <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
-          <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
-    </Helmet>
-    
-    <HomeLead data={homepage} /> 
+      <Helmet>
+        <body className="home" />
 
-    <Fade delay={300}>
-      <HomeHighlight data={changework[0]} />
-    </Fade>
-    
-    <Fade delay={300}>
-      {<ProjectRow data={changework}></ProjectRow>}
-    </Fade>
-    
-    <Fade delay={300}>
-      <HomeClients data={homepage}></HomeClients>
-    </Fade>
+        <title>Something More Near — Helping organisations evolve with imagination and impact</title>
+        <link rel="canonical" href={"https://www.somethingmorenear.com"} />
+        <meta name="type" property="og:type" content="article" />
+        <meta name="title" property="og:title" content={"Something More Near — Helping organisations evolve with imagination and impact"} />
+        <meta name="description" property="og:description" content={"We are specialists in participatory approaches to innovation, strategy and brand experience. We call it social changework."} />
+        <meta name="image" property="og:image" content={"https://www.somethingmorenear.com/meta_logo.png"} />
+        <meta name="url" property="og:url" content={"https://www.somethingmorenear.com"} />
+      </Helmet>
 
-    <Fade delay={300}>
-      <BlogRow data={blogposts}></BlogRow>
-    </Fade>
-    
+      <HomeLead data={homepage} />
+
+      <Fade delay={300}>
+        <HomeHighlight data={changework[0]} />
+      </Fade>
+
+      <Fade delay={300}>
+        {<ProjectRow data={changework}></ProjectRow>}
+      </Fade>
+
+      <Fade delay={300}>
+        <HomeClients data={homepage}></HomeClients>
+      </Fade>
+
+      <Fade delay={300}>
+        <BlogRow data={blogposts}></BlogRow>
+      </Fade>
+
     </IndexLayout>
-    )
+  )
 
 }
