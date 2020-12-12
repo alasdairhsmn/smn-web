@@ -31,7 +31,7 @@ const Subhead = tw.div `
 
 export default function ProjectImageGridTitle ( {data} ) {
 
-    if(data.section_title != null) { 
+    if(data.section_title !== null) { 
 
 
         return (
