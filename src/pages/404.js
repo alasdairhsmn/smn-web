@@ -27,11 +27,11 @@ const Main = tw.div`
 `
 
 const Heading = tw.h1`
-  text-2xl text-gray-500 uppercase
+  text-2xl text-gray-500 leading-normal uppercase
 `
 
 const Text = tw.p`
-  text-xl text-gray-700
+  text-xl leading-normal text-gray-700
 `
 
 const Logos = tw.div`

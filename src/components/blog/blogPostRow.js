@@ -11,7 +11,7 @@ const Row = tw.div `
 `
 
 const Title = tw.div `
-    text-2xl border-b pb-4 mb-8
+    text-2xl leading-normal border-b pb-4 mb-8
 `
 
 const Grid = tw.div `

@@ -30,6 +30,7 @@ const Block = tw.div `
     w-full
     font-title
     text-5xl
+    leading-normal
     text-white
     flex
     flex-col
@@ -53,6 +54,7 @@ const HeadLink = tw.div `
 
 const Meta = tw.div `
     text-xl
+    leading-normal
     font-sans
     font-normal
     border-b

@@ -37,6 +37,7 @@ const Info = tw.div `
 const Title = tw.div `
     font-title
     text-2xl md:text-4xl
+    leading-normal
     uppercase
     font-bold
     mb-2
@@ -59,6 +60,7 @@ const RowTitleMain = tw.div `
     font-title
     font-semibold
     text-2xl md:text-4xl
+    leading-normal
     flex-grow
 `
 
@@ -66,6 +68,7 @@ const RowTitleLink = tw.div `
     pt-2 md:pt-4
     text-lg 
     md:text-xl
+    leading-normal
     hover:underline
 `
 

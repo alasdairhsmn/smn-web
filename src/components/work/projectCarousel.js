@@ -19,6 +19,7 @@ const TextBlock = tw.div `
 `
 
 const Title = tw.div `
+    leading-normal
     text-2xl md:text-4xl 
     font-display 
     font-extrabold 
@@ -27,6 +28,7 @@ const Title = tw.div `
 
 const Subhead = tw.div `
     text-lg md:text-xl 
+    leading-normal
     font-sans 
     font-light 
     text-gray-600
@@ -47,7 +49,8 @@ const Item = tw.div `
 const ItemCaption = tw.div`
     mt-4 
     text-lg
-    text-lightgrey
+    text-lightgrey 
+    leading-normal
 `
 
 const ItemImage = tw.img `

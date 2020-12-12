@@ -21,6 +21,7 @@ const TextBlock = tw.div `
 
 const Title = tw.div `
     text-2xl md:text-4xl 
+    leading-normal
     font-display 
     font-extrabold 
     mb-2
@@ -28,6 +29,7 @@ const Title = tw.div `
 
 const Subhead = tw.div `
     text-lg md:text-xl 
+    leading-normal
     font-sans 
     font-light 
 `

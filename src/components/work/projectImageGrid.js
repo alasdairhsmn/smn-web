@@ -8,6 +8,7 @@ import ProjectImageGridTitle from "./projectImageGridTitle"
 const Block = tw.div `
     flex 
     text-6xl 
+    leading-normal
     mb-8 md:mb-16 
 `
 

@@ -60,6 +60,7 @@ const Title = tw.div `
     px-4 md:px-12
     mb-4 md:mb-12
     text-2xl md:text-4xl
+    leading-normal
     text-white
 `
 

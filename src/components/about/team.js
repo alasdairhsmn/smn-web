@@ -32,6 +32,7 @@ const Title = tw.div `
     font-title
     font-bold
     text-5xl md:text-10xl
+    leading-normal
     uppercase
 `
 
@@ -73,6 +74,7 @@ const Role = tw.div `
     font-title
     text-xl md:text-2xl
     font-semibold
+    leading-normal
     mb-6
 `
 

@@ -67,6 +67,7 @@ const Title = tw.div `
 
 const Subhead = tw.div `
     text-lg md:text-xl 
+    leading-normal
     font-sans 
 `
 

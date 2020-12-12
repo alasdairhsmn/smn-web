@@ -25,6 +25,7 @@ const Caption = tw.div `
     font-sans
     text-lg
     text-midgrey
+    leading-normal
     
 `
 

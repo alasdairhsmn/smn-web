@@ -27,6 +27,7 @@ const QuoteBody = tw.div `
 
 const QuoteCaption = tw.div `
     text-lg md:text-xl 
+    leading-normal
     text-white 
     mt-6 
     tracking-wide

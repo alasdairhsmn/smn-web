@@ -44,6 +44,7 @@ const Subtitle = tw.div `
   font-title
   font-bold
   text-2xl md:text-4xl 
+  leading-normal
   uppercase
   mb-4
 `

@@ -55,6 +55,7 @@ const Body = tw.div `
 
 const Meta = tw.div `
   text-xl
+  leading-normal
   text-midgrey
   mt-4
 `

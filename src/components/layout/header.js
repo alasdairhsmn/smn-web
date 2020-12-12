@@ -36,6 +36,7 @@ const Container = tw.div `
     font-normal 
     tracking-wide 
     text-base md:text-lg 
+    leading-normal
     justify-end
     py-0 md:py-4
     z-50
@@ -84,7 +85,7 @@ const HeadLink = tw.div `
     hover:text-green 
     font-sans
     text-lg
-    tracking-wider
+    leading-normal
 `
 
 const Toggle = styled.div`

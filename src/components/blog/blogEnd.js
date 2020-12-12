@@ -11,6 +11,7 @@ const Wrapper = tw.div `
     mb-32 
     mt-16 
     text-xl
+    leading-normal
 `
 
 const AuthorBlock = tw.div `
@@ -33,6 +34,7 @@ const TextBlock = tw.div `
 
 const NameTitle = tw.div `
     text-xl
+    leading-normal
 `
 
 const Summary = tw.div `

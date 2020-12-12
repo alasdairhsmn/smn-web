@@ -29,6 +29,7 @@ const RowTitleMain = tw.div `
     font-title
     font-semibold
     text-2xl md:text-4xl
+    leading-normal
     flex-grow
 `
 
@@ -36,6 +37,7 @@ const RowTitleLink = tw.div `
     pt-2 md:pt-4
     text-lg 
     md:text-xl
+    leading-normal
     hover:underline
 `
 
@@ -83,6 +85,7 @@ const WorkTags = tw.div`
     px-3
     py-2
     text-sm
+    leading-normal
 `
 
 

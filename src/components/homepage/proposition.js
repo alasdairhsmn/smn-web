@@ -67,6 +67,7 @@ const MoreLink = tw.div `
     uppercase
     tracking-widest
     text-lg
+    leading-normal
     hover:underline
 `
 

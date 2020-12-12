@@ -38,6 +38,7 @@ const TextBlock = tw.div `
 
 const Title = tw.div `
     text-xl md:text-xl 
+    leading-normal
     font-semibold 
     mb-2
 `

@@ -12,6 +12,7 @@ const Placeholder = tw.div `
     px-32 
     bg-gray-200 
     text-2xl md:text-5xl 
+    leading-normal
     text-center
 `
 
