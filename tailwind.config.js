@@ -10,6 +10,9 @@ module.exports = {
       },
     },
     extend: {
+      borderWidth: {
+        '3': '3px',
+      },
       colors: {
         yellow: "#fdfc71",
         lightyellow: "#ffeecf",
@@ -21,6 +24,7 @@ module.exports = {
         blue: "#4D0CFA",
         green: "#05FABD",
         red: "#FE546E",
+        darkblue: '#000033',
       },
       fontFamily: {
         sans: ['forma-djr-text', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
@@ -73,6 +77,10 @@ module.exports = {
         'screen70': '70vh',
         'screen80': '80vh',
         'screen90': '90vh',
+      },
+      maxWidth: {
+        '24': '24rem',
+        '29': '29rem',
       },
       width: {
         'lg': '34rem'

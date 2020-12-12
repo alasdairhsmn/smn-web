@@ -9,7 +9,7 @@ import EM from "../../assets/icons/email.svg"
 import IG from "../../assets/icons/instagram.svg"
 
 const Wrapper = tw.div`
-  bg-black 
+  bg-darkblue
   pb-6 md:pb-6 
   text-white
 `
@@ -29,12 +29,15 @@ const Grid = tw.div`
 
 const LogoBlock = tw.div `
   col-span-12 md:col-span-5
-  md:border-r-2
+  md:border-r-3
   border-white
   md:pr-4
   h-full
   w-1/2 md:w-full
   mb-12 md:mb-0
+  flex items-end
+  max-w-29
+  justify-self-end
 `
 
 const TextBlock = tw.div `
@@ -62,8 +65,8 @@ const MetaLink = tw.a `
 `
 
 const MetaIcon = tw.span `
-    w-4
-    h-4
+    w-6
+    h-6
     mr-3
     inline
     text-white
@@ -80,7 +83,7 @@ export default function Footer () {
 
             <LogoBlock>
 
-              <Link to={'/'}>
+              <Link css={tw`w-full`} to={'/'}>
                 <SMN css={tw`fill-current text-white`} />
               </Link>
 
@@ -89,7 +92,7 @@ export default function Footer () {
             <TextBlock>
 
 
-            <div> 
+            <div css={tw`w-full lg:max-w-24`}> 
 
                 <MetaLink href="mailto:hello@somethingmorenear.com">
                       <MetaIcon>
@@ -106,6 +109,13 @@ export default function Footer () {
                 </MetaLink>
 
             </div>  
+
+            <div css={tw`lg:max-w-24 mt-auto`}>
+              <p css={tw`mb-3 leading-none`}>
+                “The quickest way to find out how something works is to try to change it”
+              </p>
+              <p>Nabeel Hamdi</p>
+            </div>
 
 
             </TextBlock>
