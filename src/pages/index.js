@@ -55,6 +55,12 @@ query HomeQuery {
           subhead
           title
           lead_image
+          author {
+            ... on PRISMIC_Team_member {
+              name
+              role
+            }
+          }
         }
       }
     }

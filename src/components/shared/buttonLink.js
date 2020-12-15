@@ -16,13 +16,14 @@ const Container = tw.div`
     transition-colors
     duration-300
     tracking-tight
+    min-w-56
 `
 
 export default function ButtonLink(props) {
 
   return (
     <Container>
-      <Link css={tw`block px-12 py-5`} to={props.href}>{props.children}</Link>
+      <Link css={tw`block px-12 py-5 text-center`} to={props.href}>{props.children}</Link>
     </Container>
   );
 }

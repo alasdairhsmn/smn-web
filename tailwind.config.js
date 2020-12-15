@@ -21,8 +21,8 @@ module.exports = {
         rose: "#f6cccd",
         purple: "#793FFF",
         orange: "#ff6650",
-        lightgrey: "#dcdcdc",
-        midgrey: "#B4B4B4",
+        lightgrey: "#f0f0f0",
+        midgrey: "#979797",
         blue: "#793FFF",
         green: "#05FABD",
         red: "#FE546E",
@@ -51,10 +51,10 @@ module.exports = {
         '20xl': '18rem',
       },
       lineHeight: {
-       'extra-tight': '0.9',
+        'extra-tight': '0.9',
       },
       minHeight: {
-        'screen50':'50vh',
+        'screen50': '50vh',
         'screen60': '60vh',
         'screen70': '70vh',
         'screen80': '80vh',
@@ -84,6 +84,9 @@ module.exports = {
         '24': '24rem',
         '29': '29rem',
         'xl': '50rem',
+      },
+      minWidth: {
+        '56': '14rem'
       },
       width: {
         'lg': '34rem'

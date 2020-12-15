@@ -59,7 +59,7 @@ const RowTitle = tw.div`
 const RowTitleMain = tw.div`
     font-title
     font-bold
-    text-4xl md:text-6xl
+    text-4xl md:text-7xl
     leading-normal
     flex-grow
     uppercase

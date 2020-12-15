@@ -2,14 +2,14 @@ import tw from "twin.macro"
 import React from "react"
 import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
+import ButtonLink from "~/components/shared/buttonLink";
 
-const Wrapper = tw.div `
-    bg-blue
-    py-6 md:py-12
-    text-white
+const Wrapper = tw.div`
+    bg-lightgrey
+    py-6 md:py-20
 `
 
-const WorkGrid = tw.div `
+const WorkGrid = tw.div`
     md:grid 
     md:grid-cols-3 
     col-gap-12 
@@ -18,31 +18,21 @@ const WorkGrid = tw.div `
     mb-8
 `
 
-const RowTitle = tw.div `
+const RowTitle = tw.div`
     container 
     mx-auto
-    border-b-4
-    border-white
     mb-4 md:mb-8
     flex
-    pb-4
     items-center
+    uppercase
 `
 
-const RowTitleMain = tw.div `
+const RowTitleMain = tw.div`
     font-title
-    font-semibold
-    text-2xl md:text-4xl
+    font-bold
+    text-4xl md:text-7xl
     flex-grow
     leading-normal
-`
-
-const RowTitleLink = tw.div `
-    pt-2 md:pt-4
-    text-lg 
-    md:text-xl
-    leading-normal
-    hover:underline
 `
 
 const WorkBlock = tw.div`
@@ -56,89 +46,75 @@ const WorkImage = tw.div`
     overflow-hidden
 `
 
-const Image = tw.img `
+const Image = tw.img`
     w-full
     h-auto
 `
 
 const WorkTitle = tw.div`
-    text-xl md:text-xl 
+    text-xl md:text-3xl
     leading-normal
-    font-semibold 
-    mb-2
+    font-normal
+    tracking-tight
 `
 
-const WorkSub = tw.div `
-    font-light 
+const WorkAuthor = tw.div`
+    font-normal 
     text-xl 
     leading-snug 
-    mt-3
+    lg:mt-3
+    text-midgrey
+    tracking-tight
 `
 
-const WorkTags = tw.div`
-    mt-4 
-    uppercase 
-    tracking-widest 
-    border
-    border-white
-    rounded-md
-    inline-block
-    px-3
-    py-2
-    text-sm
-    leading-normal
-`
+export default function BlogRow({ data, id }) {
 
-
-export default function BlogRow ({data, id}) {
-
-    const blocks = data.filter(block => block.node._meta.uid !== id).map(function(block, i){ 
+    const blocks = data.filter(block => block.node._meta.uid !== id).map(function (block, i) {
 
         return (
 
-            <Link to={`/blog/${block.node._meta.uid}`}>
+            <Link key={`blogItem-${i}`} to={`/blog/${block.node._meta.uid}`}>
 
-            <WorkBlock>
+                <WorkBlock>
 
-            <WorkImage>
-                <Image src={block.node.lead_image.url}></Image>
-            </WorkImage>
+                    <WorkImage>
+                        <Image src={block.node.lead_image.url}></Image>
+                    </WorkImage>
 
-            <WorkTitle>
-                <RichText render={block.node.title} />
-            </WorkTitle>
+                    <WorkTitle>
+                        <RichText render={block.node.title} />
+                    </WorkTitle>
 
-            <WorkSub>
-                <RichText render={block.node.subhead} />
-            </WorkSub>
-            
-            </WorkBlock>
+                    <WorkAuthor>
+                        <RichText render={block.node.author.name} />
+                    </WorkAuthor>
+
+                </WorkBlock>
             </Link>
 
         )
 
-
     })
 
     return (
-    <Wrapper>
+        <Wrapper>
 
-        <RowTitle>
+            <RowTitle>
 
-            <RowTitleMain>The Blog</RowTitleMain>
-            <RowTitleLink>
-                <Link to={`/blog`}>See all &rarr;</Link>     
-            </RowTitleLink>
+                <RowTitleMain>The Blog</RowTitleMain>
 
-        </RowTitle>
+            </RowTitle>
 
-        <WorkGrid>
-                { blocks[0] }
-                { blocks[1] }
-                { blocks[2] }
-        </WorkGrid>
-    
-    </Wrapper>
+            <WorkGrid>
+                {blocks[0]}
+                {blocks[1]}
+                {blocks[2]}
+            </WorkGrid>
+
+            <div css={tw`flex justify-center lg:mt-20`}>
+                <ButtonLink href="/blog">Read More</ButtonLink>
+            </div>
+        </Wrapper>
 
     )
 
