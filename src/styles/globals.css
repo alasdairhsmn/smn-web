@@ -5,13 +5,17 @@
 @tailwind base;
 
 .headroom--unfixed {
-  background-color: transparent;
-  transform: translateY(0);
+    background-color: transparent;
+    transform: translateY(0);
 }
 
 .headroom--pinned {
-  background-color: white;
+    background-color: white;
+}
 
+::selection {
+    background-color: #fef6a5;
+    color: black;
 }
 
 html {
@@ -31,11 +35,6 @@ html.wf-inactive {
     .header-holder {
         height: 75px;
     }
-}
-
-body.home .logo {
-    transition: opacity 250ms;
-    color: black;
 }
 
 body #home-toggle {
@@ -61,17 +60,6 @@ body.home #home-burger::after {
 
 body.home #home-burger::before {
     background-color: white;
-}
-
-body.home #header .logo {
-    opacity: 0; 
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-}
-
-body.home #header[data-active="true"] .logo {
-    opacity: 1;
-    pointer-events: auto;
 }
 
 .carousel__dot-group {

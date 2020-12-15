@@ -28,7 +28,7 @@ ${tw`
       }
 `
 
-const Container = tw.div `
+const Container = tw.div`
     container 
     w-full
     md:mx-auto 
@@ -42,7 +42,7 @@ const Container = tw.div `
     z-50
 `
 
-const HeadLinks = tw.div `
+const HeadLinks = tw.div`
     flex 
     flex-1
     items-center
@@ -51,14 +51,14 @@ const HeadLinks = tw.div `
     relative
 `
 
-const Spacer = tw.div `
+const Spacer = tw.div`
     flex
     flex-1
     h-2
 `
 
-const HeadNav = styled.div `
-    ${tw `
+const HeadNav = styled.div`
+    ${tw`
     flex 
     space-x-6 
     hidden md:block
@@ -68,19 +68,25 @@ const HeadNav = styled.div `
       }
 `
 
-const SMNLink = styled.div ` 
-  ${tw `
+const SMNLink = styled.div` 
+  ${tw`
     flex-none
     w-16 md:w-24
     h-auto
     text-black
   `}
-  &[data-active='true'] {
+  
+  body.home & {
+    opacity: 0;
+  }
+
+  #header[data-active='true'] & {
     color: blue;
+    opacity: 1;
   }
 `
 
-const HeadLink = tw.div `
+const HeadLink = tw.div`
     inline-block
     hover:text-green 
     font-sans
@@ -89,7 +95,7 @@ const HeadLink = tw.div `
 `
 
 const Toggle = styled.div`
-  ${tw `
+  ${tw`
     cursor-pointer
     flex
     items-center
@@ -127,7 +133,7 @@ const Hamburger = styled.div`
 
   ::before {
     transform: ${props =>
-      props.open ? "rotate(-90deg) translate(-7px, 0px)" : "rotate(0deg)"};
+    props.open ? "rotate(-90deg) translate(-7px, 0px)" : "rotate(0deg)"};
     top: -7px;
   }
 
@@ -157,11 +163,11 @@ const Navbox = styled.div`
 
 const Header = ({ path }) => {
 
-    const [navbarOpen, setNavbarOpen] = useState(false)
+  const [navbarOpen, setNavbarOpen] = useState(false)
 
-    const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
-      // change state on scroll
+  // change state on scroll
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -179,68 +185,68 @@ const Header = ({ path }) => {
   }, [scrolled]);
 
 
-    return (
-        <div>
+  return (
+    <div>
 
-            <Wrapper id="header" data-active={scrolled}>
+      <Wrapper id="header" data-active={scrolled}>
 
-                <Container>
+        <Container>
 
-                    <HeadLinks>
+          <HeadLinks>
 
-                    <SMNLink className={'logo'}>
-                        <Link to={'/'}>
-                            <SMN css={tw`fill-current text-black`}/>
-                        </Link>    
-                    </SMNLink>
+            <SMNLink className={'logo'}>
+              <Link to={'/'}>
+                <SMN css={tw`fill-current text-black`} />
+              </Link>
+            </SMNLink>
 
-                  <Spacer />
+            <Spacer />
 
-                    <Toggle
-                        navbarOpen={navbarOpen}
-                        onClick={() => setNavbarOpen(!navbarOpen)}
-                    >
-                    {navbarOpen ? <Hamburger open /> : <Hamburger />}
-                    </Toggle>
+            <Toggle
+              navbarOpen={navbarOpen}
+              onClick={() => setNavbarOpen(!navbarOpen)}
+            >
+              {navbarOpen ? <Hamburger open /> : <Hamburger />}
+            </Toggle>
 
-                    <HeadNav data-active={scrolled}>
+            <HeadNav data-active={scrolled}>
 
-                    <Link to={'/about'}>
-                        <HeadLink>About</HeadLink>
-                    </Link>
+              <Link to={'/about'}>
+                <HeadLink>About</HeadLink>
+              </Link>
 
-                    <Link to={'/changework'}>
-                        <HeadLink>Projects</HeadLink>
-                    </Link>
+              <Link to={'/changework'}>
+                <HeadLink>Projects</HeadLink>
+              </Link>
 
-                    <Link to={'/blog'}>
-                        <HeadLink>Blog</HeadLink>
-                    </Link>
+              <Link to={'/blog'}>
+                <HeadLink>Blog</HeadLink>
+              </Link>
 
-                    </HeadNav>
+            </HeadNav>
 
-                    </HeadLinks>
-
-
+          </HeadLinks>
 
 
 
-                </Container>
 
-                {navbarOpen ? (
-                <Navbox>
-                    <MobileMenu />
-                </Navbox>
-                ) : (
-                <Navbox open>
-                    <MobileMenu />
-                </Navbox>
-                )}
 
-            </Wrapper>
+        </Container>
 
-        </div>
-    )
+        {navbarOpen ? (
+          <Navbox>
+            <MobileMenu />
+          </Navbox>
+        ) : (
+            <Navbox open>
+              <MobileMenu />
+            </Navbox>
+          )}
+
+      </Wrapper>
+
+    </div>
+  )
 
 }
 
