@@ -1,3 +1,4 @@
+import styled from "@emotion/styled"
 import tw from "twin.macro"
 import React from "react"
 import Fade from 'react-reveal/Fade'
@@ -5,127 +6,108 @@ import Fade from 'react-reveal/Fade'
 import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
-const WorkGrid = tw.div `
-    md:mb-24
+const WorkGrid = tw.div`
+    md:grid 
+    md:grid-cols-2 
+    mb-32 lg:mb-60
+    col-gap-12 
+    container
+    mx-auto
 `
 
-const Container = tw.div`
-    container 
-    md:mx-auto 
-    md:flex
-    md:space-x-6
-    py-6 md:py-24
-    mt-6 md:mt-0
+const Wrapper = styled.div`
+    &:nth-of-type(3n) {
+        grid-column: 1 / span 2;
+
+        .work-image {
+            ${tw`h-auto`}
+        }
+
+        .work-details {
+            ${tw`lg:w-1/2`}
+        }
+    }
 `
 
-const Major = tw.div `
-  md:border-r-2
-  border-black
-  md:pr-6
-  flex
-  flex-wrap
-  items-end
-  h-full
-  md:w-7/12
-  flex-1
+const WorkBlock = tw.div`
+    md:mt-12
+    mb-10 lg:mb-12 
+    hover:opacity-75
+
 `
 
-const Minor = tw.div `
-  md:flex
-  md:items-center
-  mt-4 md:mt-0
-  md:w-5/12
-  flex-1
+const WorkImage = tw.div`
+    mb-2 md:mb-4 
+    overflow-hidden
+    h-sm lg:h-lg
 `
 
-const TextBlock = tw.div `
-    md:pr-16
+
+const Image = tw.img`
+    object-cover
+    h-full
+    w-full
 `
 
-const Title = tw.div `
-    text-5xl md:text-8xl 
+const WorkDetails = tw.div`
+`
+
+const WorkTitle = tw.span`
+    text-2xl lg:text-3xl 
     font-title
     font-bold 
     uppercase
-    leading-extra-tight
-    mb-4 md:mb-10
+    text-purple
 `
 
-const Subhead = tw.div `
-    text-xl md:text-2xl 
-    font-sans 
-    leading-tight
-    mb-3 md:mb-6
+const WorkSub = tw.span`
+    text-2xl lg:text-3xl 
+    font-light 
+    text-black
 `
 
-const MoreLink = tw.div `
-    font-sans
-    uppercase
-    tracking-widest
-    text-lg
-    leading-normal
-    hover:underline
-`
+export default function ProjectGrid({ data }) {
 
-const ImageBlock = tw.div `
-    
-`
+    const blocks = data.map(function (block, i) {
 
-const ItemImage = tw.img `
-    h-sm md:h-lg
-    w-full
-    object-cover
-`
-
-export default function ProjectGrid ( {data} ) {
-
-    const blocks = data.map(function(block){
-    
         return (
 
-        <Fade delay={300}>
-            <Link to={`/changework/${block.project._meta.uid}`}>
-            
-        <Container>
+            <Wrapper>
+                <Fade delay={300}>
+                    <Link key={`project-${i}`} to={`/changework/${block.project._meta.uid}`}>
 
-            <Major>
-                <ImageBlock>
-                    <ItemImage src={block.project.lead_image.url}></ItemImage>
-                </ImageBlock>
-            </Major>
+                        <WorkBlock>
 
-            <Minor>
-                <TextBlock>
-                    <Title>
-                        <RichText render={block.project.title} />
-                    </Title>
+                            <WorkImage className="work-image">
+                                <Image src={block.project.lead_image.url}></Image>
+                            </WorkImage>
 
-                    <Subhead>
-                        <RichText render={block.project.challenge} />
-                    </Subhead>
+                            <WorkDetails className="work-details">
+                                <WorkTitle>
+                                    {RichText.asText(block.project.title)}
+                                </WorkTitle>
+                                <WorkSub>
+                                    <span>&thinsp;—&thinsp;</span>
+                                    {RichText.asText(block.project.challenge)}
+                                </WorkSub>
+                            </WorkDetails>
 
-                    <MoreLink>
-                        <Link to={`/changework/${block.project._meta.uid}`}>Learn More &rarr;</Link>   
-                    </MoreLink>
-                </TextBlock>
-            </Minor>
-
-        </Container>
-
-            </Link>
-        </Fade>
+                        </WorkBlock>
+                    </Link>
+                </Fade>
+            </Wrapper>
         )
-    
+
     })
 
     return (
-    <>
-    <WorkGrid>
+        <>
+            <WorkGrid>
 
-        { blocks }
+                {blocks}
 
-    </WorkGrid>
-    </>
+            </WorkGrid>
+        </>
 
     )
 

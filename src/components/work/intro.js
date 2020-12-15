@@ -4,7 +4,7 @@ import React from "react"
 const Container = tw.div`
   container
   mx-auto
-  mt-12 lg:my-20
+  my-12 lg:my-20
 `
 
 const Title = tw.h1`
