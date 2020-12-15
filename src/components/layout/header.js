@@ -31,7 +31,7 @@ ${tw`
 const Container = tw.div`
     container 
     w-full
-    md:mx-auto 
+    mx-auto 
     flex 
     font-normal 
     tracking-wide 
