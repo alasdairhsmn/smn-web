@@ -1,16 +1,17 @@
 import React from "react"
 import { graphql } from 'gatsby'
-import IndexLayout from "../components/layout/indexLayout"
+import IndexLayout from "~/components/layout/indexLayout"
 
 import Fade from 'react-reveal/Fade'
 
-import HomeLead from '../components/homepage/leadBlock'
-import HomeHighlight from "../components/homepage/highlight"
+import HomeLead from '~/components/homepage/leadBlock'
+import TextBlock from '~/components/shared/textBlock'
+import HomeHighlight from "~/components/homepage/highlight"
 
-import HomeClients from "../components/homepage/clients"
+import HomeClients from "~/components/homepage/clients"
 
-import ProjectRow from "../components/homepage/projectRow"
-import BlogRow from "../components/shared/blogRow"
+import ProjectRow from "~/components/homepage/projectRow"
+import BlogRow from "~/components/shared/blogRow"
 import Helmet from 'react-helmet'
 
 
@@ -103,6 +104,10 @@ export default function Home({ data }) {
       </Helmet>
 
       <HomeLead data={homepage} />
+
+      <Fade delay={300}>
+        <TextBlock />
+      </Fade>
 
       <Fade delay={300}>
         <HomeHighlight data={changework[0]} />
