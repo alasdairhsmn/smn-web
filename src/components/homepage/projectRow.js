@@ -3,17 +3,16 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
-const Wrapper = tw.div `
-    py-6 md:py-12
+const Wrapper = tw.div`
+    pt-6 md:pt-12
 `
 
-const WorkGrid = tw.div `
+const WorkGrid = tw.div`
     md:grid 
-    md:grid-cols-3 
+    md:grid-cols-2 
     col-gap-12 
     container
     mx-auto
-    mb-8
 `
 
 const WorkBlock = tw.div`
@@ -26,48 +25,35 @@ const WorkBlock = tw.div`
 const WorkImage = tw.div`
     mb-2 md:mb-4 
     overflow-hidden
+    h-sm lg:h-lg
 `
 
-const Image = tw.img `
-    h-sm md:h-sm
+const Image = tw.img`
     object-cover
+    h-full
+    w-full
 `
 
-const WorkTitle = tw.div`
+const WorkDetails = tw.div`
+`
+
+const WorkTitle = tw.span`
     text-2xl md:text-3xl 
     font-title
     font-bold 
     uppercase
-    mb-2 md:mb-4 
-    leading-none
+    text-purple
 `
 
-const WorkSub = tw.div `
+const WorkSub = tw.span`
+    text-2xl md:text-3xl 
     font-light 
-    text-xl 
-    leading-snug 
-    mt-3
-    text-midgrey
+    text-black
 `
 
-const WorkTags = tw.div`
-    mt-4 
-    uppercase 
-    tracking-widest 
-    border
-    border-black
-    rounded-md
-    inline-block
-    px-3
-    py-2
-    text-sm
-    leading-normal
-`
+export default function ProjectRow({ data }) {
 
-
-export default function ProjectRow ({data}) {
-
-    const blocks = data.slice(1, 4).map(function(block, i){
+    const blocks = data.slice(1, 3).map(function (block, i) {
 
         if (i > 2) {
 
@@ -75,39 +61,41 @@ export default function ProjectRow ({data}) {
 
         } else
 
-        return (
+            return (
 
-            <Link to={`/changework/${block.project._meta.uid}`}>
+                <Link key={`project-${i}`} to={`/changework/${block.project._meta.uid}`}>
 
-            <WorkBlock>
+                    <WorkBlock>
 
-            <WorkImage>
-                <Image src={block.project.lead_image.url}></Image>
-            </WorkImage>
-           
-                <WorkTitle>
-                    <RichText render={block.project.title} />
-                </WorkTitle>
+                        <WorkImage>
+                            <Image src={block.project.lead_image.url}></Image>
+                        </WorkImage>
 
-                <WorkSub>
-                    <RichText render={block.project.challenge} />
-                </WorkSub>
+                        <WorkDetails>
+                            <WorkTitle>
+                                {RichText.asText(block.project.title)}
+                            </WorkTitle>
+                            <WorkSub>
+                                <span>&ensp;—&ensp;</span>
+                                {RichText.asText(block.project.challenge)}
+                            </WorkSub>
+                        </WorkDetails>
 
-            </WorkBlock>
-            </Link>
+                    </WorkBlock>
+                </Link>
 
-        )
+            )
 
     })
 
     return (
-    <Wrapper>
+        <Wrapper>
 
-        <WorkGrid>
-                { blocks }
-        </WorkGrid>
-    
-    </Wrapper>
+            <WorkGrid>
+                {blocks}
+            </WorkGrid>
+
+        </Wrapper>
 
     )
 

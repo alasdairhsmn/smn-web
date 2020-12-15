@@ -1,10 +1,9 @@
 import tw from "twin.macro"
 import styled from "@emotion/styled"
 import React from "react"
-import { Link } from "gatsby"
-import { RichText } from 'prismic-reactjs'
+import ButtonLink from '~/components/shared/buttonLink'
 
-const Wrapper = tw.div `
+const Wrapper = tw.div`
     flex
     items-center
     mt-0 md:mt-24
@@ -12,124 +11,58 @@ const Wrapper = tw.div `
     py-12 md:py-0
 `
 
-const Container = tw.div `
+const Container = tw.div`
     container
     mx-auto
-    md:grid
-    grid-cols-12
-    gap-4
-`
-
-const Major = tw.div `
-    col-span-7
-    md:border-l-2
-    border-black
-    h-auto
     flex
+    flex-col
     items-center
 `
 
-const Gallery = tw.div `
-    grid
-    grid-cols-3 md:grid-cols-3
-    md:w-5/6
-    gap-0
-    mx-auto
+const Gallery = tw.div`
+    mx-auto mb-20
+    flex justify-between
+    flex-wrap lg:flex-nowrap
 `
-const GalleryItem = tw.div `
+
+const GalleryItem = tw.div`
     flex
     items-center
-    m-4 md:m-8
+    justify-between
+    m-4 lg:m-8
+    grayscale
+    w-1/5 sm:p-2 lg:w-auto
 `
 
-const ItemImage = tw.img `
+export default function HomeClients({ data }) {
 
-`
-
-const Minor = tw.div `
-    md:col-span-5
-    mb-6 md:mb-0
-`
-
-const Title = tw.div `
-    text-4xl md:text-8xl
-    font-title
-    font-bold
-    tracking-tight
-    leading-extra-tight
-    mb-6 md:mb-12
-    uppercase
-`
-
-const Body = styled.div `
-    ${tw`   
-    font-sans
-    text-xl
-    leading-tight
-    md:pr-12
-    font-normal
-    `}
-    p     {
-            margin-bottom: 1em;
-            }
-`
-
-const MoreLink = tw.div `
-    font-sans
-    uppercase
-    tracking-widest
-    text-lg
-    hover:underline
-`
-
-export default function HomeClients ( {data} ) {
-
-    const logos = data.client_logos.map(function(logo){
+    const logos = data.client_logos.map(function (logo) {
 
         return (
             <GalleryItem>
-                <ItemImage src={logo.logo_image.url} />
+                <img alt="" src={logo.logo_image.url} />
             </GalleryItem>
         )
 
     })
 
     return (
-        
-    <Wrapper>
 
-        <Container>
+        <Wrapper>
 
-        <Minor>
-            <Title>
-                <RichText render={data.clients_heading} />
-            </Title> 
+            <Container>
 
-            <Body>
-                <RichText render={data.clients_copy} />
-            </Body>  
+                <Gallery>
 
-            <MoreLink>
-                <Link to={`/about`}>About Us &rarr;</Link>   
-            </MoreLink>
+                    {logos}
 
-        </Minor>   
+                </Gallery>
 
-        
-        <Major>
+                <ButtonLink href={`/changework`}>See all projects</ButtonLink>
 
-            <Gallery>
+            </Container>
 
-                {logos}
-
-            </Gallery>
-            
-        </Major> 
-
-
-        </Container>
-
-    </Wrapper>
+        </Wrapper>
 
     )
 

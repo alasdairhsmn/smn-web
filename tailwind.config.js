@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   theme: {
     container: {
@@ -89,7 +91,17 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const filterUtilities = {
+        '.grayscale': {
+          filter: 'grayscale(100%)',
+        },
+      }
+
+      addUtilities(filterUtilities, ['responsive', 'hover'])
+    })
+  ],
   purge: [
     './src/components/**/*.js',
     './src/pages/**/*.js'
