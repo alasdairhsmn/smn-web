@@ -1,4 +1,5 @@
 import React from "react"
+import tw from "twin.macro"
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Fade from 'react-reveal/Fade'
@@ -8,6 +9,8 @@ import IndexLayout from "~/components/layout/indexLayout"
 import AboutHero from "~/components/about/hero"
 import AboutPolaroids from "~/components/about/polaroids"
 import AboutRow from "~/components/about/row"
+import TextBlock from "~/components/shared/textBlock";
+import ButtonLink from "~/components/shared/ButtonLink";
 
 export const query = graphql`
 query AboutQuery {
@@ -99,6 +102,18 @@ export default function AboutIndex({ data }) {
           <p>Our shared future needs organisations that are imaginative, inclusive and post-carbon.</p>
           <p>We founded Something More Near to help clients who embody these principles to succeed, and equip others to find their place in this new world.</p>
         </AboutRow>
+      </Fade>
+
+      <Fade delay={300}>
+        <TextBlock yellow>
+          <p>We always want to hear more from ambitious organisations and individuals.</p>
+
+          <p>Get in touch and find out how we can work together</p>
+
+          <div css={tw`text-center`}>
+            <ButtonLink mailto href="mailto:hello@somethingmorenear.com">Get in touch</ButtonLink>
+          </div>
+        </TextBlock>
       </Fade>
 
     </IndexLayout>

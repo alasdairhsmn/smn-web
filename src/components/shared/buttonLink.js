@@ -19,11 +19,16 @@ const Container = tw.div`
     min-w-56
 `
 
-export default function ButtonLink(props) {
+export default function ButtonLink({ href, children, mailto = false }) {
 
   return (
     <Container>
-      <Link css={tw`block px-12 py-5 text-center`} to={props.href}>{props.children}</Link>
+      { mailto
+        ?
+        <a css={tw`block px-12 py-5 text-center`} href={href}>{children}</a>
+        :
+        <Link css={tw`block px-12 py-5 text-center`} to={href}>{children}</Link>
+      }
     </Container>
   );
 }

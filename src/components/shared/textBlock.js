@@ -2,17 +2,16 @@ import tw from "twin.macro"
 import React from "react"
 
 const Block = tw.div`
-    w-full
     bg-darkblue
-    min-h-screen80 md:min-h-screen
+    w-full
+    min-h-screen60 md:min-h-screen70
     flex
     items-center
     justify-center
     text-white
     text-3xl sm:text-4xl md:text-5xl lg:text-6xl
     leading-tight md:leading-none
-    font-normal
-    
+    font-normal   
 `
 
 const Container = tw.div`
@@ -27,15 +26,18 @@ const Text = tw.div`
   py-12
 `
 
-export default function TextBlock() {
+const yellowBackground = tw`
+  bg-lightyellow
+  text-black
+`
+
+export default function TextBlock({ children, yellow = false }) {
 
   return (
-    <Block>
+    <Block css={[yellow && yellowBackground]}>
       <Container>
         <Text>
-          <p>We specialise in participatory approaches to strategy and innovation.</p>
-
-          <p>We like ambitious clients, big challenges and messy problems.</p>
+          {children}
         </Text>
       </Container>
     </Block>

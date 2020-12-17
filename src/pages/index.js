@@ -112,7 +112,11 @@ export default function Home({ data }) {
       <HomeLead data={homepage} />
 
       <Fade delay={300}>
-        <TextBlock />
+        <TextBlock>
+          <p>We specialise in participatory approaches to strategy and innovation.</p>
+
+          <p>We like ambitious clients, big challenges and messy problems.</p>
+        </TextBlock>
       </Fade>
 
       <Fade delay={300}>
