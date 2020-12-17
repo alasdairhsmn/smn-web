@@ -3,7 +3,7 @@ import React from "react"
 import Fade from 'react-reveal/Fade'
 
 const Wrapper = tw.section`
-  bg-lightyellow
+  bg-lightgrey
 `
 
 const Content = tw.div`
@@ -30,28 +30,34 @@ const Heading = tw.h2`
   uppercase
   font-bold
   text-5xl lg:text-7xl
-  mb-2 md:mb-4
+  mb-2 md:mb-10
 `
 
-const Paragraph = tw.p`
+const Paragraph = tw.div`
   text-2xl md:text-3xl
   font-normal
+  space-y-8
 `
 
+const yellowBackground = tw`
+    bg-lightyellow
+`
 
-export default function AboutRow() {
+const reverseOrder = tw`
+    lg:flex-row-reverse
+`
 
+export default function AboutRow({ title, children, yellow = false, reverse = false }) {
     return (
-
-        <Wrapper>
+        <Wrapper css={[yellow && yellowBackground]}>
             <Fade delay={300}>
-                <Content>
+                <Content css={[reverse && reverseOrder]}>
                     <ImageContainer>
-                        <div css={tw` bg-purple h-64 w-64 rounded-full`}></div>
+                        <div css={tw`bg-purple h-64 w-64 rounded-full`}></div>
                     </ImageContainer>
                     <TextContainer>
-                        <Heading>The Method</Heading>
-                        <Paragraph>Our projects run on a methodology that breaks down messy problems into simple steps and tangible progress that everyone can get behind.</Paragraph>
+                        <Heading>{title}</Heading>
+                        <Paragraph>{children}</Paragraph>
                     </TextContainer>
                 </Content>
             </Fade>

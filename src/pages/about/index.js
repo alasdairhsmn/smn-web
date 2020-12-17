@@ -83,7 +83,22 @@ export default function AboutIndex({ data }) {
       <AboutPolaroids />
 
       <Fade delay={300}>
-        <AboutRow />
+        <AboutRow title={'The Method'} yellow>
+          Our projects run on a methodology that breaks down messy problems into simple steps and tangible progress that everyone can get behind.
+        </AboutRow>
+      </Fade>
+
+      <Fade delay={300}>
+        <AboutRow title={'The Vibes'} reverse>
+          <p>We’re a hard-working team that gets our energy from honest conversations, challenging ideas, and meetings that finish on time. </p>
+        </AboutRow>
+      </Fade>
+
+      <Fade delay={300}>
+        <AboutRow title={'The Why'} yellow>
+          <p>Our shared future needs organisations that are imaginative, inclusive and post-carbon.</p>
+          <p>We founded Something More Near to help clients who embody these principles to succeed, and equip others to find their place in this new world.</p>
+        </AboutRow>
       </Fade>
 
     </IndexLayout>
