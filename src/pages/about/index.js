@@ -1,17 +1,12 @@
 import React from "react"
 import { graphql } from 'gatsby'
-import IndexLayout from "~/components/layout/indexLayout"
 import { Helmet } from 'react-helmet'
-
 import Fade from 'react-reveal/Fade'
 import { RichText } from 'prismic-reactjs'
 
+import IndexLayout from "~/components/layout/indexLayout"
 import AboutHero from "~/components/about/hero"
-import AboutTeam from "../../components/about/team"
-import AboutTeamNew from "../../components/about/team-new"
-import AboutExperience from "../../components/about/experience"
-import AboutEditorial from "../../components/about/editorial"
-import PageTitle from "../../components/shared/pageTitle"
+import AboutPolaroids from "~/components/about/polaroids"
 
 export const query = graphql`
 query AboutQuery {
@@ -87,29 +82,13 @@ export default function AboutIndex({ data }) {
 
       </Fade>
 
-      <Fade delay={300}>
-        <AboutExperience data={about.recently_list} />
-      </Fade>
-
+      <AboutPolaroids />
 
       <Fade delay={300}>
-        <AboutEditorial data={about.body} />
+        <AboutPolaroids />
       </Fade>
 
-
-      <Fade delay={300}>
-        <AboutTeamNew data={about.team_list} />
-      </Fade>
-
-      <Fade delay={300}>
-        <PageTitle
-          title={RichText.asText(about.footer_title)}
-          sub={RichText.asText(about.footer_copy)} />
-      </Fade>
-
-
-
-    </Layout>
+    </IndexLayout>
   )
 
 }
