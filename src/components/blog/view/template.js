@@ -42,6 +42,13 @@ query BlogPostQuery($uid: String!) {
                 _meta {
                   uid
                 }
+                author {
+                  ... on PRISMIC_Team_member {
+                    name
+                    image
+                    in_brief
+                  }
+                }
                 subhead
                 title
                 lead_image
