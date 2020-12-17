@@ -37,6 +37,12 @@ html.wf-inactive {
     }
 }
 
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body #home-toggle {
     display: none;
 }
