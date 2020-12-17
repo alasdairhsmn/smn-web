@@ -1,56 +1,41 @@
 import tw from "twin.macro"
-import styled from "@emotion/styled"
 import React from "react"
 
-const Wrapper = tw.div `
-    mb-6 md:mb-12
+const Wrapper = tw.div`
+    bg-lightgrey
+    pt-12 md:pt-24
 `
 
-const Editorial = tw.div `
+const Editorial = tw.div`
     container
     mx-auto
-    w-3/4 md:w-1/2
-    text-center
-    md:min-h-screen60
+    md:min-h-screen50
     py-8 md:py-8
     border-b-0
     border-black
 `
 
-const EditorialTitle = tw.div `
+const EditorialTitle = tw.div`
     font-title 
     font-bold 
     uppercase
     text-5xl md:text-8xl
     leading-extra-tight
     mb-10 md:mb-12
+    w-full lg:w-2/3 xl:w-1/2
 `
 
-const EditorialBody = tw.div `
+const EditorialBody = tw.div`
     text-lg 
     text-xl md:text-2xl 
     font-light
     leading-tight
+    w-full lg:w-2/3 xl:w-1/2
 `
 
-const ImageBlock = tw.div `
-    col-span-6
-    h-full
-    flex
-    items-center
-`
-
-const Image = tw.img `
-    w-full
-    h-auto
-    bg-red
-`
-
-
-export default function AboutHero ( {title, sub, image} ) {
+export default function AboutHero({ title, sub }) {
 
     return (
-        
 
         <Wrapper>
 

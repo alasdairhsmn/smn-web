@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from 'gatsby'
-import Layout from "../../components/layout/layout"
+import IndexLayout from "~/components/layout/indexLayout"
 import { Helmet } from 'react-helmet'
 
 import Fade from 'react-reveal/Fade'
 import { RichText } from 'prismic-reactjs'
 
-import AboutHero from "../../components/about/hero"
+import AboutHero from "~/components/about/hero"
 import AboutTeam from "../../components/about/team"
 import AboutTeamNew from "../../components/about/team-new"
 import AboutExperience from "../../components/about/experience"
@@ -57,14 +57,13 @@ query AboutQuery {
   }  
 `;
 
-
 export default function AboutIndex({ data }) {
 
   const about = data.prismic.about_page
   if (!about) return null
 
   return (
-    <Layout>
+    <IndexLayout>
 
       <Helmet>
         <title>About &mdash; Something More Near</title>
