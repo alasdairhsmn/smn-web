@@ -88,6 +88,9 @@ module.exports = {
       minWidth: {
         '56': '14rem'
       },
+      spacing: {
+        'full': '100%'
+      },
       width: {
         'lg': '34rem'
       }

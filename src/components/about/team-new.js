@@ -1,48 +1,59 @@
 import tw from "twin.macro"
 import React from "react"
+import styled from "@emotion/styled"
 import { RichText } from 'prismic-reactjs'
 
 
-const Wrapper = tw.div `
-    bg-black
+const Wrapper = tw.div`
+    bg-lightgrey
+    text-black
     pt-6 md:pt-12
     pb-8 md:pb-20
     w-full
 `
 
-const Container = tw.div `
+const Container = tw.div`
     mx-auto
     w-full
     pr-4 md:pr-12
     pl-4 md:pl-6
     grid
-    grid-cols-2 md:grid-cols-12
+    grid-cols-2 md:grid-cols-3
     gap-6
-    md:divide-x 
-    divide-white
     font-sans
     text-lg md:text-xl
     font-light
     leading-tight
-    text-white
 `
 
-const Experience = tw.div `
-    col-span-1 md:col-span-2
-    py-1
+const Experience = tw.div`
+    col-span-1
+    p-7
     flex
     flex-col-reverse md:flex-col
-    text-white
-    md:pl-6
+    bg-white
 `
 
-const ImageBlock = tw.div `
-    h-auto
-    w-full
-    mb-2 md:mb-0
+const ImageBlock = styled.div`
+
+    ${tw`
+        w-full
+        mb-2 md:mb-0
+        relative
+        pb-full
+    `}
+
+    img {
+        ${tw`
+            absolute inset-0
+            h-full w-full
+            object-cover
+        `}
+    }
+    
 `
 
-const Line = tw.div `
+const Line = tw.div`
     mb-4 md:mb-16
     font-title
     font-bold
@@ -52,23 +63,23 @@ const Line = tw.div `
     flex-1
 `
 
-const Title = tw.div `
+const Title = tw.div`
     mx-auto
     font-title
     font-normal
     uppercase
     px-4 md:px-12
     mb-4 md:mb-12
-    text-2xl md:text-4xl
+    text-3xl md:text-7xl
     leading-normal
-    text-white
+    font-bold
 `
 
-const Role = tw.div `
+const Role = tw.div`
     font-light
 `
 
-const Body = tw.div `
+const Body = tw.div`
     font-sans
     font-light
     text-base md:text-base
@@ -79,51 +90,48 @@ const Body = tw.div `
 
 
 
-export default function AboutTeamNew ( {data} ) {
+export default function AboutTeamNew({ data }) {
 
-    const team = data.map(function(person){
+    const team = data.map(function (person) {
         return (
 
-        <Experience>
+            <Experience>
 
-            <Line>
-                <RichText render={person.team_member.name} />
-                
-                <Role>
-                    <RichText render={person.team_member.role} />
-                </Role>
+                <ImageBlock>
+                    <img alt="" src={person.team_member.image.url} />
+                </ImageBlock>
 
-                <Body>
-                    <RichText render={person.team_member.in_brief} />
-                </Body>
-            </Line>
+                <Line>
+                    <RichText render={person.team_member.name} />
 
-            <ImageBlock>
-                <img alt="" src={person.team_member.image.url} />
-            </ImageBlock>
+                    <Role>
+                        <RichText render={person.team_member.role} />
+                    </Role>
 
+                    <Body>
+                        <RichText render={person.team_member.in_brief} />
+                    </Body>
+                </Line>
 
-        </Experience>
+            </Experience>
 
         )
-})
+    })
 
-return (
+    return (
 
-    <Wrapper>
+        <Wrapper>
 
-        <Title>
-            Meet Our Team
-        </Title>
+            <Title>The team</Title>
 
-        <Container>
+            <Container>
 
-            {team}
+                {team}
 
-        </Container>
+            </Container>
 
-    </Wrapper>
+        </Wrapper>
 
-)
+    )
 
 }
