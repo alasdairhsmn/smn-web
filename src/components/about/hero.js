@@ -1,5 +1,6 @@
 import tw from "twin.macro"
 import React from "react"
+import Fade from 'react-reveal/Fade'
 
 const Wrapper = tw.div`
     bg-lightgrey
@@ -41,13 +42,15 @@ export default function AboutHero({ title, sub }) {
 
             <Editorial>
 
-                <EditorialTitle>
-                    {title}
-                </EditorialTitle>
+                <Fade delay={300}>
+                    <EditorialTitle>
+                        {title}
+                    </EditorialTitle>
 
-                <EditorialBody>
-                    {sub}
-                </EditorialBody>
+                    <EditorialBody>
+                        {sub}
+                    </EditorialBody>
+                </Fade>
 
             </Editorial>
 

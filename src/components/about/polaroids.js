@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import Fade from 'react-reveal/Fade'
 
 const Wrapper = tw.div`
     bg-lightgrey
@@ -42,19 +43,21 @@ const PolaroidImage = styled.div`
 
 export default function AboutPolaroids() {
 
-  return (
+    return (
 
-    <Wrapper>
+        <Wrapper>
 
-      <Content>
-        <PolaroidImage />
-        <PolaroidImage />
-        <PolaroidImage />
-        <PolaroidImage />
-      </Content>
+            <Fade delay={300}>
+                <Content>
+                    <PolaroidImage />
+                    <PolaroidImage />
+                    <PolaroidImage />
+                    <PolaroidImage />
+                </Content>
+            </Fade>
 
-    </Wrapper>
+        </Wrapper>
 
-  )
+    )
 
 }

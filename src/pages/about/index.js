@@ -7,6 +7,7 @@ import { RichText } from 'prismic-reactjs'
 import IndexLayout from "~/components/layout/indexLayout"
 import AboutHero from "~/components/about/hero"
 import AboutPolaroids from "~/components/about/polaroids"
+import AboutRow from "~/components/about/row"
 
 export const query = graphql`
 query AboutQuery {
@@ -72,20 +73,17 @@ export default function AboutIndex({ data }) {
       </Helmet>
 
 
-      <Fade delay={300}>
 
-        <AboutHero
-          title={RichText.asText(about.main_headline)}
-          sub={RichText.render(about.main_subhead)}
-          image={about.lead_image}
-        />
-
-      </Fade>
+      <AboutHero
+        title={RichText.asText(about.main_headline)}
+        sub={RichText.render(about.main_subhead)}
+        image={about.lead_image}
+      />
 
       <AboutPolaroids />
 
       <Fade delay={300}>
-        <AboutPolaroids />
+        <AboutRow />
       </Fade>
 
     </IndexLayout>
