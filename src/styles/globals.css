@@ -84,3 +84,64 @@ body.home #home-burger::before {
 .carousel__dot--selected {
     background: rgb(0, 0, 0);
 }
+
+.team-carousel {
+    padding-bottom: 80px;
+}
+
+.team-carousel .slick-slider .slick-track {
+    display: flex;
+}
+
+.team-carousel .slick-slide {
+    float: none;
+    height: auto;
+    margin: 0 24px;
+}
+
+@media (max-width: 600px) {
+    .team-carousel .slick-slide {
+        margin: 0 8px;
+    }
+}
+
+.team-carousel .slick-slide > div {
+    height: 100%;
+}
+
+.team-carousel .slick-arrow {
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+    height: 64px;
+    left: 50vw;
+    position: absolute;
+    top: 100%;
+    width: 64px;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .team-carousel .slick-arrow {
+        left: 40%;
+        top: 95%;
+    }
+}
+
+.team-carousel .slick-arrow.slick-prev {
+    transform: translate(-75%, 100%);
+}
+
+.team-carousel .slick-arrow.slick-next {
+    transform: translate(75%, 100%);
+}
+
+.team-carousel .slick-arrow.slick-prev:before {
+    content: url("/icons/arrow-left.svg");
+    font-family: inherit;
+    color: #333;
+}
+
+.team-carousel .slick-arrow.slick-next:before {
+    content: url("/icons/arrow-right.svg");
+}

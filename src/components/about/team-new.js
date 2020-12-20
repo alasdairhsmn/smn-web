@@ -2,24 +2,20 @@ import tw from "twin.macro"
 import React from "react"
 import styled from "@emotion/styled"
 import { RichText } from 'prismic-reactjs'
+import Slider from "react-slick";
 
 
 const Wrapper = tw.div`
     bg-lightgrey
     text-black
     pt-6 md:pt-12
-    pb-8 md:pb-20
+    pb-16 md:pb-36
     w-full
 `
 
 const Container = tw.div`
     mx-auto
     w-full
-    pr-4 md:pr-12
-    pl-4 md:pl-6
-    grid
-    grid-cols-2 md:grid-cols-3
-    gap-6
     font-sans
     text-lg md:text-xl
     font-light
@@ -32,6 +28,7 @@ const Experience = tw.div`
     flex
     flex-col-reverse md:flex-col
     bg-white
+    h-full
 `
 
 const ImageBlock = styled.div`
@@ -54,7 +51,6 @@ const ImageBlock = styled.div`
 `
 
 const Line = tw.div`
-    mb-4 md:mb-16
     font-title
     font-bold
     uppercase
@@ -91,6 +87,44 @@ const Body = tw.div`
 
 
 export default function AboutTeamNew({ data }) {
+    const settings = {
+        speed: 700,
+        fadeIn: false,
+        pauseOnHover: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        centerMode: true,
+        centerPadding: '15%',
+        initialSlide: 0,
+        draggable: false,
+        responsive: [
+            {
+                breakpoint: 1300,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    centerPadding: '7.5%',
+                }
+            },
+            {
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    centerPadding: '7.5%',
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerPadding: '5%',
+                }
+            },
+        ]
+    };
+
 
     const team = data.map(function (person) {
         return (
@@ -124,10 +158,10 @@ export default function AboutTeamNew({ data }) {
 
             <Title>The team</Title>
 
-            <Container>
-
-                {team}
-
+            <Container className="team-carousel js-team-carousel">
+                <Slider {...settings}>
+                    {team}
+                </Slider>
             </Container>
 
         </Wrapper>

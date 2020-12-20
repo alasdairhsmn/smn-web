@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade'
 
 const Wrapper = tw.div`
     bg-lightgrey
-    pt-12 md:pt-24
+    py-12 md:pt-24
 `
 
 const Editorial = tw.div`
