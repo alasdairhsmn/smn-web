@@ -19,9 +19,7 @@ const Wrapper = styled.div`
     &:nth-of-type(3n) {
         grid-column: 1 / span 2;
 
-        .work-image {
-            ${tw`h-auto`}
-        }
+        
 
         .work-details {
             ${tw`lg:w-1/2`}
@@ -36,10 +34,19 @@ const WorkBlock = tw.div`
 
 `
 
-const WorkImage = tw.div`
-    mb-2 md:mb-4 
-    overflow-hidden
-    h-sm lg:h-lg
+const WorkImage = styled.div`
+    position: relative;
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        background-color: red;
+        padding-bottom: calc(900% / 16);
+    }
+    ${tw`
+        mb-2 md:mb-4 
+        overflow-hidden
+    `}
 `
 
 
@@ -47,6 +54,8 @@ const Image = tw.img`
     object-cover
     h-full
     w-full
+    inset-0
+    absolute
 `
 
 const WorkDetails = tw.div`
