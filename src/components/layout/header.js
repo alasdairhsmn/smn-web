@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 
 import MobileMenu from "./menu/mobileMenu"
 
-import SMN from "../../assets/SomethingMoreNear_Black.svg"
+import SMN from "~/assets/SomethingMoreNear_Black.svg"
 
 
 const Wrapper = styled.div`
@@ -64,8 +64,12 @@ const HeadNav = styled.div`
     hidden md:block
     `}
     &[data-active='true'] {
-        color: black;
-      }
+      color: black;
+    }
+
+    a[aria-current="page"] div {
+      border-bottom: solid 1px currentColor;
+    }
 `
 
 const SMNLink = styled.div` 
@@ -87,11 +91,11 @@ const SMNLink = styled.div`
 `
 
 const HeadLink = tw.div`
-    inline-block
-    hover:text-green 
-    font-sans
-    text-lg
-    leading-normal
+  inline-block
+  hover:text-green
+  font-sans
+  text-lg
+  leading-normal
 `
 
 const Toggle = styled.div`
