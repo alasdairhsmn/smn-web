@@ -219,7 +219,7 @@ const Header = ({ path }) => {
                 <HeadLink>About</HeadLink>
               </Link>
 
-              <Link to={'/changework'}>
+              <Link to={'/projects'}>
                 <HeadLink>Projects</HeadLink>
               </Link>
 

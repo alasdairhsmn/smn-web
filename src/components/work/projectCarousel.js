@@ -5,20 +5,20 @@ import { RichText } from 'prismic-reactjs'
 
 import Slider from "react-slick";
 
-const Block = tw.div `
+const Block = tw.div`
     mt-20 md:mt-40 
 `
 
-const Wrapper = tw.div `
+const Wrapper = tw.div`
     container 
     md:mx-auto
 `
 
-const TextBlock = tw.div `
+const TextBlock = tw.div`
     w-full md:w-1/2
 `
 
-const Title = tw.div `
+const Title = tw.div`
     leading-normal
     text-2xl md:text-4xl 
     font-display 
@@ -26,7 +26,7 @@ const Title = tw.div `
     mb-2
 `
 
-const Subhead = tw.div `
+const Subhead = tw.div`
     text-lg md:text-xl 
     leading-normal
     font-sans 
@@ -34,13 +34,13 @@ const Subhead = tw.div `
     text-gray-600
 `
 
-const SliderBlock = tw.div `
+const SliderBlock = tw.div`
     w-full
     mx-auto
     mt-8
 `
 
-const Item = tw.div `
+const Item = tw.div`
     w-full
     h-lg
     overflow-hidden
@@ -53,7 +53,7 @@ const ItemCaption = tw.div`
     leading-normal
 `
 
-const ItemImage = tw.img `
+const ItemImage = tw.img`
     h-full
     w-full
     object-cover
@@ -61,7 +61,7 @@ const ItemImage = tw.img `
 `
 
 
-export default function ProjectCarousel ( {data} ) {
+export default function ProjectCarousel({ data }) {
 
 
     const settings = {
@@ -74,10 +74,10 @@ export default function ProjectCarousel ( {data} ) {
         pauseOnHover: false,
         slidesToShow: 2,
         slidesToScroll: 1,
-      };
+    };
 
 
-    const images = data.fields.map(function(image){
+    const images = data.fields.map(function (image) {
 
         return (
             <Item>
@@ -92,32 +92,32 @@ export default function ProjectCarousel ( {data} ) {
 
 
     return (
-    <>
+        <>
 
-    <Block>
-        <Wrapper>
+            <Block>
+                <Wrapper>
 
-            <TextBlock>
+                    <TextBlock>
 
-            <Title>
-                <RichText render={data.primary.section_title} />
-            </Title>
+                        <Title>
+                            <RichText render={data.primary.section_title} />
+                        </Title>
 
-            <Subhead>
-                <RichText render={data.primary.section_summary} />
-            </Subhead>
+                        <Subhead>
+                            <RichText render={data.primary.section_summary} />
+                        </Subhead>
 
-            </TextBlock>
-        </Wrapper>
-    </Block>
+                    </TextBlock>
+                </Wrapper>
+            </Block>
 
-    <SliderBlock>
-        <Slider {...settings}>
-            { images }
-        </Slider>
-    </SliderBlock>
-    
-    </>
+            <SliderBlock>
+                <Slider {...settings}>
+                    {images}
+                </Slider>
+            </SliderBlock>
+
+        </>
 
     )
 

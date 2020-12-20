@@ -3,11 +3,11 @@ import React from "react"
 import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
-const Wrapper = tw.div `
+const Wrapper = tw.div`
     py-8 md:py-16
 `
 
-const WorkGrid = tw.div `
+const WorkGrid = tw.div`
     md:grid 
     md:grid-cols-3 
     col-gap-12 
@@ -16,7 +16,7 @@ const WorkGrid = tw.div `
     mb-8
 `
 
-const RowTitle = tw.div `
+const RowTitle = tw.div`
     container 
     mx-auto
     mb-4 md:mb-8
@@ -25,7 +25,7 @@ const RowTitle = tw.div `
     items-center
 `
 
-const RowTitleMain = tw.div `
+const RowTitleMain = tw.div`
     font-title
     font-semibold
     text-2xl md:text-4xl
@@ -33,7 +33,7 @@ const RowTitleMain = tw.div `
     flex-grow
 `
 
-const RowTitleLink = tw.div `
+const RowTitleLink = tw.div`
     pt-2 md:pt-4
     text-lg 
     md:text-xl
@@ -52,7 +52,7 @@ const WorkImage = tw.div`
     overflow-hidden
 `
 
-const Image = tw.img `
+const Image = tw.img`
     h-sm md:h-sm
     object-cover
 `
@@ -66,7 +66,7 @@ const WorkTitle = tw.div`
     leading-none
 `
 
-const WorkSub = tw.div `
+const WorkSub = tw.div`
     font-light 
     text-xl 
     leading-snug 
@@ -89,29 +89,29 @@ const WorkTags = tw.div`
 `
 
 
-export default function ProjectRow ({data, id}) {
+export default function ProjectRow({ data, id }) {
 
-    const blocks = data.filter(block => block.project._meta.uid !== id).map(function(block, i){
+    const blocks = data.filter(block => block.project._meta.uid !== id).map(function (block, i) {
 
         return (
 
-            <Link to={`/changework/${block.project._meta.uid}`}>
+            <Link to={`/projects/${block.project._meta.uid}`}>
 
-            <WorkBlock>
+                <WorkBlock>
 
-            <WorkImage>
-                <Image src={block.project.lead_image.url}></Image>
-            </WorkImage>
-           
-                <WorkTitle>
-                    <RichText render={block.project.title} />
-                </WorkTitle>
+                    <WorkImage>
+                        <Image src={block.project.lead_image.url}></Image>
+                    </WorkImage>
 
-                <WorkSub>
-                    <RichText render={block.project.challenge} />
-                </WorkSub>
+                    <WorkTitle>
+                        <RichText render={block.project.title} />
+                    </WorkTitle>
 
-            </WorkBlock>
+                    <WorkSub>
+                        <RichText render={block.project.challenge} />
+                    </WorkSub>
+
+                </WorkBlock>
             </Link>
 
         )
@@ -119,24 +119,24 @@ export default function ProjectRow ({data, id}) {
     })
 
     return (
-    <Wrapper>
+        <Wrapper>
 
-        <RowTitle>
+            <RowTitle>
 
-            <RowTitleMain>Changework Projects</RowTitleMain>
-            <RowTitleLink>
-                <Link to={`/changework`}>See all &rarr;</Link>     
-            </RowTitleLink>
+                <RowTitleMain>Changework Projects</RowTitleMain>
+                <RowTitleLink>
+                    <Link to={`/projects`}>See all &rarr;</Link>
+                </RowTitleLink>
 
-        </RowTitle>
+            </RowTitle>
 
-        <WorkGrid>
-                { blocks[0] }
-                { blocks[1] }
-                { blocks[2] }
-        </WorkGrid>
-    
-    </Wrapper>
+            <WorkGrid>
+                {blocks[0]}
+                {blocks[1]}
+                {blocks[2]}
+            </WorkGrid>
+
+        </Wrapper>
 
     )
 

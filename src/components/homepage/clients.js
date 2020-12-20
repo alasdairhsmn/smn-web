@@ -58,7 +58,7 @@ export default function HomeClients({ data }) {
 
                 </Gallery>
 
-                <ButtonLink href={`/changework`}>See all projects</ButtonLink>
+                <ButtonLink href={`/projects`}>See all projects</ButtonLink>
 
             </Container>
 

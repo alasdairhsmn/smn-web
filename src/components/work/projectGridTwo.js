@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade'
 import { RichText } from 'prismic-reactjs'
 import { Link } from "gatsby"
 
-const WorkGrid = tw.div `
+const WorkGrid = tw.div`
     container
     mx-auto
     grid
@@ -14,7 +14,7 @@ const WorkGrid = tw.div `
     py-12
 `
 
-const Item = tw.div `
+const Item = tw.div`
     col-span-1
 `
 
@@ -28,7 +28,7 @@ const Container = tw.div`
     mt-6 md:mt-0
 `
 
-const Major = tw.div `
+const Major = tw.div`
   md:border-r-2
   border-black
   md:pr-6
@@ -40,7 +40,7 @@ const Major = tw.div `
   flex-1
 `
 
-const Minor = tw.div `
+const Minor = tw.div`
   md:flex
   md:items-center
   mt-4 md:mt-0
@@ -48,12 +48,12 @@ const Minor = tw.div `
   flex-1
 `
 
-const TextBlock = tw.div `
+const TextBlock = tw.div`
     md:pr-16
     mt-4
 `
 
-const Title = tw.div `
+const Title = tw.div`
     text-2xl md:text-4xl 
     font-title
     font-bold 
@@ -62,14 +62,14 @@ const Title = tw.div `
     mb-2 md:mb-4
 `
 
-const Subhead = tw.div `
+const Subhead = tw.div`
     text-lg md:text-xl 
     font-sans 
     leading-tight
     mb-3 md:mb-6
 `
 
-const MoreLink = tw.div `
+const MoreLink = tw.div`
     font-sans
     uppercase
     tracking-widest
@@ -78,58 +78,58 @@ const MoreLink = tw.div `
     hover:underline
 `
 
-const ImageBlock = tw.div `
+const ImageBlock = tw.div`
     
 `
 
-const ItemImage = tw.img `
+const ItemImage = tw.img`
     h-sm md:h-med
     w-full
     object-cover
 `
 
-export default function ProjectGridTwo ( {data} ) {
+export default function ProjectGridTwo({ data }) {
 
-    const blocks = data.map(function(block){
-    
+    const blocks = data.map(function (block) {
+
         return (
 
-        <Link to={`/changework/${block.project._meta.uid}`}>
+            <Link to={`/projects/${block.project._meta.uid}`}>
 
-            <Item>
+                <Item>
 
-            <ImageBlock>
-                <ItemImage src={block.project.lead_image.url}></ItemImage>
-            </ImageBlock>
+                    <ImageBlock>
+                        <ItemImage src={block.project.lead_image.url}></ItemImage>
+                    </ImageBlock>
 
-            <TextBlock>
+                    <TextBlock>
 
-                <Title>
-                    <RichText render={block.project.title} />
-                </Title>
+                        <Title>
+                            <RichText render={block.project.title} />
+                        </Title>
 
-                <Subhead>
-                    <RichText render={block.project.challenge} />
-                </Subhead>
+                        <Subhead>
+                            <RichText render={block.project.challenge} />
+                        </Subhead>
 
-            </TextBlock>
+                    </TextBlock>
 
-            </Item>  
+                </Item>
 
-        </Link>
+            </Link>
 
         )
-    
+
     })
 
     return (
-    <>
-    <WorkGrid>
+        <>
+            <WorkGrid>
 
-        { blocks }
+                {blocks}
 
-    </WorkGrid>
-    </>
+            </WorkGrid>
+        </>
 
     )
 

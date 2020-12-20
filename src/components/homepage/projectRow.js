@@ -63,7 +63,7 @@ export default function ProjectRow({ data }) {
 
             return (
 
-                <Link key={`project-${i}`} to={`/changework/${block.project._meta.uid}`}>
+                <Link key={`project-${i}`} to={`/projects/${block.project._meta.uid}`}>
 
                     <WorkBlock>
 

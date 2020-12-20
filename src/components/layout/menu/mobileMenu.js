@@ -3,11 +3,11 @@ import React from 'react';
 
 import { Link } from "gatsby"
 
-import SMN from "../../../assets/SomethingMoreNear.svg"
+import SMN from "~/assets/SomethingMoreNear.svg"
 
-import Email from "../../../assets/icons/email.svg"
-import Insta from "../../../assets/icons/instagram.svg"
-import Linkedin from "../../../assets/icons/linkedin.svg"
+import Email from "~/assets/icons/email.svg"
+import Insta from "~/assets/icons/instagram.svg"
+import Linkedin from "~/assets/icons/linkedin.svg"
 
 
 
@@ -16,13 +16,13 @@ const Wrapper = tw.div`
     w-full
 `
 
-const Logo = tw.div `
+const Logo = tw.div`
     pb-6
     border-b
     border-white
 `
 
-const Block = tw.div `
+const Block = tw.div`
     container
     mx-auto
     block
@@ -39,11 +39,11 @@ const Block = tw.div `
     h-screen
 `
 
-const Nav = tw.div `
+const Nav = tw.div`
     flex-none
 `
 
-const HeadLink = tw.div `
+const HeadLink = tw.div`
     border-b
     border-white
     font-bold
@@ -52,7 +52,7 @@ const HeadLink = tw.div `
     pt-2
 `
 
-const Meta = tw.div `
+const Meta = tw.div`
     text-xl
     leading-normal
     font-sans
@@ -62,66 +62,66 @@ const Meta = tw.div `
     py-4
 `
 
-const MetaLink = tw.div `
+const MetaLink = tw.div`
     py-2
     flex
     items-center
 `
 
-const MetaIcon = tw.div `
+const MetaIcon = tw.div`
     w-4
     h-4
     mr-3
     float-left
 `
 
-export default function MobileMenu () {
+export default function MobileMenu() {
 
     return (
 
         <Wrapper>
-        
+
             <Block>
 
 
-            <Logo>
-                <Link to={'/'}>
-                    <SMN css={tw`fill-current text-white w-1/2`} />
-                </Link>
-            </Logo>
+                <Logo>
+                    <Link to={'/'}>
+                        <SMN css={tw`fill-current text-white w-1/2`} />
+                    </Link>
+                </Logo>
 
                 <Nav>
-            
-                <Link to={'/about'}>
-                    <HeadLink>About</HeadLink>
-                </Link>
 
-                <Link to={'/changework'}>
-                    <HeadLink>Changework</HeadLink>
-                </Link>
+                    <Link to={'/about'}>
+                        <HeadLink>About</HeadLink>
+                    </Link>
 
-                <Link to={'/blog'}>
-                    <HeadLink>Blog</HeadLink>
-                </Link>
+                    <Link to={'/projects'}>
+                        <HeadLink>Projects</HeadLink>
+                    </Link>
 
-                <Meta>
+                    <Link to={'/blog'}>
+                        <HeadLink>Blog</HeadLink>
+                    </Link>
 
-                <MetaLink>
-                    <MetaIcon><Email /></MetaIcon>
-                    <a className={'inline'} href="mailto:hello@somethingmorenear.com">hello@somethingmorenear.com</a>
-                </MetaLink>
-                    
-                <MetaLink>
-                    <MetaIcon><Linkedin /></MetaIcon>
-                    <a className={'inline'} target="_blank" href="https://www.linkedin.com/company/something-more-near/">LinkedIn</a>
-                </MetaLink>
+                    <Meta>
 
-                <MetaLink>
-                    <MetaIcon><Insta /></MetaIcon>
-                    <a className={'inline'} target="_blank" href="https://www.instagram.com/somethingmorenear/">Instagram</a>
-                </MetaLink>
-   
-                </Meta>
+                        <MetaLink>
+                            <MetaIcon><Email /></MetaIcon>
+                            <a className={'inline'} href="mailto:hello@somethingmorenear.com">hello@somethingmorenear.com</a>
+                        </MetaLink>
+
+                        <MetaLink>
+                            <MetaIcon><Linkedin /></MetaIcon>
+                            <a className={'inline'} target="_blank" href="https://www.linkedin.com/company/something-more-near/">LinkedIn</a>
+                        </MetaLink>
+
+                        <MetaLink>
+                            <MetaIcon><Insta /></MetaIcon>
+                            <a className={'inline'} target="_blank" href="https://www.instagram.com/somethingmorenear/">Instagram</a>
+                        </MetaLink>
+
+                    </Meta>
 
                 </Nav>
 

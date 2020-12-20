@@ -13,7 +13,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
-    
+
     {
       resolve: 'gatsby-source-prismic-graphql',
       options: {
@@ -22,7 +22,7 @@ module.exports = {
         previews: false, // optional, default: false
         pages: [{
           type: 'Project',
-          match: '/changework/:uid',
+          match: '/projects/:uid',
           component: require.resolve('./src/components/work/view/template.js'),
         }, {
           type: 'Blog_post',
@@ -54,13 +54,13 @@ module.exports = {
         }
       }
     },
-    
+
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-125950580-1'
       }
     }
-    
+
   ],
 }

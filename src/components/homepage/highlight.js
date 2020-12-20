@@ -82,7 +82,7 @@ export default function HomeHighlight({ data }) {
 
             </RowTitle>
 
-            <Link to={`/changework/${data.project._meta.uid}`}>
+            <Link to={`/projects/${data.project._meta.uid}`}>
 
                 <HoverWrap>
 

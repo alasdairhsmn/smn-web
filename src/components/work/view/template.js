@@ -127,66 +127,66 @@ query ProjectQuery($uid: String!) {
 `
 
 
-const Block = tw.div `
+const Block = tw.div`
     container mx-auto mb-12
 `
 
-const BodyBlock = tw.div `
+const BodyBlock = tw.div`
     container 
     mx-auto 
     md:mb-32 
     md:mt-24
 `
 
-export default function ProjectView ({data}) {
+export default function ProjectView({ data }) {
 
-    const project = data.prismic.project
+  const project = data.prismic.project
 
-    const nextprojects = data.prismic.changework_page.projects
+  const nextprojects = data.prismic.changework_page.projects
 
-    if(!project) return null
+  if (!project) return null
 
-    return (
-       <Layout>
+  return (
+    <Layout>
 
-<Helmet>
-          <title>{RichText.asText(project.title)} &mdash; Something More Near</title>
-          <link rel="canonical" href={`https://www.somethingmorenear.com/changework/${project._meta.uid}`} />
+      <Helmet>
+        <title>{RichText.asText(project.title)} &mdash; Something More Near</title>
+        <link rel="canonical" href={`https://www.somethingmorenear.com/projects/${project._meta.uid}`} />
 
-          <meta name="type" property="og:type" content="article" />
-          <meta name="title" property="og:title" content={`${RichText.asText(project.title)} – Something More Near`} />
-          <meta name="description" property="og:description" content={RichText.asText(project.challenge)} />
-          <meta name="image" property="og:image" content={project.lead_image.url} />
-          <meta name="url" property="og:url" content={`https://www.somethingmorenear.com/changework/${project.uid}`} />
-          
+        <meta name="type" property="og:type" content="article" />
+        <meta name="title" property="og:title" content={`${RichText.asText(project.title)} – Something More Near`} />
+        <meta name="description" property="og:description" content={RichText.asText(project.challenge)} />
+        <meta name="image" property="og:image" content={project.lead_image.url} />
+        <meta name="url" property="og:url" content={`https://www.somethingmorenear.com/changework/${project.uid}`} />
+
       </Helmet>
 
+      <Fade delay={300}>
+        <ProjectHero data={project}></ProjectHero>
+      </Fade>
+
+      <ProjectSummary data={project}></ProjectSummary>
+
+      <Block>
         <Fade delay={300}>
-            <ProjectHero data={project}></ProjectHero>
+          <ProjectContextImage data={project}></ProjectContextImage>
         </Fade>
+      </Block>
 
-          <ProjectSummary data={project}></ProjectSummary>  
+      <BodyBlock>
+        <Fade delay={300}>
+          <BodyText data={project.summary}></BodyText>
+        </Fade>
+      </BodyBlock>
 
-           <Block>
-           <Fade delay={300}>
-               <ProjectContextImage data={project}></ProjectContextImage>
-              </Fade>
-           </Block>
+      <ProjectSlices data={project.body}></ProjectSlices>
 
-           <BodyBlock>
-           <Fade delay={300}>
-               <BodyText data={project.summary}></BodyText>
-               </Fade>
-           </BodyBlock>
+      <Fade delay={300}>
+        <ProjectRow data={nextprojects} id={project._meta.uid} ></ProjectRow>
+      </Fade>
 
-           <ProjectSlices data={project.body}></ProjectSlices>
 
-          <Fade delay={300}>
-            <ProjectRow data={nextprojects} id={project._meta.uid} ></ProjectRow>
-          </Fade>
-
-            
-       </Layout>
-    )
+    </Layout>
+  )
 
 }

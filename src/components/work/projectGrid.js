@@ -83,7 +83,7 @@ export default function ProjectGrid({ data }) {
 
             <Wrapper>
                 <Fade delay={300}>
-                    <Link key={`project-${i}`} to={`/changework/${block.project._meta.uid}`}>
+                    <Link key={`project-${i}`} to={`/projects/${block.project._meta.uid}`}>
 
                         <WorkBlock>
 

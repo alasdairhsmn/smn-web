@@ -40,9 +40,9 @@ export default function ProjectsIndex({ data }) {
     <Layout>
 
       <Helmet>
-        <title>Changework &mdash; Something More Near</title>
-        <link rel="canonical" href={"https://www.somethingmorenear.com/changework"} />
-        <meta name="title" property="og:title" content={"Changework – Something More Near"} />
+        <title>Projects &mdash; Something More Near</title>
+        <link rel="canonical" href={"https://www.somethingmorenear.com/projects"} />
+        <meta name="title" property="og:title" content={"Projects – Something More Near"} />
 
         <meta name="type" property="og:type" content="article" />
         <meta name="description" property="og:description" content={"We are specialists in participatory approaches to innovation, strategy and brand experience. We call it social changework."} />
